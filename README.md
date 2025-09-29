@@ -2,7 +2,11 @@
 
 # Windy Seas (WIP Title)
 
-Nesse jogo o jogador é entregue um navio e é encarregado de fazer entregas pelo arquipélago, enquanto desvia de obstáculos pelo oceano, fuge de navios piratas, ou engaja em combate naval. O jogador deve tomar cuidado para evitar que seu navio naufrague e deve realizar suas entregas a tempo. As missões serão escritas manualmente e com um tempo de jogo previsto de ao menos 5 minutos.
+Nesse jogo o jogador é entregue um navio e é encarregado de fazer entregas pelo
+arquipélago, enquanto desvia de obstáculos pelo oceano, fuge de navios piratas,
+ou engaja em combate naval. O jogador deve tomar cuidado para evitar que seu
+navio naufrague e deve realizar suas entregas a tempo. As missões serão escritas
+manualmente e com um tempo de jogo previsto de ao menos 5 minutos.
 
 ## Assets
 
