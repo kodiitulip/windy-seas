@@ -1,0 +1,274 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "custom_style",
+"suffix": ""
+},
+&"default_portrait": "finger_one",
+&"description": "",
+&"display_name": "narrator",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"finger_one": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_finger_one.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"finger_two": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_finger_two.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"hand_closed": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_hand_closed.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"hand_open": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_hand_open.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"rotate_left": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_rotate_left.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"rotate_right": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_rotate_right.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_down": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_down.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_horizontal": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_horizontal.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_left": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_left.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_move": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_move.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_right": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_right.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_down": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_down.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_horizontal": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_horizontal.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_left": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_left.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_move": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_move.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_right": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_right.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_up": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_up.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_two_vertical": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_two_vertical.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_up": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_up.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"swipe_vertical": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_swipe_vertical.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tap": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_tap.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tap_double": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_tap_double.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tap_hold": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_tap_hold.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"two": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_two.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"two_double": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_two_double.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"two_hold": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_two_hold.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"zoom_in": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_zoom_in.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"zoom_out": {
+"export_overrides": {
+"image": "\"res://assets/kenney_assets/input_prompts/touch/vector/touch_zoom_out.svg\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

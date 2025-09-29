@@ -1,0 +1,17 @@
+narrator (finger_two): Yo!
+label go-back
+narrator (hand_open): Sup? you gud?
+[text_input text="Response:" var="response"]
+if {response} == "...":
+	narrator (rotate_left): Uhh... earth to traveller?
+	[wait time="3.0"]
+	jump go-back
+elif {response} == "yea":
+	narrator (hand_open): Cool Nice
+	narrator (finger_one): so what's next?
+	- custom
+		Cool
+	- signals
+		Awesome
+else:
+	narrator (finger_one): Ok Nice talking
