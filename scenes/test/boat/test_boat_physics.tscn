@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3f1xqtcwaf35"]
+[gd_scene load_steps=10 format=3 uid="uid://3f1xqtcwaf35"]
 
 [ext_resource type="PackedScene" uid="uid://le4cec82q2pa" path="res://scenes/objects/boat/boat.tscn" id="1_a54fq"]
+[ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scenes/test/boat/third_person_phantom_camera_3d.gd" id="2_nukdk"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_nukdk"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_nukdk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a54fq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,6 +17,12 @@ background_mode = 2
 sky = SubResource("Sky_xpql3")
 tonemap_mode = 2
 
+[sub_resource type="Resource" id="Resource_nukdk"]
+script = ExtResource("3_nukdk")
+metadata/_custom_type_script = "uid://8umksf8e80fw"
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_0uvl7"]
+
 [node name="TestBoatPhysics" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -25,3 +34,25 @@ environment = SubResource("Environment_jrnrh")
 
 [node name="Boat" parent="." instance=ExtResource("1_a54fq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(-0.9999999, -2.9900352e-08, 8.2150535e-08, 0, 0.9396926, 0.34202015, -8.742278e-08, 0.34202015, -0.9396925, 1.3144086e-06, 11.472322, -15.035082)
+script = ExtResource("2_nukdk")
+follow_mode = 6
+follow_target = NodePath("../Boat")
+tween_resource = SubResource("Resource_nukdk")
+follow_distance = 16.0
+vertical_rotation_offset = 0.3490658503988659
+horizontal_rotation_offset = 3.141592653589793
+spring_length = 16.0
+shape = SubResource("SeparationRayShape3D_0uvl7")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(-0.9999999, -2.9900352e-08, 8.2150535e-08, 0, 0.9396926, 0.34202015, -8.742278e-08, 0.34202015, -0.9396925, 1.3144086e-06, 11.472322, -15.035082)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_nukdk")

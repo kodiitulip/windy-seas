@@ -19,58 +19,47 @@ script = ExtResource("1_qrvow")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_gf2dy")
 
-[node name="HCamMovement" type="Node3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(0.42893517, 0, 0.9033353, 0, 1, 0, -0.9033353, 0, 0.42893517, 0, 4, 0)
-top_level = true
-
-[node name="VCamMovement" type="Node3D" parent="HCamMovement"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.73491454, 0.6781596, 0, -0.6781596, 0.73491454, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="HCamMovement/VCamMovement"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-
-[node name="FR" type="Marker3D" parent="."]
+[node name="Floaty" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 2)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="FL" type="Marker3D" parent="."]
+[node name="Floaty2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BR" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4)
+[node name="Floaty3" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BL" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -4)
+[node name="Floaty4" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BL2" type="Marker3D" parent="."]
+[node name="Floaty5" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BL3" type="Marker3D" parent="."]
+[node name="Floaty6" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BL4" type="Marker3D" parent="."]
+[node name="Floaty7" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="BL5" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+[node name="Floaty8" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
 script = ExtResource("2_caqfs")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
-[node name="CenterOfMass" type="Marker3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+[node name="Floaty9" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3)
+script = ExtResource("2_caqfs")
+metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
