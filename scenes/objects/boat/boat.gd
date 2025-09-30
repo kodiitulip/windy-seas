@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 
 	var rotation_dir: float = -Input.get_axis(&"rotate_left", &"rotate_right")
 	apply_central_force(global_transform.basis * Vector3.FORWARD * curr_speed)
-	apply_torque(Vector3(0, rotation_dir * minf(curr_speed, 1), 0))
+	apply_torque(Vector3(0, rotation_dir * curr_speed, 0))
 
 
 func _get_max_speed() -> float:

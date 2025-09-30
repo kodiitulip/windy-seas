@@ -4,6 +4,7 @@ class_name ThirdPersonPCamController3D
 extends Node
 
 @export var mouse_sensitivity: float = 0.20
+@export var zoom_sensitivity: float = 2.0
 
 var pcam: PhantomCamera3D
 
@@ -19,13 +20,18 @@ func _unhandled_input(event: InputEvent) -> void:
 	var controlling: bool = Input.is_action_pressed(&"cam_control")
 	if controlling and event is InputEventMouseMotion:
 		_third_person_camera_movement(event as InputEventMouseMotion)
+	var zoom_axis: float = Input.get_axis(&"cam_zoom_down", &"cam_zoom_up")
+	if zoom_axis != 0:
+		var spring_length: float = pcam.get_spring_length()
+		pcam.set_spring_length(
+			clampf(spring_length - zoom_axis * zoom_sensitivity, 6, 20))
 
 
 func _third_person_camera_movement(event: InputEventMouseMotion) -> void:
 	var moviment: Vector2 = event.relative
 	var pcam_rotation: Vector3 = pcam.get_third_person_rotation_degrees()
 	pcam_rotation.x -= moviment.y * mouse_sensitivity
-	pcam_rotation.x = clampf(pcam_rotation.x, -89, 20)
+	pcam_rotation.x = clampf(pcam_rotation.x, -89, -20)
 	pcam_rotation.y -= moviment.x * mouse_sensitivity
 	pcam_rotation.y = wrapf(pcam_rotation.y, 0, 360)
 	pcam.set_third_person_rotation_degrees(pcam_rotation)

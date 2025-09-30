@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://duolc8ueunraj"]
+
+[ext_resource type="Shader" uid="uid://dridpplhpcg3j" path="res://resources/shaders/ocean/ocean_waves.gdshader" id="1_r8ra0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_r8ra0")
+shader_parameter/beer_factor = 0.8
+shader_parameter/depth_gradient_shallow = Color(0.22202528, 0.43878317, 0.7562485, 1)
+shader_parameter/depth_gradient_deep = Color(0.15160438, 0.25981373, 0.61236006, 1)
+shader_parameter/depth_max_distance = 1.0
+shader_parameter/depth_factor = 1.0
+shader_parameter/wave_peak_treshold = 2.8
+shader_parameter/waves = Array[Vector3]([Vector3(0.75, 0.165, 20.765), Vector3(0.67, 0.13, 20.09), Vector3(0.64, 0.115, 13.545)])
+shader_parameter/waves_dir = Array[Vector2]([Vector2(1, 0), Vector2(-1, 1), Vector2(0.5, 1)])
+shader_parameter/height_scale = 1.0
