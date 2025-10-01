@@ -1,13 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://3f1xqtcwaf35"]
+[gd_scene load_steps=20 format=3 uid="uid://3f1xqtcwaf35"]
 
 [ext_resource type="PackedScene" uid="uid://le4cec82q2pa" path="res://scenes/objects/boat/boat.tscn" id="1_a54fq"]
 [ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="2_ftxyv"]
+[ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="2_g21k3"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_jrnrh"]
 [ext_resource type="Script" uid="uid://dwdvv2qmhrk5s" path="res://scripts/ocean_waves_resource.gd" id="3_4atxy"]
 [ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="3_jrnrh"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_nukdk"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_nukdk"]
 [ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="6_0uvl7"]
+[ext_resource type="PackedScene" uid="uid://ddm450cb8iu23" path="res://assets/kenney_assets/pirate_kit/models/rocks-sand-a.glb" id="10_usny0"]
+[ext_resource type="PackedScene" uid="uid://4rcp0y5g30td" path="res://assets/kenney_assets/pirate_kit/models/rocks-sand-b.glb" id="11_x0t57"]
+[ext_resource type="PackedScene" uid="uid://q0c156eac3be" path="res://assets/kenney_assets/pirate_kit/models/patch-grass-foliage.glb" id="12_4dd3f"]
+[ext_resource type="PackedScene" uid="uid://d3qtil8vm7rph" path="res://assets/kenney_assets/pirate_kit/models/rocks-c.glb" id="13_sgs33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a54fq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,11 +26,11 @@ background_mode = 2
 sky = SubResource("Sky_xpql3")
 tonemap_mode = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ftxyv"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_4dd3f"]
 material = ExtResource("2_ftxyv")
 size = Vector2(256, 256)
-subdivide_width = 64
-subdivide_depth = 64
+subdivide_width = 128
+subdivide_depth = 128
 
 [sub_resource type="Resource" id="Resource_g21k3"]
 script = ExtResource("3_4atxy")
@@ -45,10 +50,15 @@ shadow_enabled = true
 environment = SubResource("Environment_jrnrh")
 
 [node name="Boat" parent="." instance=ExtResource("1_a54fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="TopLevelFollowerNode3D" type="Node3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+top_level = true
+script = ExtResource("2_g21k3")
 
 [node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_ftxyv")
+mesh = SubResource("PlaneMesh_4dd3f")
 script = ExtResource("3_jrnrh")
 ocean_waves = SubResource("Resource_g21k3")
 ocean_size = Vector2(256, 256)
@@ -56,7 +66,7 @@ metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 11.284601, 6.128356)
+transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 14.284601, 6.128356)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -64,11 +74,11 @@ process_physics_priority = 300
 script = ExtResource("4_nukdk")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 13.284601, 6.128356)
+transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 14.284601, 6.128356)
 script = ExtResource("2_jrnrh")
 priority = 3
 follow_mode = 6
-follow_target = NodePath("../Boat")
+follow_target = NodePath("../Boat/TopLevelFollowerNode3D")
 tween_resource = SubResource("Resource_0uvl7")
 tween_on_load = false
 follow_offset = Vector3(0, 2, 0)
@@ -81,5 +91,24 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D"]
 script = ExtResource("6_0uvl7")
-zoom_sensitivity = null
 metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="rocks-sand-a2" parent="Node3D" instance=ExtResource("10_usny0")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.542946, 0, -16.958624)
+
+[node name="rocks-sand-b2" parent="Node3D" instance=ExtResource("11_x0t57")]
+transform = Transform3D(1.9013298, 0, 3.5192251, 0, 4, 0, -3.5192251, 0, 1.9013298, -36.5104, 1.9073486e-06, 0.6774187)
+
+[node name="patch-grass-foliage2" parent="." instance=ExtResource("12_4dd3f")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.738241, 0, 35.633747)
+
+[node name="patch-grass-foliage3" parent="." instance=ExtResource("12_4dd3f")]
+transform = Transform3D(-0.6706543, 0, -3.943377, 0, 4, 0, 3.943377, 0, -0.6706543, 1.3439875, 0, 42.363647)
+
+[node name="patch-grass-foliage4" parent="." instance=ExtResource("12_4dd3f")]
+transform = Transform3D(2.9398947, 0, -2.712382, 0, 4, 0, 2.712382, 0, 2.9398947, 10.341406, 0, 48.641697)
+
+[node name="rocks-c2" parent="." instance=ExtResource("13_sgs33")]
+transform = Transform3D(3.9996982, 0, -0.049147233, 0, 4, 0, 0.049147233, 0, 3.9996982, 14.519014, 0, 44.48821)

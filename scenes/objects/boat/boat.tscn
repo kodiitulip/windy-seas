@@ -8,60 +8,80 @@
 points = PackedVector3Array(0.109475374, 3.0994585, 4.5999994, -0.1099453, 3.0994585, 4.5999994, 0.20955348, 3.0019298, 4.5999994, 0.12967896, 6.6426716, 2.3397021, 0, 6.6426716, 2.4146433, -0.21002364, 3.0019298, 4.5999994, -0.13014889, 6.6426716, 2.3397021, 0.20955348, 2.8263783, 4.5999994, 2.1998434, 2.5991368, 0.5574784, 0.12967896, 9.96352, -0.54510593, 0, 9.96352, -0.47016454, -2.2003133, 2.5991368, 0.5574784, -0.21002364, 2.8263783, 4.5999994, -0.13014889, 9.96352, -0.54510593, 0.27956152, 1.088419, 3.1993732, 1.6999216, 0.69927996, 0.49976492, 2.1998434, 2.0997903, 0.5574784, 2.4, 2.0997903, -0.012764454, 2.1998434, 3.9996471, -2.4367266, 2.1998434, 4.1995807, -3.500548, 0.12967896, 9.96352, -0.6949885, -2.4, 2.0997903, -0.012764454, -2.2003133, 2.0997903, 0.5574784, -2.2003133, 3.9996471, -2.4367266, -1.7003917, 0.69927996, 0.49976492, -0.28003144, 1.088419, 3.1993732, -0.13014889, 9.96352, -0.6949885, -2.2003133, 4.1995807, -3.500548, 1.0999217, 0.19993359, 0.49976492, 1.8685985, 0.5793198, -0.11268616, 2.4, 1.8998568, -0.012764454, 2.4, 2.0997903, -1.087784, 2.1998434, 4.1995807, -3.7003913, 0, 9.96352, -0.76992965, 2.0532498, 4.1995807, -4.0535626, -2.4, 2.0997903, -1.087784, -2.4, 1.8998568, -0.012764454, -1.8690681, 0.5793198, -0.11268616, -1.1003916, 0.19993359, 0.49976492, -2.0537198, 4.1995807, -4.0535626, -2.2003133, 4.1995807, -3.7003913, 1.1722786, 0, -0.11268616, 1.8685985, 0.5793198, -0.98786235, 2.4, 1.8998568, -1.087784, 2.1998434, 3.4993255, -3.7003913, 1.6999216, 4.1995807, -4.2, -1.7003917, 4.1995807, -4.2, 2.0532498, 3.4993255, -4.0535626, -2.4, 1.8998568, -1.087784, -1.8690681, 0.5793198, -0.98786235, -1.1727487, 0, -0.11268616, -2.0537198, 3.4993255, -4.0535626, -2.2003133, 3.4993255, -3.7003913, 1.1722786, 0, -0.98786235, 1.0999217, 0.19993359, -3.0000782, 1.6999216, 0.69927996, -3.0000782, 2.1998434, 1.4999896, -3.6004696, 1.6999216, 3.4993255, -4.2, -1.7003917, 3.4993255, -4.2, 1.9996867, 2.7990704, -4.0001564, -2.2003133, 1.4999896, -3.6004696, -1.7003917, 0.69927996, -3.0000782, -1.1003916, 0.19993359, -3.0000782, -1.1727487, 0, -0.98786235, -2.0001566, 2.7990704, -4.0001564, 2.0997648, 1.4999896, -3.7003913, -2.100235, 1.4999896, -3.7003913)
 
 [node name="Boat" type="RigidBody3D"]
+mass = 4.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 2.3, 0)
-linear_damp = 1.0
-angular_damp = 1.0
+linear_damp = 0.7
+angular_damp = 0.7
 script = ExtResource("1_qrvow")
+max_speed = 20.0
 
 [node name="ship-small2" parent="." instance=ExtResource("3_gf2dy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.5, 0)
 shape = SubResource("ConvexPolygonShape3D_gf2dy")
 
 [node name="Floaty" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty3" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4381666, 0, -1.7338687)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty4" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.482522, 0, -1.6747283)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty5" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty6" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty7" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty8" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7338681, 0, -2.97043)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty9" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6599431, 0, -2.8965046)
 script = ExtResource("2_caqfs")
+waves_buoyancy = true
+water_level = null
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
