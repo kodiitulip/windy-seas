@@ -1,44 +1,47 @@
 <!-- markdownlint-disable MD013 -->
 
-# Windy Seas (WIP Title)
+# WINDY SEAS/Bestas de Carga
 
-Nesse jogo o jogador é entregue um navio e é encarregado de fazer entregas pelo
-arquipélago, enquanto desvia de obstáculos pelo oceano, fuge de navios piratas,
-ou engaja em combate naval. O jogador deve tomar cuidado para evitar que seu
-navio naufrague e deve realizar suas entregas a tempo. As missões serão escritas
-manualmente e com um tempo de jogo previsto de ao menos 5 minutos.
-
-## Assets
-
-### Modelos 3D e Texturas
-
-- [ ] Navios
-- [ ] Ilhas
-- [ ] Oceano
-- [ ] Personagens
-- [ ] UI
-
-### Sons
-
-- [ ] Musica de fundo
-- [ ] Musica de batalha
-- [ ] Sons de fala (_gibberish_)
-- [ ] Sons de fundo: Oceano
-- [ ] Sons de fundo: Navio
-- [ ] Sons de UI
-
-## Mecânicas / Código
-
-- [ ] Controle de Camera (Phantom Camera)
-- [ ] Controle do Navio
-- [ ] Árvore de comportamento de navios inimigos (BeeHave)
-- [ ] Física simples para navios, oceano e ilhas
-- [ ] Sistema de diálogo para missões (Dialogic)
-- [ ] _Fetch Quests_
+> Legenda
+>
+> - Gameplay = **Negrito**
+> - Arte = _Itálico_
+> - Som = **_NegritoItálico_**
 
 ## Narrativa
 
-Você acabou de conseguir dinheiro para comprar seu próprio navio, e agora está oferecendo serviços de entrega pelo arquipélago. Um velho amigo seu lhe apoia em sua aventura mas pede que tome cuidado ao velejar, parece que essas águas estão ocupadas por piratas. Melhor se previnir.
+O jogador aceita um trabalho como cargueiro para quitar dívidas de jogo. Agora deve interpretar as insanas instruções de seus clientes para fazer as entregas da forma correta.
+
+## Jogo
+
+Começa o jogo com a _tela_ de **Loading** para o **menu inicial**, sendo esse composto pelos _botões jogar_ e _sair do jogo_ possuindo **_música de fundo_**, ao clicar em jogar uma tela de **Loading** levará o jogador para a próxima cena que consiste de uma _ilha_ e um _caís_ onde um jogador(representado pelo _modelo do barco_) receberá instruções sobre como **dirigir o barco** por meio de **diálogos** em _balões de fala_ e com a "ajuda" de instruções mal contadas deve adivinhar a ilha em que deve fazer sua primeira entrega.
+
+Na interface do jogo haverá um _ícone de papel_ que ao **clicar abrirá uma tela com as instruções**.
+
+A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busca da ilha correta para a primeira entrega. _Cada ilha terá características únicas_ que devem ser observadas pelo jogador para fazer uma entrega bem sucedida, caso o jogador entregue em uma ilha errada o mesmo pode voltar com o pacote para o caís original e **trocar o pacote que está carregando** ou tentar em outra ilha com o mesmo pacote.
+
+## Assets
+
+- [ ] Loading
+- [ ] UI
+- [ ] Ilhas
+- [ ] Barco
+- [ ] Diálogos
+- [ ] Ícones
+
+## Gameplay / Código
+
+- [ ] Loading entre cenas
+- [ ] Controles do Barco
+- [ ] Diálogos (dialogic2)
+- [ ] Missões de entrega
+- [ ] UI funcional
+- [ ] Física e Colisões
+
+## Sons
+
+- [ ] Sons de UI
+- [ ] Música de fundo
 
 ## Licensas
 

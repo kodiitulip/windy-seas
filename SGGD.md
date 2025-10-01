@@ -19,3 +19,41 @@ Começa o jogo com a _tela_ de **Loading** para o **menu inicial**, sendo esse c
 Na interface do jogo haverá um _ícone de papel_ que ao **clicar abrirá uma tela com as instruções**.
 
 A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busca da ilha correta para a primeira entrega. _Cada ilha terá características únicas_ que devem ser observadas pelo jogador para fazer uma entrega bem sucedida, caso o jogador entregue em uma ilha errada o mesmo pode voltar com o pacote para o caís original e **trocar o pacote que está carregando** ou tentar em outra ilha com o mesmo pacote.
+
+## Assets
+
+- [ ] Loading
+- [ ] UI
+- [ ] Ilhas
+- [ ] Barco
+- [ ] Diálogos
+- [ ] Ícones
+
+## Gameplay / Código
+
+- [ ] Loading entre cenas
+- [ ] Controles do Barco
+- [ ] Diálogos (dialogic2)
+- [ ] Missões de entrega
+- [ ] UI funcional
+- [ ] Física e Colisões
+
+## Sons
+
+- [ ] Sons de UI
+- [ ] Música de fundo
+
+## Licensas
+
+- Assets - Modelos 3D e Texturas:
+  - ["PirateKit by Kenney"](https://kenney.nl/assets/pirate-kit) CC0
+  - ["UI Pack Adventure by Kenney"](https://kenney.nl/assets/ui-pack-adventure) CC0
+  - ["Input Prompts by Kenney"](https://kenney.nl/assets/input-prompts) CC0
+  - ["Fonts by Kenney"](https://kenney.nl/assets/kenney-fonts) CC0
+- Assets - Sons:
+  - ["Interface Sounds by Kenney"](https://kenney.nl/assets/interface-sounds) CC0
+- Código:
+  - ["BeeHave"](https://bitbra.in/beehave/#/) MIT
+  - ["Dialogic"](https://github.com/dialogic-godot/dialogic?tab=readme-ov-file#dialogic-2) MIT
+  - ["Phantom Camera"](https://phantom-camera.dev/) MIT
+  - Esse jogo MIT
