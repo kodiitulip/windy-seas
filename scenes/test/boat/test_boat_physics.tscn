@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://3f1xqtcwaf35"]
+[gd_scene load_steps=17 format=3 uid="uid://3f1xqtcwaf35"]
 
 [ext_resource type="PackedScene" uid="uid://le4cec82q2pa" path="res://scenes/objects/boat/boat.tscn" id="1_a54fq"]
 [ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="2_ftxyv"]
@@ -9,10 +9,7 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_nukdk"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_nukdk"]
 [ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="6_0uvl7"]
-[ext_resource type="PackedScene" uid="uid://ddm450cb8iu23" path="res://assets/kenney_assets/pirate_kit/models/rocks-sand-a.glb" id="10_usny0"]
-[ext_resource type="PackedScene" uid="uid://4rcp0y5g30td" path="res://assets/kenney_assets/pirate_kit/models/rocks-sand-b.glb" id="11_x0t57"]
-[ext_resource type="PackedScene" uid="uid://q0c156eac3be" path="res://assets/kenney_assets/pirate_kit/models/patch-grass-foliage.glb" id="12_4dd3f"]
-[ext_resource type="PackedScene" uid="uid://d3qtil8vm7rph" path="res://assets/kenney_assets/pirate_kit/models/rocks-c.glb" id="13_sgs33"]
+[ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="14_sgs33"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a54fq"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,7 +23,7 @@ background_mode = 2
 sky = SubResource("Sky_xpql3")
 tonemap_mode = 2
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4dd3f"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_8iygf"]
 material = ExtResource("2_ftxyv")
 size = Vector2(256, 256)
 subdivide_width = 128
@@ -58,7 +55,7 @@ top_level = true
 script = ExtResource("2_g21k3")
 
 [node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_4dd3f")
+mesh = SubResource("PlaneMesh_8iygf")
 script = ExtResource("3_jrnrh")
 ocean_waves = SubResource("Resource_g21k3")
 ocean_size = Vector2(256, 256)
@@ -93,22 +90,11 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 script = ExtResource("6_0uvl7")
 metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
 
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="rocks-sand-a2" parent="Node3D" instance=ExtResource("10_usny0")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -17.542946, 0, -16.958624)
-
-[node name="rocks-sand-b2" parent="Node3D" instance=ExtResource("11_x0t57")]
-transform = Transform3D(1.9013298, 0, 3.5192251, 0, 4, 0, -3.5192251, 0, 1.9013298, -36.5104, 1.9073486e-06, 0.6774187)
-
-[node name="patch-grass-foliage2" parent="." instance=ExtResource("12_4dd3f")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.738241, 0, 35.633747)
-
-[node name="patch-grass-foliage3" parent="." instance=ExtResource("12_4dd3f")]
-transform = Transform3D(-0.6706543, 0, -3.943377, 0, 4, 0, 3.943377, 0, -0.6706543, 1.3439875, 0, 42.363647)
-
-[node name="patch-grass-foliage4" parent="." instance=ExtResource("12_4dd3f")]
-transform = Transform3D(2.9398947, 0, -2.712382, 0, 4, 0, 2.712382, 0, 2.9398947, 10.341406, 0, 48.641697)
-
-[node name="rocks-c2" parent="." instance=ExtResource("13_sgs33")]
-transform = Transform3D(3.9996982, 0, -0.049147233, 0, 4, 0, 0.049147233, 0, 3.9996982, 14.519014, 0, 44.48821)
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("14_sgs33")
+cell_size = Vector3(1, 0.2, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(-131049, 65525, 655363, -131049, 4, 1048579, -131033, 65533, 3, -131033, 65512, 1441795, -131046, 65507, 655363, 29, 65532, 655363, 28, 65518, 1048579, 35, 65523, 1048579, 131101, 65517, 1048583, -65567, 65520, 1048579, -65581, 65515, 3, -65578, 65531, 1441795, -65591, 65529, 1441795, -65565, 4, 1441795, -65579, 8, 1441795, 65485, 65526, 1441793, 65493, 65520, 655361, 65501, 65526, 1048577, 65494, 65531, 1048577, 65503, 2, 1048577, 65497, 6, 1, 65489, 65534, 1441793, 262101, 65530, 655364)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)

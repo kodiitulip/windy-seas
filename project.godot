@@ -117,6 +117,11 @@ toggle_anchor={
 
 locale/locale_filter_mode=0
 
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="boat"
+
 [physics]
 
 common/physics_interpolation=true
@@ -124,3 +129,18 @@ common/physics_interpolation=true
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+
+[shader_globals]
+
+wind_intensity={
+"type": "float",
+"value": 1.0
+}
+wind_direction={
+"type": "vec3",
+"value": Vector3(1, 0, 0)
+}
+player_position={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
