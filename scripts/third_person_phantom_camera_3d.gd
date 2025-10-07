@@ -5,6 +5,9 @@ extends Node
 
 @export var mouse_sensitivity: float = 0.20
 @export var zoom_sensitivity: float = 2.0
+@export_group("Camera Limits", "camera")
+@export_range(0.0, 360.0, 1.0, "radians_as_degrees") var camera_x_max: float = deg_to_rad(10)
+@export_range(0.0, 360.0, 1.0, "radians_as_degrees") var camera_x_min: float = deg_to_rad(89)
 
 var pcam: PhantomCamera3D
 
@@ -29,12 +32,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _third_person_camera_movement(event: InputEventMouseMotion) -> void:
 	var moviment: Vector2 = event.relative
-	var pcam_rotation: Vector3 = pcam.get_third_person_rotation_degrees()
-	pcam_rotation.x -= moviment.y * mouse_sensitivity
-	pcam_rotation.x = clampf(pcam_rotation.x, -89, -20)
-	pcam_rotation.y -= moviment.x * mouse_sensitivity
-	pcam_rotation.y = wrapf(pcam_rotation.y, 0, 360)
-	pcam.set_third_person_rotation_degrees(pcam_rotation)
+	var pcam_rotation: Vector3 = pcam.get_third_person_rotation()
+	pcam_rotation.x -= deg_to_rad(moviment.y * mouse_sensitivity)
+	pcam_rotation.x = clampf(pcam_rotation.x, -camera_x_min, -camera_x_max)
+	pcam_rotation.y -= deg_to_rad(moviment.x * mouse_sensitivity)
+	pcam_rotation.y = wrapf(pcam_rotation.y, deg_to_rad(0), deg_to_rad(360))
+	pcam.set_third_person_rotation(pcam_rotation)
 	get_viewport().set_input_as_handled()
 
 

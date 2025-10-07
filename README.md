@@ -24,15 +24,15 @@ A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busc
 
 - [ ] Loading
 - [ ] UI
-- [ ] Ilhas
-- [ ] Barco
+- [x] Ilhas
+- [x] Barco
 - [ ] Diálogos
 - [ ] Ícones
 
 ## Gameplay / Código
 
 - [ ] Loading entre cenas
-- [ ] Controles do Barco
+- [x] Controles do Barco
 - [ ] Diálogos (dialogic2)
 - [ ] Missões de entrega
 - [ ] UI funcional

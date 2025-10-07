@@ -25,7 +25,7 @@ tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8iygf"]
 material = ExtResource("2_ftxyv")
-size = Vector2(256, 256)
+size = Vector2(512, 512)
 subdivide_width = 128
 subdivide_depth = 128
 
@@ -58,7 +58,7 @@ script = ExtResource("2_g21k3")
 mesh = SubResource("PlaneMesh_8iygf")
 script = ExtResource("3_jrnrh")
 ocean_waves = SubResource("Resource_g21k3")
-ocean_size = Vector2(256, 256)
+ocean_size = Vector2(512, 512)
 metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -88,6 +88,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D"]
 script = ExtResource("6_0uvl7")
+camera_x_max = 0.0
 metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
 
 [node name="GridMap" type="GridMap" parent="."]
