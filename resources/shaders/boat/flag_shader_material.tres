@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cv1m0576026m3"]
+
+[ext_resource type="Shader" uid="uid://cjxa1ltahy70t" path="res://resources/shaders/boat/flag.gdshader" id="1_xsxes"]
+[ext_resource type="Texture2D" uid="uid://bbntf2oncsjko" path="res://assets/models/textures/colormap.png" id="2_7o7no"]
+
+[sub_resource type="Gradient" id="Gradient_xsxes"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.735357, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xsxes"]
+resource_local_to_scene = true
+frequency = 0.001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7o7no"]
+noise = SubResource("FastNoiseLite_xsxes")
+color_ramp = SubResource("Gradient_xsxes")
+seamless = true
+invert = true
+normalize = false
+
+[resource]
+resource_local_to_scene = true
+resource_name = "colormap"
+render_priority = 0
+shader = ExtResource("1_xsxes")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_7o7no")
+shader_parameter/uv_offset_texture = SubResource("NoiseTexture2D_7o7no")
+shader_parameter/uv_offset_scale = Vector2(-0.2, -0.1)
+shader_parameter/time_scale = 0.3
