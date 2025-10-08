@@ -24,7 +24,7 @@ A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busc
 
 ## Documentação
 
-Nossa documentação pode ser encontrada aqui [[docs/README]]
+Nossa documentação pode ser encontrada [aqui](docs/README.md)
 
 ## Assets
 
