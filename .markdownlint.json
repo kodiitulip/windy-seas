@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.38.0/schema/markdownlint-config-schema.json",
+  "ul-indent": {
+    "indent": 4
+  },
+  "line-length": {
+    "code_blocks": false,
+    "line_length": 120,
+    "tables": false
+  },
+  "single-h1": {
+    "front_matter_title": ""
+  },
+  "no-inline-html": {
+    "allowed_elements": [
+      "a",
+      "br",
+      "details",
+      "div",
+      "img",
+      "s",
+      "span",
+      "summary",
+      "sup",
+      "table",
+      "thead",
+      "tbody",
+      "td",
+      "th",
+      "tr"
+    ]
+  },
+  "hr-style": {
+    "style": "---"
+  },
+  "MD042": false
+}

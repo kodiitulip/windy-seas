@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "875f7165943416fa",
+        "id": "483bad3543d76803",
         "type": "tabs",
         "children": [
           {
-            "id": "1a2d81483282b81d",
+            "id": "c435e9447edbaa34",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "docs/quests/quest-index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "8f0ef5c705d2db00",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SGGD.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "SGGD"
+              "title": "quest-index"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d1ae4eded57f42cd",
@@ -166,27 +150,48 @@
               "icon": "lucide-list",
               "title": "Outline of SGGD"
             }
+          },
+          {
+            "id": "1634adbcb24c4b16",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian42-brat:BRAT": false
     }
   },
-  "active": "8f0ef5c705d2db00",
+  "active": "c435e9447edbaa34",
   "lastOpenFiles": [
     "README.md",
+    "4913",
+    "icon.svg",
+    "docs/README.md",
+    "docs/quests/quest-01.md",
+    "docs/quests/quest-index.md",
+    "docs/quests",
+    "docs",
+    "Untitled.base",
     "SGGD.md"
   ]
 }

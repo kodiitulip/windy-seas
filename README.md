@@ -1,12 +1,14 @@
-<!-- markdownlint-disable MD013 -->
+# Windy Seas
 
-# WINDY SEAS/Bestas de Carga
+<p align="center">
+	<img class="align-center" src="./icon.svg" alt="icon"/>
+</p>
 
-> Legenda
+> INFO: Legenda
 >
-> - Gameplay = **Negrito**
+> - Código = **Negrito**
 > - Arte = _Itálico_
-> - Som = **_NegritoItálico_**
+> - Som = **_Negrito Itálico_**
 
 ## Narrativa
 
@@ -19,6 +21,10 @@ Começa o jogo com a _tela_ de **Loading** para o **menu inicial**, sendo esse c
 Na interface do jogo haverá um _ícone de papel_ que ao **clicar abrirá uma tela com as instruções**.
 
 A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busca da ilha correta para a primeira entrega. _Cada ilha terá características únicas_ que devem ser observadas pelo jogador para fazer uma entrega bem sucedida, caso o jogador entregue em uma ilha errada o mesmo pode voltar com o pacote para o caís original e **trocar o pacote que está carregando** ou tentar em outra ilha com o mesmo pacote.
+
+## Documentação
+
+Nossa documentação pode ser encontrada aqui [[docs/README]]
 
 ## Assets
 
