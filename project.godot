@@ -14,9 +14,12 @@ config/name="Windy Seas"
 config/name_localized={
 "pt_BR": "Bestas de Carga"
 }
-run/main_scene="uid://3f1xqtcwaf35"
+run/main_scene="uid://bx460u03mm1g6"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0.12941177, 0.047058824, 0.13725491, 1)
 config/icon="res://icon.svg"
+boot_splash/bg_color.editor_hint=Color(0.14, 0.14, 0.14, 1)
+boot_splash/image.editor_hint=""
 
 [autoload]
 
@@ -24,6 +27,7 @@ BeehaveGlobalMetrics="*res://addons/beehave/metrics/beehave_global_metrics.gd"
 BeehaveGlobalDebugger="*res://addons/beehave/debug/global_debugger.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+SceneTransitionManager="*res://scenes/managers/scene_transition/scene_transition.tscn"
 
 [debug]
 
