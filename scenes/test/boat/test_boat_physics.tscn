@@ -26,8 +26,8 @@ tonemap_mode = 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_8iygf"]
 material = ExtResource("2_ftxyv")
 size = Vector2(512, 512)
-subdivide_width = 128
-subdivide_depth = 128
+subdivide_width = 256
+subdivide_depth = 256
 
 [sub_resource type="Resource" id="Resource_g21k3"]
 script = ExtResource("3_4atxy")

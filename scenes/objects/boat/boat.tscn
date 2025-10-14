@@ -27,53 +27,44 @@ shape = SubResource("ConvexPolygonShape3D_gf2dy")
 [node name="Floaty" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty3" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4381666, 0, -1.7338687)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty4" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.482522, 0, -1.6747283)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty5" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty6" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty7" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty8" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7338681, 0, -2.97043)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="Floaty9" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6599431, 0, -2.8965046)
 script = ExtResource("2_caqfs")
-waves_buoyancy = true
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
