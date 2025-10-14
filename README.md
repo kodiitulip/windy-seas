@@ -1,14 +1,14 @@
 # Windy Seas
 
 <p align="center">
-	<img class="align-center" src="./icon.svg" alt="icon"/>
+  <img class="align-center" src="./icon.svg" alt="icon"/>
 </p>
 
-> INFO: Legenda
->
-> - Código = **Negrito**
-> - Arte = _Itálico_
-> - Som = **_Negrito Itálico_**
+> [!NOTE]
+> Legenda
+> - Código: **<span style="color:#FF0A0A;font-weight:bold;">Negrito</span>**
+> - Arte: _<span style="color:#59d7ee;font-style:italic;">Itálico</span>_
+> - Som: **_<span style="color:#FFFF00;font-weight:bold;font-style:italic;">Negrito Itálico</span>_**
 
 ## Narrativa
 
@@ -16,33 +16,50 @@ O jogador aceita um trabalho como cargueiro para quitar dívidas de jogo. Agora 
 
 ## Jogo
 
-Começa o jogo com a _tela_ de **Loading** para o **menu inicial**, sendo esse composto pelos _botões jogar_ e _sair do jogo_ possuindo **_música de fundo_**, ao clicar em jogar uma tela de **Loading** levará o jogador para a próxima cena que consiste de uma _ilha_ e um _caís_ onde um jogador(representado pelo _modelo do barco_) receberá instruções sobre como **dirigir o barco** por meio de **diálogos** em _balões de fala_ e com a "ajuda" de instruções mal contadas deve adivinhar a ilha em que deve fazer sua primeira entrega.
+Começa o jogo com a _<span style="color:#59d7ee;font-style:italic;">tela</span>_ de **<span style="color:#FF0A0A;font-weight:bold;">Loading</span>** para o **<span style="color:#FF0A0A;font-weight:bold;">menu inicial</span>**, sendo esse composto pelos _<span style="color:#59d7ee;font-style:italic;">botões jogar e sair do jogo</span>_ possuindo **_<span style="color:#FFFF00;font-weight:bold;font-style:italic;">música de fundo</span>_**, ao clicar em jogar uma tela de **<span style="color:#FF0A0A;font-weight:bold;">Loading</span>** levará o jogador para a próxima cena que consiste de uma _<span style="color:#59d7ee;font-style:italic;">ilha</span>_ e um _<span style="color:#59d7ee;font-style:italic;">cais</span>_ onde um jogador(representado pelo _<span style="color:#59d7ee;font-style:italic;">modelo do barco</span>_) receberá instruções sobre como **<span style="color:#FF0A0A;font-weight:bold;">controlar o barco</span>** por meio de **<span style="color:#FF0A0A;font-weight:bold;">diálogos</span>** em _<span style="color:#59d7ee;font-style:italic;">balões de fala</span>_ e, com a ajuda de instruções dadas pelos NPC's de cada ilha, deve encontrar a ilha em que deve fazer sua primeira entrega.
 
-Na interface do jogo haverá um _ícone de papel_ que ao **clicar abrirá uma tela com as instruções**.
+Na interface do jogo haverá um _<span style="color:#59d7ee;font-style:italic;">ícone de papel</span>_ que ao <span style="color:#FF0A0A;font-weight:bold;">clicar abrirá uma tela com as instruções</span>. Durante o jogo terá uma **_<span style="color:#FFFF00;font-weight:bold;font-style:italic;">musica animada</span>_** tocando de fundo.
 
-A partir daí o jogador se encontra livre para explorar o _arquipélago_ em busca da ilha correta para a primeira entrega. _Cada ilha terá características únicas_ que devem ser observadas pelo jogador para fazer uma entrega bem sucedida, caso o jogador entregue em uma ilha errada o mesmo pode voltar com o pacote para o caís original e **trocar o pacote que está carregando** ou tentar em outra ilha com o mesmo pacote.
+A partir daí o jogador se encontra livre para explorar o _<span style="color:#59d7ee;font-style:italic;">arquipélago</span>_ em busca da ilha correta para a primeira entrega. _<span style="color:#59d7ee;font-style:italic;">Cada ilha terá características únicas</span>_, essas características estarão descritas nas informação das missões e devem ser interpretadas pelo jogador para fazer uma entrega bem sucedida, caso o jogador entregue em uma ilha errada o mesmo pode voltar com o pacote para o cais original e **<span style="color:#FF0A0A;font-weight:bold;">trocar o pacote que está carregando</span>** ou tentar em outra ilha com o mesmo pacote.
+
+Em cada ilha haverá diferentes _<span style="color:#59d7ee;font-style:italic;">NPC's</span>_ que **<span style="color:#FF0A0A;font-weight:bold;">irão contar um pouco de suas histórias</span>** uns com os outros, e o jogador deve fazer as **<span style="color:#FF0A0A;font-weight:bold;">missões</span>** dadas por eles para conseguir suas amizades e quem sabe reunir um grupo de antigos amigos.
 
 ## Documentação
 
 Nossa documentação pode ser encontrada [aqui](docs/README.md)
 
-## Assets
+## Assets / Arte
 
-- [ ] Loading
-- [ ] UI
-- [x] Ilhas
-- [x] Barco
+- [ ] Tela de Loading
+- [ ] Menu Inicial
+  - [ ] Botões
+  - [ ] Fonte
+  - [ ] Backdrop
+- [ ] UI durante o jogo
+  - [ ] Botões
+  - [ ] Controles do Barco
+  - [ ] Interface de Diálogo
+- [x] Modelos das Ilhas
+- [x] Modelo do Barco
 - [ ] Diálogos
+  - [ ] Texto dos diálogos
+  - [ ] Narrativa do jogo
+  - [ ] Sprites dos personagens
 - [ ] Ícones
 
 ## Gameplay / Código
 
-- [ ] Loading entre cenas
+- [x] Loading entre cenas
 - [x] Controles do Barco
 - [ ] Diálogos (dialogic2)
 - [ ] Missões de entrega
+  - [ ] Começar uma nova missão
+  - [ ] Completar a missão atual
+  - [ ] Ter acesso as informações da missão a todo momento
 - [ ] UI funcional
-- [ ] Física e Colisões
+  - [ ] Interface de Controle do Barco
+  - [ ] Interface de Pausa
+- [x] Física e Colisões
 
 ## Sons
 

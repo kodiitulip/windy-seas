@@ -1,4 +1,6 @@
 {
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "markups"
+  ]
 }
-

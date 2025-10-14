@@ -1,0 +1,51 @@
+{
+  "Colors": [
+    [
+      "Red",
+      "#FF0A0A"
+    ],
+    [
+      "Green",
+      "#00C800"
+    ],
+    [
+      "Orange",
+      "#DD7700"
+    ],
+    [
+      "Yellow",
+      "#FFFF00"
+    ],
+    [
+      "Teal",
+      "#59d7ee"
+    ]
+  ],
+  "HighlightColors": [
+    [
+      "Black on Yellow",
+      "#000000",
+      "#FFFF00"
+    ],
+    [
+      "Black on Green",
+      "#000000",
+      "#00FF00"
+    ],
+    [
+      "White on Red",
+      "#FFFFFF",
+      "#FF0000"
+    ],
+    [
+      "Black on Teal",
+      "#000000",
+      "#00FFFF"
+    ],
+    [
+      "White on Purple",
+      "#FFFFFF",
+      "#FF00FF"
+    ]
+  ]
+}

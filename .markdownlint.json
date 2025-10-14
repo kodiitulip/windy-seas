@@ -1,18 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/v0.38.0/schema/markdownlint-config-schema.json",
   "ul-indent": {
-    "indent": 4
+    "indent": 2
   },
-  "line-length": {
-    "code_blocks": false,
-    "line_length": 120,
-    "tables": false
-  },
+  "line-length": false,
   "single-h1": {
     "front_matter_title": ""
   },
+  "no-hard-tabs": true,
   "no-inline-html": {
     "allowed_elements": [
+      "p",
       "a",
       "br",
       "details",
