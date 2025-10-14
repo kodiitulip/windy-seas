@@ -24,47 +24,25 @@ A partir daí o jogador se encontra livre para explorar o _<span style="color:#5
 
 Em cada ilha haverá diferentes _<span style="color:#59d7ee;font-style:italic;">NPC's</span>_ que **<span style="color:#FF0A0A;font-weight:bold;">irão contar um pouco de suas histórias</span>** uns com os outros, e o jogador deve fazer as **<span style="color:#FF0A0A;font-weight:bold;">missões</span>** dadas por eles para conseguir suas amizades e quem sabe reunir um grupo de antigos amigos.
 
-## Documentação
+| Arte                         | Status | Programação                         | Status |
+| ---------------------------- | :----: | ----------------------------------- | :----: |
+| Tela de Loading              |   🚧   | Loading entre cenas                 |   ✅    |
+| Fonte                        |   🚧   | Controles do Barco                  |   ✅    |
+| Backdrop Tela Inicial        |   🚧   | Diálogos (dialogic2)                |   🚧   |
+| Botões Tela inicial          |   🚧   | Começar uma nova missão             |   🚧   |
+| Botões de Controles do Barco |   🚧   | Completar a missão atual            |   🚧   |
+| Interface de Diálogo         |   🚧   | Ter acesso as informações da missão |   🚧   |
+| Modelos das Ilhas            |   ✅    | Interface de Controle do Barco      |   🚧   |
+| Modelo do Barco              |   ✅    | Interface de Pausa                  |   🚧   |
+| Texto dos diálogos           |   🚧   | Física e Colisões                   |   ✅    |
+| Narrativa do jogo            |   🚧   |                                     |        |
+| Sprites dos personagens      |   🚧   |                                     |        |
+| Ícones                       |   🚧   |                                     |        |
 
-Nossa documentação pode ser encontrada [aqui](docs/README.md)
-
-## Assets / Arte
-
-- [ ] Tela de Loading
-- [ ] Menu Inicial
-  - [ ] Botões
-  - [ ] Fonte
-  - [ ] Backdrop
-- [ ] UI durante o jogo
-  - [ ] Botões
-  - [ ] Controles do Barco
-  - [ ] Interface de Diálogo
-- [x] Modelos das Ilhas
-- [x] Modelo do Barco
-- [ ] Diálogos
-  - [ ] Texto dos diálogos
-  - [ ] Narrativa do jogo
-  - [ ] Sprites dos personagens
-- [ ] Ícones
-
-## Gameplay / Código
-
-- [x] Loading entre cenas
-- [x] Controles do Barco
-- [ ] Diálogos (dialogic2)
-- [ ] Missões de entrega
-  - [ ] Começar uma nova missão
-  - [ ] Completar a missão atual
-  - [ ] Ter acesso as informações da missão a todo momento
-- [ ] UI funcional
-  - [ ] Interface de Controle do Barco
-  - [ ] Interface de Pausa
-- [x] Física e Colisões
-
-## Sons
-
-- [ ] Sons de UI
-- [ ] Música de fundo
+| Sons            | Status |
+| --------------- | :----: |
+| Sons de UI      |   🚧   |
+| Música de fundo |   🚧   |
 
 ## Licensas
 
