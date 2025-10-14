@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @export var mouse_sensitivity: float = 0.20
 @export var max_speed: float = 10.0
+@export var flip_foward: bool = false
 
 var curr_speed: float = 0.0
 
@@ -16,6 +17,7 @@ func _handle_move(delta: float) -> void:
 		curr_speed = move_toward(curr_speed, 0.0, delta * 2.5)
 	if Input.is_action_just_pressed(&"toggle_anchor"):
 		curr_speed = 0.0
-	apply_central_force(global_transform.basis * Vector3.FORWARD * curr_speed)
+	var dir: Vector3 = Vector3.BACK if flip_foward else Vector3.FORWARD
+	apply_central_force(global_transform.basis * dir * curr_speed)
 	var rotation_dir: float = -Input.get_axis(&"turn_left", &"turn_right")
 	apply_torque(Vector3(0, rotation_dir * curr_speed, 0))
