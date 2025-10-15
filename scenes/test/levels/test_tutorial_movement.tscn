@@ -1,0 +1,99 @@
+[gd_scene load_steps=17 format=3 uid="uid://cetv51siqit31"]
+
+[ext_resource type="PackedScene" uid="uid://le4cec82q2pa" path="res://scenes/objects/boat/boat.tscn" id="1_88uk3"]
+[ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="2_g74u0"]
+[ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="3_mcixy"]
+[ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="4_vmfuo"]
+[ext_resource type="Script" uid="uid://dwdvv2qmhrk5s" path="res://scripts/ocean_waves_resource.gd" id="5_jlcp2"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_4vudg"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_fx55w"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_f66l6"]
+[ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="9_04jjd"]
+[ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="10_5jg82"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a54fq"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xpql3"]
+sky_material = SubResource("ProceduralSkyMaterial_a54fq")
+
+[sub_resource type="Environment" id="Environment_jrnrh"]
+background_mode = 2
+sky = SubResource("Sky_xpql3")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_allw3"]
+material = ExtResource("3_mcixy")
+size = Vector2(512, 512)
+subdivide_width = 256
+subdivide_depth = 256
+
+[sub_resource type="Resource" id="Resource_g21k3"]
+script = ExtResource("5_jlcp2")
+params = Array[Vector3]([Vector3(0.75, 0.165, 20.765), Vector3(0.67, 0.13, 20.09), Vector3(0.64, 0.115, 13.545)])
+directions = Array[Vector2]([Vector2(1, 0), Vector2(-1, 1), Vector2(0.5, 1)])
+
+[sub_resource type="Resource" id="Resource_0uvl7"]
+script = ExtResource("8_f66l6")
+
+[node name="TestRockyIsland" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jrnrh")
+
+[node name="Boat" parent="." instance=ExtResource("1_88uk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="TopLevelFollowerNode3D" type="Node3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+top_level = true
+script = ExtResource("2_g74u0")
+
+[node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_allw3")
+script = ExtResource("4_vmfuo")
+ocean_waves = SubResource("Resource_g21k3")
+ocean_size = Vector2(512, 512)
+metadata/_custom_type_script = "uid://btia4uu0y4tow"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 14.284601, 6.128356)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("6_4vudg")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 14.284601, 6.128356)
+script = ExtResource("7_fx55w")
+priority = 3
+follow_mode = 6
+follow_target = NodePath("../Boat/TopLevelFollowerNode3D")
+tween_resource = SubResource("Resource_0uvl7")
+tween_on_load = false
+follow_offset = Vector3(0, 2, 0)
+follow_distance = 16.0
+vertical_rotation_offset = 0.6981317007977318
+horizontal_rotation_offset = -1.0471975511965976
+spring_length = 16.0
+collision_mask = 0
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D"]
+script = ExtResource("9_04jjd")
+camera_x_max = 0.0
+metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("10_5jg82")
+data = {
+"cells": PackedInt32Array(24, 65530, 4, 27, 4, 5, 26, 65523, 6, 28, 65516, 1048581)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
