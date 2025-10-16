@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=3 uid="uid://3f1xqtcwaf35"]
+[gd_scene load_steps=18 format=3 uid="uid://3f1xqtcwaf35"]
 
-[ext_resource type="PackedScene" uid="uid://le4cec82q2pa" path="res://scenes/objects/boat/boat.tscn" id="1_a54fq"]
 [ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="2_ftxyv"]
 [ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="2_g21k3"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_jrnrh"]
@@ -33,7 +32,7 @@ subdivide_depth = 256
 
 [sub_resource type="Resource" id="Resource_g21k3"]
 script = ExtResource("3_4atxy")
-params = Array[Vector3]([Vector3(0.75, 0.165, 20.765), Vector3(0.67, 0.13, 20.09), Vector3(0.64, 0.115, 13.545)])
+params = Array[Vector3]([Vector3(0.75, 0.12, 20.765), Vector3(0.67, 0.175, 20.09), Vector3(0.64, 0.115, 13.545)])
 directions = Array[Vector2]([Vector2(1, 0), Vector2(-1, 1), Vector2(0.5, 1)])
 
 [sub_resource type="Resource" id="Resource_0uvl7"]
@@ -48,14 +47,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jrnrh")
 
-[node name="Boat" parent="." instance=ExtResource("1_a54fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="TopLevelFollowerNode3D" type="Node3D" parent="Boat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-top_level = true
-script = ExtResource("2_g21k3")
-
 [node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_usny0")
 script = ExtResource("3_jrnrh")
@@ -65,7 +56,7 @@ metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.953398, 12.284601, -20.500568)
+transform = Transform3D(0.49999994, -0.4297044, 0.75190043, 0, 0.86821973, 0.49617988, -0.86602545, -0.24808991, 0.4341098, 10.953398, 12.284601, -20.500568)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -73,7 +64,7 @@ process_physics_priority = 300
 script = ExtResource("4_nukdk")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.953398, 12.284601, -20.500568)
+transform = Transform3D(0.49999994, -0.4297044, 0.75190043, 0, 0.86821973, 0.49617988, -0.86602545, -0.24808991, 0.4341098, 10.953398, 12.284601, -20.500568)
 script = ExtResource("2_jrnrh")
 priority = 3
 follow_mode = 6
@@ -86,6 +77,7 @@ vertical_rotation_offset = 0.6981317007977318
 horizontal_rotation_offset = -1.0471975511965976
 spring_length = 16.0
 collision_mask = 0
+look_at_offset = Vector3(0, 3.28, 0)
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D"]

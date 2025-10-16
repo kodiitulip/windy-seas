@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cih2me4xa8ff0"]
+[gd_scene load_steps=7 format=4 uid="uid://cih2me4xa8ff0"]
 
 [ext_resource type="Texture2D" uid="uid://bqijnc8g3xbsv" path="res://assets/kenney_assets/watercraft_pack/models/GLB format/Textures/colormap.png" id="1_fs3s1"]
 
@@ -40,15 +40,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lc4tw")
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fs3s1"]
+friction = 0.0
+bounce = 0.24
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vuo7h"]
-points = PackedVector3Array(-1, 0, -2, 1, 0, -2, 1, 0, 1.5, -1, 0, 1.5, 1, 1.25, 1.5, -1, 1.25, 1.5)
+points = PackedVector3Array(-2, -0.2, -3, 2, -0.2, -3, 2, 1.2, 1.5, -2, 1.2, 1.5)
 
 [node name="ramp" type="MeshInstance3D"]
 mesh = SubResource("ArrayMesh_88mhg")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-constant_linear_velocity = Vector3(0, 5, 9)
+physics_material_override = SubResource("PhysicsMaterial_fs3s1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_vuo7h")
