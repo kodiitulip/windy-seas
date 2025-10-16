@@ -1,3 +1,4 @@
+class_name BoatBody3D
 extends RigidBody3D
 
 @export var mouse_sensitivity: float = 0.20
