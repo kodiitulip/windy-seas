@@ -31,5 +31,6 @@
   "hr-style": {
     "style": "---"
   },
-  "MD042": false
+  "MD042": false,
+  "first-line-heading": false
 }
