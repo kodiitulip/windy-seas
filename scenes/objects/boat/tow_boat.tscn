@@ -73,29 +73,35 @@ skeleton = NodePath("")
 [node name="FloatyMarker3D3" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, -1.4000001)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D4" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, 0.59999996)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D6" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 2.75)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D7" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -3.3)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D10" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, -1.4)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D11" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, 0.6)
 script = ExtResource("3_hwofe")
+float_force = 2.0
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
