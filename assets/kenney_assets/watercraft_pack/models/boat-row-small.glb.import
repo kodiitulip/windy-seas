@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c3a28g7wlcb85"
-path="res://.godot/imported/boat-row-small.glb-37c9eeb789601008073bf776f984788a.scn"
+path="res://.godot/imported/boat-row-small.glb-8aefb2ebc322ee939caf9d08c1486f55.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-row-small.glb"
-dest_files=["res://.godot/imported/boat-row-small.glb-37c9eeb789601008073bf776f984788a.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-row-small.glb"
+dest_files=["res://.godot/imported/boat-row-small.glb-8aefb2ebc322ee939caf9d08c1486f55.scn"]
 
 [params]
 

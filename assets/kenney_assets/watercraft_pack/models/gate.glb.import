@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dl42nvw6slaa"
-path="res://.godot/imported/gate.glb-15ae477ee4b16ac6d5f00f04fe3a31a4.scn"
+path="res://.godot/imported/gate.glb-45dda74a03df2133dbcd4994fa293c35.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/gate.glb"
-dest_files=["res://.godot/imported/gate.glb-15ae477ee4b16ac6d5f00f04fe3a31a4.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/gate.glb"
+dest_files=["res://.godot/imported/gate.glb-45dda74a03df2133dbcd4994fa293c35.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dj6d8lcggxr84"
-path="res://.godot/imported/boat-tug-c.glb-7954144f7e9f18309a932a0f4bff3aa4.scn"
+path="res://.godot/imported/boat-tug-c.glb-5509bef3cf0e529961f50043d1d96b16.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-tug-c.glb"
-dest_files=["res://.godot/imported/boat-tug-c.glb-7954144f7e9f18309a932a0f4bff3aa4.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-tug-c.glb"
+dest_files=["res://.godot/imported/boat-tug-c.glb-5509bef3cf0e529961f50043d1d96b16.scn"]
 
 [params]
 

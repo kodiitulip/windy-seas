@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dwli314w646fj"
-path="res://.godot/imported/boat-fishing-small.glb-991078fb36520cc6c1e953f268f45543.scn"
+path="res://.godot/imported/boat-fishing-small.glb-faa8dcb16bf56ca20ad7918503167107.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-fishing-small.glb"
-dest_files=["res://.godot/imported/boat-fishing-small.glb-991078fb36520cc6c1e953f268f45543.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-fishing-small.glb"
+dest_files=["res://.godot/imported/boat-fishing-small.glb-faa8dcb16bf56ca20ad7918503167107.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b8n2g06x0w3x1"
-path="res://.godot/imported/boat-speed-g.glb-195b06ad45e0988efe8065de95982fea.scn"
+path="res://.godot/imported/boat-speed-g.glb-029c46c5cfa8b2f7d1fad7d273b0f17c.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-speed-g.glb"
-dest_files=["res://.godot/imported/boat-speed-g.glb-195b06ad45e0988efe8065de95982fea.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-speed-g.glb"
+dest_files=["res://.godot/imported/boat-speed-g.glb-029c46c5cfa8b2f7d1fad7d273b0f17c.scn"]
 
 [params]
 

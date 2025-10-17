@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgqgbkw88d1rf"
-path="res://.godot/imported/boat-fan.glb-20768db833b062f3275a531f758ee9fa.scn"
+path="res://.godot/imported/boat-fan.glb-8897ea962cc40f7346eae5eca55f5f96.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-fan.glb"
-dest_files=["res://.godot/imported/boat-fan.glb-20768db833b062f3275a531f758ee9fa.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-fan.glb"
+dest_files=["res://.godot/imported/boat-fan.glb-8897ea962cc40f7346eae5eca55f5f96.scn"]
 
 [params]
 

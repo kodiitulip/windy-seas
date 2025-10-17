@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://fi1p33a6hlk8"
-path="res://.godot/imported/boat-sail-a.glb-473efbab2eff50faabe92cfc15c53e10.scn"
+path="res://.godot/imported/boat-sail-a.glb-015741af47526130a3432982b20b8531.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-sail-a.glb"
-dest_files=["res://.godot/imported/boat-sail-a.glb-473efbab2eff50faabe92cfc15c53e10.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-sail-a.glb"
+dest_files=["res://.godot/imported/boat-sail-a.glb-015741af47526130a3432982b20b8531.scn"]
 
 [params]
 

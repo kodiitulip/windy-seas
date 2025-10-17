@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bmyy2w83jf0pf"
-path="res://.godot/imported/boat-house-d.glb-e9f76b6bd43bd9b72866ed8ec22623a2.scn"
+path="res://.godot/imported/boat-house-d.glb-8c715c9414cb9170a93e3a4c99331e08.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-house-d.glb"
-dest_files=["res://.godot/imported/boat-house-d.glb-e9f76b6bd43bd9b72866ed8ec22623a2.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-house-d.glb"
+dest_files=["res://.godot/imported/boat-house-d.glb-8c715c9414cb9170a93e3a4c99331e08.scn"]
 
 [params]
 

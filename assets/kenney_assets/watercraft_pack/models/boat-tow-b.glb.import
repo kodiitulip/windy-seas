@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://btnbjsyegl6rb"
-path="res://.godot/imported/boat-tow-b.glb-d701d6ad233f4b3800370f41257c9ebc.scn"
+path="res://.godot/imported/boat-tow-b.glb-b7a858be467b1e2491d04f745bf9dba4.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/boat-tow-b.glb"
-dest_files=["res://.godot/imported/boat-tow-b.glb-d701d6ad233f4b3800370f41257c9ebc.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/boat-tow-b.glb"
+dest_files=["res://.godot/imported/boat-tow-b.glb-b7a858be467b1e2491d04f745bf9dba4.scn"]
 
 [params]
 

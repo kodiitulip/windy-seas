@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d041j8oevlwa5"
-path="res://.godot/imported/arrow-standing.glb-bfdb91eff4644a92252ffaab2fefac10.scn"
+path="res://.godot/imported/arrow-standing.glb-ea3e909d8be1d235698b8d617663f343.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/arrow-standing.glb"
-dest_files=["res://.godot/imported/arrow-standing.glb-bfdb91eff4644a92252ffaab2fefac10.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/arrow-standing.glb"
+dest_files=["res://.godot/imported/arrow-standing.glb-ea3e909d8be1d235698b8d617663f343.scn"]
 
 [params]
 

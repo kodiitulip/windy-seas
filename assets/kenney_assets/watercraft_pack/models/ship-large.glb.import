@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://jw4xr7svr0fc"
-path="res://.godot/imported/ship-large.glb-5540311fb59a8e695fe4336049797396.scn"
+path="res://.godot/imported/ship-large.glb-c39b52c6cc97f07096fafbb702976c79.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/ship-large.glb"
-dest_files=["res://.godot/imported/ship-large.glb-5540311fb59a8e695fe4336049797396.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/ship-large.glb"
+dest_files=["res://.godot/imported/ship-large.glb-c39b52c6cc97f07096fafbb702976c79.scn"]
 
 [params]
 

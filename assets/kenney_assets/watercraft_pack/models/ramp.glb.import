@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://drl6r6j5j76kj"
-path="res://.godot/imported/ramp.glb-01b5f0da6f7a4e27ea2a091fb9f16ec6.scn"
+path="res://.godot/imported/ramp.glb-31026fabb5e7374e84021543514cce3d.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/ramp.glb"
-dest_files=["res://.godot/imported/ramp.glb-01b5f0da6f7a4e27ea2a091fb9f16ec6.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/ramp.glb"
+dest_files=["res://.godot/imported/ramp.glb-31026fabb5e7374e84021543514cce3d.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cquqwrkxpsxvn"
-path="res://.godot/imported/ship-ocean-liner.glb-2c3962ecfd0c76e53a7e3505671cf1bf.scn"
+path="res://.godot/imported/ship-ocean-liner.glb-0bcba43022227db94f5660711c8737ff.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/ship-ocean-liner.glb"
-dest_files=["res://.godot/imported/ship-ocean-liner.glb-2c3962ecfd0c76e53a7e3505671cf1bf.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/ship-ocean-liner.glb"
+dest_files=["res://.godot/imported/ship-ocean-liner.glb-0bcba43022227db94f5660711c8737ff.scn"]
 
 [params]
 

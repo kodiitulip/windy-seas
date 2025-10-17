@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://oi8cdqqcvjs1"
-path="res://.godot/imported/cargo-container-c.glb-7f02ad95ad66c97614295b67804f35c5.scn"
+path="res://.godot/imported/cargo-container-c.glb-8a392ae7d9033c0e99791f65055217dd.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/cargo-container-c.glb"
-dest_files=["res://.godot/imported/cargo-container-c.glb-7f02ad95ad66c97614295b67804f35c5.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/cargo-container-c.glb"
+dest_files=["res://.godot/imported/cargo-container-c.glb-8a392ae7d9033c0e99791f65055217dd.scn"]
 
 [params]
 

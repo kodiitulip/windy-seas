@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqijnc8g3xbsv"
-path.s3tc="res://.godot/imported/colormap.png-5ac05501ecd517efea2cb15e7f69ac20.s3tc.ctex"
-path.etc2="res://.godot/imported/colormap.png-5ac05501ecd517efea2cb15e7f69ac20.etc2.ctex"
+path.s3tc="res://.godot/imported/colormap.png-4dc08ea1c2bf60923951e0fb748be6f2.s3tc.ctex"
+path.etc2="res://.godot/imported/colormap.png-4dc08ea1c2bf60923951e0fb748be6f2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/Textures/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-5ac05501ecd517efea2cb15e7f69ac20.s3tc.ctex", "res://.godot/imported/colormap.png-5ac05501ecd517efea2cb15e7f69ac20.etc2.ctex"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/Textures/colormap.png"
+dest_files=["res://.godot/imported/colormap.png-4dc08ea1c2bf60923951e0fb748be6f2.s3tc.ctex", "res://.godot/imported/colormap.png-4dc08ea1c2bf60923951e0fb748be6f2.etc2.ctex"]
 
 [params]
 

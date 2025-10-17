@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dm4fws7kmmib0"
-path="res://.godot/imported/cargo-pile-a.glb-b97b64f8399a80fdc6b5b609bbee26cf.scn"
+path="res://.godot/imported/cargo-pile-a.glb-d452420404893f91a53f3b781e96df6b.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/cargo-pile-a.glb"
-dest_files=["res://.godot/imported/cargo-pile-a.glb-b97b64f8399a80fdc6b5b609bbee26cf.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/cargo-pile-a.glb"
+dest_files=["res://.godot/imported/cargo-pile-a.glb-d452420404893f91a53f3b781e96df6b.scn"]
 
 [params]
 

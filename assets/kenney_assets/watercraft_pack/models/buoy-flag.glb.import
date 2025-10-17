@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d02r6xke20heo"
-path="res://.godot/imported/buoy-flag.glb-1d49c3cfb794514697c967c1d32fbf5e.scn"
+path="res://.godot/imported/buoy-flag.glb-8296e2f5108c0b8f5c6b60042350f5e4.scn"
 
 [deps]
 
-source_file="res://assets/kenney_assets/watercraft_pack/models/GLB format/buoy-flag.glb"
-dest_files=["res://.godot/imported/buoy-flag.glb-1d49c3cfb794514697c967c1d32fbf5e.scn"]
+source_file="res://assets/kenney_assets/watercraft_pack/models/buoy-flag.glb"
+dest_files=["res://.godot/imported/buoy-flag.glb-8296e2f5108c0b8f5c6b60042350f5e4.scn"]
 
 [params]
 
