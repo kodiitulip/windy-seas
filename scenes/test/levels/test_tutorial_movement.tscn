@@ -1,5 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cetv51siqit31"]
 
+[ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="1_eryla"]
 [ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="2_g74u0"]
 [ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="3_mcixy"]
 [ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="4_vmfuo"]
@@ -14,23 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://byt7wf3ind6bq" path="res://assets/kenney_assets/pirate_kit/models/chest.glb" id="12_eryla"]
 [ext_resource type="PackedScene" uid="uid://r7v8jr8eju2c" path="res://assets/kenney_assets/pirate_kit/models/barrel.glb" id="13_yvwvk"]
 [ext_resource type="PackedScene" uid="uid://o7rvmya3mpks" path="res://assets/kenney_assets/pirate_kit/models/bottle.glb" id="14_7y2u7"]
-[ext_resource type="PackedScene" uid="uid://dl42nvw6slaa" path="res://assets/kenney_assets/watercraft_pack/models/GLB format/gate.glb" id="15_igme4"]
-[ext_resource type="PackedScene" uid="uid://c8n3jnoj7uyan" path="res://assets/kenney_assets/watercraft_pack/models/GLB format/gate-finish.glb" id="16_pxjei"]
+[ext_resource type="PackedScene" uid="uid://dl42nvw6slaa" path="res://assets/kenney_assets/watercraft_pack/models/gate.glb" id="15_igme4"]
+[ext_resource type="PackedScene" uid="uid://c8n3jnoj7uyan" path="res://assets/kenney_assets/watercraft_pack/models/gate-finish.glb" id="16_pxjei"]
 [ext_resource type="PackedScene" uid="uid://ta5hvrygiodi" path="res://scenes/objects/buoy_row.tscn" id="17_by1dx"]
+[ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="18_o7myi"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a54fq"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_xpql3"]
-sky_material = SubResource("ProceduralSkyMaterial_a54fq")
-
-[sub_resource type="Environment" id="Environment_jrnrh"]
-background_mode = 2
-sky = SubResource("Sky_xpql3")
-tonemap_mode = 2
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_dg1jo"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_eryla"]
 material = ExtResource("3_mcixy")
 size = Vector2(512, 512)
 subdivide_width = 256
@@ -44,6 +34,13 @@ directions = Array[Vector2]([Vector2(1, 0), Vector2(-1, 1), Vector2(0.5, 1)])
 [sub_resource type="Resource" id="Resource_0uvl7"]
 script = ExtResource("8_f66l6")
 
+[sub_resource type="Curve3D" id="Curve3D_eryla"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -39.360428, 0, -3.8228652, 0, 0, 0, 0, 0, 0, -29.025589, 0, -11.931736, 0, 0, 0, 0, 0, 0, -15.626602, 0, -12.595369, 0, 0, 0, 0, 0, 0, -8.416412, 0, -4.20801, 0, 0, 0, 0, 0, 0, -7.82782, 0, 14.921059, 0, 0, 0, 0, 0, 0, -33.72564, 0, 15.068205, 0, 0, 0, 0, 0, 0, -40.788677, 0, 0.9421226),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
 [node name="TestRockyIsland" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -51,19 +48,20 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jrnrh")
+environment = ExtResource("1_eryla")
 
 [node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12704754, 1.9073486e-06, -0.0018901825)
-mesh = SubResource("PlaneMesh_dg1jo")
+mesh = SubResource("PlaneMesh_eryla")
 script = ExtResource("4_vmfuo")
 ocean_waves = SubResource("Resource_g21k3")
 ocean_size = Vector2(512, 512)
 metadata/_custom_type_script = "uid://btia4uu0y4tow"
+metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 12.284601, 7.550356)
+transform = Transform3D(-1, -2.990035e-08, 8.2150535e-08, -3.5527137e-15, 0.9396926, 0.34202012, -8.742278e-08, 0.34202012, -0.93969274, 1.3144086e-06, 5.472322, -13.613082)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -71,17 +69,16 @@ process_physics_priority = 300
 script = ExtResource("6_4vudg")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.5, -0.5566703, 0.66341394, 2.9802322e-08, 0.7660445, 0.6427875, -0.8660254, -0.32139373, 0.3830223, 10.614624, 12.284601, 7.550356)
+transform = Transform3D(-1, -2.990035e-08, 8.2150535e-08, -3.5527137e-15, 0.9396926, 0.34202012, -8.742278e-08, 0.34202012, -0.93969274, 1.3144086e-06, 5.472322, -13.613082)
 script = ExtResource("7_fx55w")
 priority = 3
 follow_mode = 6
 follow_target = NodePath("../TowBoat/TopLevelFollowerNode3D")
 tween_resource = SubResource("Resource_0uvl7")
 tween_on_load = false
-follow_offset = Vector3(0, 2, 0)
 follow_distance = 16.0
-vertical_rotation_offset = 0.6981317007977318
-horizontal_rotation_offset = -1.0471975511965976
+vertical_rotation_offset = 0.3490658503988659
+horizontal_rotation_offset = 3.141592653589793
 spring_length = 16.0
 collision_mask = 0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
@@ -127,3 +124,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.452486, 0, 10.221937)
 
 [node name="buoy-row" parent="." instance=ExtResource("17_by1dx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -10)
+visible = false
+
+[node name="MultiMeshPath3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_eryla")
+script = ExtResource("18_o7myi")
+distance_between_mesh_instances = 6.47
+align_instances_rotation = false
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
