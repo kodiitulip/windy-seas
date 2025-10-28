@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3f1xqtcwaf35"]
+[gd_scene load_steps=17 format=3 uid="uid://3f1xqtcwaf35"]
 
 [ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="1_x0t57"]
 [ext_resource type="Material" uid="uid://duolc8ueunraj" path="res://resources/shaders/ocean/ocean_waves_shader.tres" id="2_ftxyv"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="11_usny0"]
 [ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="12_x0t57"]
 [ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="14_sgs33"]
+[ext_resource type="PackedScene" uid="uid://rrshmr31vbtt" path="res://scenes/objects/collectables/barrel_collectable.tscn" id="14_u4iqr"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_usny0"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_4dd3f"]
 material = ExtResource("2_ftxyv")
 size = Vector2(512, 512)
 subdivide_width = 256
@@ -37,11 +38,12 @@ shadow_enabled = true
 environment = ExtResource("1_x0t57")
 
 [node name="OceanMeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_usny0")
+mesh = SubResource("PlaneMesh_4dd3f")
 script = ExtResource("3_jrnrh")
 ocean_waves = SubResource("Resource_g21k3")
 ocean_size = Vector2(512, 512)
 metadata/_custom_type_script = "uid://btia4uu0y4tow"
+metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
@@ -94,3 +96,6 @@ metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
 
 [node name="ramp" parent="." instance=ExtResource("12_x0t57")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="BarrelCollectable" parent="." instance=ExtResource("14_u4iqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47358513, 9.536743e-07, 7.6387997)

@@ -28,6 +28,7 @@ BeehaveGlobalDebugger="*res://addons/beehave/debug/global_debugger.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 SceneTransitionManager="*res://scenes/managers/scene_transition/scene_transition.tscn"
+GlobalSignalBus="*res://scripts/signal_bus.gd"
 
 [debug]
 

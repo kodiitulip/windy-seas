@@ -2,6 +2,7 @@
 class_name MultiMeshPath3D
 extends Path3D
 
+@export var wave_movement_shader: ShaderMaterial
 @export var mesh: Mesh = preload("uid://b50kbehaggo63"):
 	set = _set_mesh
 @export var distance_between_mesh_instances: float = 1.0:
@@ -61,4 +62,10 @@ func _set_distance_between_mesh_instances(new_value: float) -> void:
 func _set_mesh(new_value: Mesh) -> void:
 	mesh = new_value
 	_multimesh.multimesh.mesh = mesh
+	curve_changed.emit()
+
+
+func _set_mesh_materials(new: ShaderMaterial) -> void:
+	wave_movement_shader = new
+	_multimesh.multimesh.mesh.set(&"surface_0/material", wave_movement_shader)
 	curve_changed.emit()

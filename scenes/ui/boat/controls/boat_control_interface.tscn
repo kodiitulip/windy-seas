@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba56hadfj8rfy"]
+[gd_scene load_steps=4 format=3 uid="uid://ba56hadfj8rfy"]
 
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_ekyel"]
 [ext_resource type="Script" uid="uid://bdpsf8ny3gjcs" path="res://scenes/ui/boat/controls/boat_control_interface.gd" id="2_rlhkv"]
+[ext_resource type="Texture2D" uid="uid://dn01luirp7tf8" path="res://icon.svg" id="3_c1om7"]
 
 [node name="BoatControlInterface" type="Control"]
 layout_mode = 3
-anchor_top = 0.7484568
+anchor_top = 0.6990741
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -32.0
-offset_bottom = -32.0
+anchor_bottom = 0.9506173
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -29,3 +28,33 @@ min_value = -10.0
 max_value = 10.0
 step = 0.5
 metadata/_edit_use_anchors_ = true
+
+[node name="LemeAnchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -19.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7086037
+
+[node name="TextureRect" type="TextureRect" parent="LemeAnchor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_c1om7")
