@@ -6,25 +6,20 @@ extends Marker3D
 @export var waves_buoyancy: bool = false
 @export var water_level: float = 0.0
 
-var ocean: OceanMeshInstance3D
 var body: RigidBody3D
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9.8)
 
 func _ready() -> void:
-	ocean = OceanMeshInstance3D.ocean
+	if Engine.is_editor_hint():
+		return
 	assert(owner is RigidBody3D, "Floaty markers must be children of RigidBody3D's")
 	body = owner as RigidBody3D
 
 
 func _physics_process(_delta: float) -> void:
-	if Engine.is_editor_hint() or not ocean or not body:
+	if Engine.is_editor_hint() or not body:
 		return
-	var water_height: float = (
-		ocean.get_water_height(global_position)
-		if waves_buoyancy
-		else water_level
-	)
-	var depth: float = water_height - global_position.y
+	var depth: float = water_level - global_position.y
 	if depth > 0:
 		apply_buoyancy_force(depth)
 

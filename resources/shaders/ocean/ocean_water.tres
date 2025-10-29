@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://deplp1k0qessb"]
+
+[ext_resource type="Shader" uid="uid://c6vatlu356rsa" path="res://resources/shaders/ocean/ocean_water.gdshader" id="1_ncjmb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4v7o7"]
+frequency = 0.0067
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6js3g"]
+noise = SubResource("FastNoiseLite_4v7o7")
+seamless = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_44lyd"]
+noise = SubResource("FastNoiseLite_4v7o7")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ncjmb")
+shader_parameter/time_speed = 0.1
+shader_parameter/surface_speed = 0.1
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 2.8
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_44lyd")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_6js3g")
+shader_parameter/wave_height = 0.4
+shader_parameter/texture_height = 0.1
+shader_parameter/color1 = Color(0.59, 0.761, 1, 1)
+shader_parameter/color2 = Color(0.274, 0.474, 0.98, 1)
+shader_parameter/color3 = Color(0.059, 0.389, 0.85, 1)
+shader_parameter/color4 = Color(0, 0.267, 1, 1)

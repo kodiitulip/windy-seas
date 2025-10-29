@@ -9,19 +9,16 @@ signal speed_changed(speed_value: float)
 @onready var leme_anchor: Control = $LemeAnchor
 
 func _ready() -> void:
-	if not player_boat:
-		printerr("No PlayerBoat found")
-	
-	speed_lever.value_changed.connect(_on_speed_lever_value_changed)
+	assert(player_boat is BoatBody3D, "No PlayerBoat found")
 	GlobalSignalBus.direction_changed.connect(_rotate_leme)
+	GlobalSignalBus.speed_changed.connect(_update_lever_value)
 
 
-func _on_speed_lever_value_changed(value: float) -> void:
-	speed_changed.emit(value)
+func _update_lever_value(value: float) -> void:
+	pass
 
 
 func _rotate_leme(direction: float) -> void:
-	var dir_deg: float = direction * 90
-	var rotat: float = clampf(leme_anchor.rotation_degrees + dir_deg, -45, 45)
+	var dir_deg: float = direction * -45
 	var t: Tween = get_tree().create_tween()
-	t.tween_property(leme_anchor, ^"rotation_degrees", rotat, 0.2)
+	t.tween_property(leme_anchor, ^"rotation_degrees", dir_deg, 0.2)

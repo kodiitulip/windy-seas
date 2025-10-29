@@ -29,6 +29,7 @@ func _handle_move(delta: float) -> void:
 		get_tree().create_tween().tween_property(self, ^"curr_speed", 0.0, .2)
 	var dir: Vector3 = Vector3.BACK if flip_foward else Vector3.FORWARD
 	apply_central_force(global_transform.basis * dir * curr_speed)
+	GlobalSignalBus.emit_speed_changed(curr_speed)
 
 
 func _handle_steer() -> void:
