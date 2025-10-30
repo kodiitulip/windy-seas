@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://bf1cu8h0y1u1x"]
+[gd_scene load_steps=11 format=4 uid="uid://bf1cu8h0y1u1x"]
 
 [ext_resource type="Script" uid="uid://bqca0gnak6yyu" path="res://scenes/objects/boat/boat.gd" id="1_wha21"]
-[ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="2_2qkur"]
 [ext_resource type="Texture2D" uid="uid://bqijnc8g3xbsv" path="res://assets/kenney_assets/watercraft_pack/models/Textures/colormap.png" id="2_hwofe"]
 [ext_resource type="Script" uid="uid://dqv4vfaxlo8vo" path="res://scripts/boyancy/floaty.gd" id="3_hwofe"]
 [ext_resource type="Script" uid="uid://so5rewyea1hc" path="res://scripts/collecting/collector_box.gd" id="4_7kimf"]
@@ -63,13 +62,12 @@ center_of_mass = Vector3(0, 0.8, 0)
 linear_damp = 0.8
 angular_damp = 0.9
 script = ExtResource("1_wha21")
+mouse_sensitivity = null
 max_speed = 50.0
 flip_foward = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="BoatControlInterface" parent="CanvasLayer" node_paths=PackedStringArray("player_boat") instance=ExtResource("2_2qkur")]
-player_boat = NodePath("../..")
+acceleration_rate = null
+deacceleration_rate = null
+brake_power = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_7kimf")

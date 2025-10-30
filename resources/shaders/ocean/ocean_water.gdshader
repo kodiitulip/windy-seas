@@ -29,7 +29,7 @@ uniform vec4 color4 : source_color = vec4(0.0, 0.267, 1.0, 1.0);
 void vertex() {
 	float time = -TIME * time_speed;
 	VERTEX += NORMAL * wave_height * texture(wave_texture, vec2(UV.x + time * surface_speed, UV.y + time * surface_speed)).r;
-	VERTEX += NORMAL * texture_height * texture(noise_texture,vec2(UV.x * horizontal_frequency + spin * (time /2.0), (UV.y * vertical_frequency) + time)).r;;
+	VERTEX += NORMAL * texture_height * texture(noise_texture,vec2(UV.x * horizontal_frequency + spin * (time /2.0), (UV.y * vertical_frequency) + time)).r;
 }
 
 void fragment() {

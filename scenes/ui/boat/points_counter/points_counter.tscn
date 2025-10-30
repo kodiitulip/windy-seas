@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7mj02qp38y1c"]
+
+[ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_k2ytu"]
+[ext_resource type="Script" uid="uid://dtmb8nopy80n7" path="res://scenes/ui/boat/points_counter/points_counter.gd" id="2_86rsi"]
+[ext_resource type="Texture2D" uid="uid://cgm87pevwbo8b" path="res://assets/kenney_assets/pirate_kit/previews/barrel.png" id="2_ee00l"]
+
+[node name="PointsCounter" type="HBoxContainer"]
+anchors_preset = -1
+anchor_left = 0.8480903
+anchor_top = 0.043209877
+anchor_right = 0.9748264
+anchor_bottom = 0.14197531
+grow_horizontal = 0
+theme = ExtResource("1_k2ytu")
+script = ExtResource("2_86rsi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_ee00l")
+stretch_mode = 5

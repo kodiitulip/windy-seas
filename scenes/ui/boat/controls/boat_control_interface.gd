@@ -1,21 +1,18 @@
 class_name BoatControllerInterface
 extends Control
 
-signal speed_changed(speed_value: float)
-
-@export var player_boat: BoatBody3D
-
 @onready var speed_lever: VSlider = $SpeedLever
 @onready var leme_anchor: Control = $LemeAnchor
 
 func _ready() -> void:
-	assert(player_boat is BoatBody3D, "No PlayerBoat found")
 	GlobalSignalBus.direction_changed.connect(_rotate_leme)
 	GlobalSignalBus.speed_changed.connect(_update_lever_value)
 
 
-func _update_lever_value(value: float) -> void:
-	pass
+func _update_lever_value(value: float, max_speed: float) -> void:
+	speed_lever.max_value = max_speed
+	speed_lever.min_value = -max_speed
+	speed_lever.value = value
 
 
 func _rotate_leme(direction: float) -> void:

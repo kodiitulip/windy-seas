@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://rrshmr31vbtt"]
+[gd_scene load_steps=8 format=4 uid="uid://rrshmr31vbtt"]
 
 [ext_resource type="Texture2D" uid="uid://dchqy8422eqqy" path="res://assets/kenney_assets/pirate_kit/models/Textures/colormap.png" id="1_f4jsq"]
+[ext_resource type="Script" uid="uid://be3i3cede0lb" path="res://scenes/objects/collectables/collectable.gd" id="1_sesrd"]
 [ext_resource type="Script" uid="uid://c1e7buf8k76ts" path="res://scripts/collecting/collected_box.gd" id="2_sesrd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blyfs"]
@@ -47,7 +48,9 @@ shadow_mesh = SubResource("ArrayMesh_y0mxm")
 height = 1.5
 radius = 1.0
 
-[node name="BarrelCollectable" type="Node3D"]
+[node name="BarrelCollectable" type="Node3D" node_paths=PackedStringArray("collected_box")]
+script = ExtResource("1_sesrd")
+collected_box = NodePath("ColectedBoxArea3D")
 
 [node name="barrel" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_5gpwd")

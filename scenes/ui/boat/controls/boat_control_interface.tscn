@@ -6,7 +6,7 @@
 
 [node name="BoatControlInterface" type="Control"]
 layout_mode = 3
-anchor_top = 0.6990741
+anchor_top = 0.82098764
 anchor_right = 1.0
 anchor_bottom = 0.9506173
 grow_horizontal = 2
@@ -23,6 +23,7 @@ anchor_left = 0.049479168
 anchor_right = 0.06336805
 anchor_bottom = 1.0
 grow_vertical = 2
+mouse_filter = 2
 theme_type_variation = &"SpeedLever"
 min_value = -10.0
 max_value = 10.0
@@ -36,24 +37,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = -19.0
-offset_bottom = -19.0
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="LemeAnchor"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_c1om7")
+expand_mode = 1
+stretch_mode = 5

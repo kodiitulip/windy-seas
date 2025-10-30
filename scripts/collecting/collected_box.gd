@@ -1,4 +1,4 @@
-class_name ColectedBoxArea3D extends Area3D
+class_name CollectedBoxArea3D extends Area3D
 
 signal collected()
 
