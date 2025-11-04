@@ -57,3 +57,8 @@ Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</spa
   - ["Dialogic"](https://github.com/dialogic-godot/dialogic?tab=readme-ov-file#dialogic-2) MIT
   - ["Phantom Camera"](https://phantom-camera.dev/) MIT
   - Esse jogo MIT
+
+## Inspiração Level Design
+
+- [Rational Approach to Racing Game Track Design](https://www.gamedeveloper.com/design/a-rational-approach-to-racing-game-track-design)
+![](readme-assets/pista-interlagos.svg)
