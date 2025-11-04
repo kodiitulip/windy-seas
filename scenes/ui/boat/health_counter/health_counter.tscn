@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c75a001af3mqf"]
+
+[ext_resource type="Script" uid="uid://brmtb2rtyuw8r" path="res://scenes/ui/boat/health_counter/health_counter.gd" id="1_nl4ah"]
+[ext_resource type="Texture2D" uid="uid://bt8yqv4l8uk20" path="res://assets/kenney_assets/ui_pack_adventure/vector/progress_transparent.svg" id="2_m4llg"]
+[ext_resource type="Texture2D" uid="uid://b0d1432f7x8ve" path="res://assets/kenney_assets/ui_pack_adventure/vector/progress_red.svg" id="3_agtn1"]
+
+[node name="HealthCounter" type="HBoxContainer"]
+anchors_preset = -1
+anchor_left = 0.020833334
+anchor_top = 0.037037037
+anchor_right = 0.22222222
+anchor_bottom = 0.074074075
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nl4ah")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 5.0
+value = 5.0
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("2_m4llg")
+texture_progress = ExtResource("3_agtn1")
