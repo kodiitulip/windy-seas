@@ -6,10 +6,10 @@
 
 [node name="PointsCounter" type="HBoxContainer"]
 anchors_preset = -1
-anchor_left = 0.8480903
-anchor_top = 0.043209877
-anchor_right = 0.9748264
-anchor_bottom = 0.14197531
+anchor_left = 0.8611111
+anchor_top = 0.037037037
+anchor_right = 0.9791667
+anchor_bottom = 0.13580246
 grow_horizontal = 0
 theme = ExtResource("1_k2ytu")
 script = ExtResource("2_86rsi")
