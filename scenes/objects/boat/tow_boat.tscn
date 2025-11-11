@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dqv4vfaxlo8vo" path="res://scripts/boyancy/floaty.gd" id="3_hwofe"]
 [ext_resource type="Script" uid="uid://so5rewyea1hc" path="res://scripts/collecting/collector_box.gd" id="4_7kimf"]
 [ext_resource type="Texture2D" uid="uid://beyrol22srhkg" path="res://assets/particles/smoke.png" id="5_2qkur"]
-[ext_resource type="Script" uid="uid://ecqxdanh726o" path="res://scenes/objects/boat/smoke_stack.gd" id="6_e4cav"]
+[ext_resource type="Script" path="res://scenes/objects/boat/smoke_stack.gd" id="6_e4cav"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7kimf"]
 points = PackedVector3Array(-0.55677694, 0.2961148, 1.8666235, -0.90520066, 1.0202098, -3.3636904, -1.1874084, 1.4508, 1.9775417, 0.60424584, 0.013616094, -2.2393966, 1.2422602, 0.91668963, 2.0142531, 1.3424269, 1.6484754, -1.9896556, -1.4220392, 1.5689608, -2.018005, -0.6328667, 0.045071412, -2.162522, 0.6027763, 0.01565095, 1.2764786, 0.7461906, 0.34026653, -3.3636904, 0.5977625, 1.4508, 2.42383, -1.289914, 1.0062135, 2.0001464, -1.3914764, 1.7006667, -0.44810975, -0.8084763, 1.5061526, -3.2662811, 1.4265049, 1.7006667, -0.44810975, -0.20998414, 0.9171553, 2.664707, 1.1941074, 0.8260381, -2.6070864, -0.6328667, 0.045071412, 1.2209195, -1.0052245, 0.47026205, -2.5665314, 0.7791259, 1.2739481, -3.121309, -0.7108673, 0.34026653, -3.3636904, -0.581, 1.654775, 1.1271118, -1.289914, 1.0062135, -2.6881576, 1.2224369, 1.4508, 1.8886197, 0.9418563, 0.38596302, 1.6825476, 0.06299413, 0.46051714, 2.304711, -0.6801427, 1.3843094, 2.5381126, -1.3111433, 1.6508, -1.9945617, 0.78356826, 0.9160791, 2.449552, -1.0052245, 0.47026205, 1.702642, 1.4339589, 1.5570349, -1.9896861, -0.20653841, 0.01761274, 1.5423195)
@@ -90,12 +90,8 @@ center_of_mass = Vector3(0, 0.8, 0)
 linear_damp = 0.8
 angular_damp = 0.9
 script = ExtResource("1_wha21")
-mouse_sensitivity = null
 max_speed = 50.0
 flip_foward = true
-acceleration_rate = null
-deacceleration_rate = null
-brake_power = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_7kimf")
