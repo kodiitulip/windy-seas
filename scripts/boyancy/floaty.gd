@@ -3,7 +3,6 @@ class_name FloatyMarker3D
 extends Marker3D
 
 @export var float_force: float = 3.0
-@export var waves_buoyancy: bool = false
 @export var water_level: float = 0.0
 
 var body: RigidBody3D
