@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://c4walhhhmdfd3"]
+[gd_scene load_steps=26 format=3 uid="uid://c4walhhhmdfd3"]
 
+[ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_1.gd" id="1_wfdrs"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
 [ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="2_5o1mp"]
 [ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_hhmec"]
 [ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="3_spwf2"]
+[ext_resource type="PackedScene" uid="uid://4okr6p57k2n1" path="res://scenes/ui/finish_interfaces/won_interface.tscn" id="4_rmnd1"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_spwf2"]
 [ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="5_7uxs1"]
 [ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="6_3lh42"]
@@ -14,6 +16,7 @@
 [ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="11_1jeig"]
 [ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="12_napug"]
 [ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="13_1jeig"]
+[ext_resource type="PackedScene" uid="uid://rrshmr31vbtt" path="res://scenes/objects/collectables/barrel_collectable.tscn" id="16_ldw0e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("2_5o1mp")
@@ -49,13 +52,23 @@ _data = {
 }
 point_count = 11
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" node_paths=PackedStringArray("wpoints_counter_ui")]
+script = ExtResource("1_wfdrs")
+wpoints_enable = true
+wpoints_counter_ui = NodePath("CanvasLayer/PointsCounter")
+wpoints_points_to_collect = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BoatControlInterface" parent="CanvasLayer" instance=ExtResource("1_x3ahk")]
 
 [node name="PointsCounter" parent="CanvasLayer" instance=ExtResource("2_hhmec")]
+
+[node name="WonInterface" parent="CanvasLayer" instance=ExtResource("4_rmnd1")]
+unique_name_in_owner = true
+visible = false
+next_level = "uid://3f1xqtcwaf35"
+level_to_restart = "uid://c4walhhhmdfd3"
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 multimesh = SubResource("MultiMesh_3lh42")
@@ -133,7 +146,7 @@ mesh_library = ExtResource("11_1jeig")
 cell_size = Vector3(1, 0.2, 1)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, -131052, 19, 6, -131042, 14, 1048580, -131035, 5, 5, -131030, 65529, 6, -131028, 45, 5, -131025, 65518, 4, -131023, 34, 4, -131021, 25, 6, -131017, 48, 1441794, -131014, 12, 655366, -131008, 24, 1441795, -131007, 36, 1048579, -131005, 2, 655365, -131005, 7, 655366, -130997, 13, 1441795, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 56, 47, 1048577, 62, 30, 1048576, 63, 23, 1048576, 63, 40, 1441793, 72, 18, 1048576, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 131125, 41, 0, -131061, 18, 4, -65537, 16, 1441798, -65545, 9, 1441798, -65547, 65535, 655366, -65554, 4, 1048581, -65553, 65527, 1048580, -65552, 14, 2, -65538, 25, 2, -131053, 27, 655363, -131066, 28, 655363, -131056, 6, 655363, -131066, 6, 655363, 16, 11, 655360, 5, 12, 655360, 6, 65521, 655372, 19, 65492, 655372, 22, 65520, 655372, -131015, 65500, 655372, 59, 65527, 655372, 49, 7, 655372, 39, 26, 655372, 18, 56, 655372, 65520, 50, 655372, 10, 73, 655372, 65458, 37, 655364, 65453, 27, 1048581, 65456, 17, 6, 65458, 7, 1441796, 65466, 24, 1441804, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797)
+"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, -131052, 19, 6, -131042, 14, 1048580, -131035, 5, 5, -131030, 65529, 6, -131028, 45, 5, -131025, 65518, 4, -131023, 34, 4, -131021, 25, 6, -131017, 48, 1441794, -131014, 12, 655366, -131008, 24, 1441795, -131007, 36, 1048579, -131005, 2, 655365, -131005, 7, 655366, -130997, 13, 1441795, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 56, 47, 1048577, 62, 30, 1048576, 63, 23, 1048576, 63, 40, 1441793, 72, 18, 1048576, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 131125, 41, 0, -131061, 18, 4, -65537, 16, 1441798, -65545, 9, 1441798, -65547, 65535, 655366, -65554, 4, 1048581, -65553, 65527, 1048580, -65552, 14, 2, -65538, 25, 2, -131053, 27, 655363, -131066, 28, 655363, -131056, 6, 655363, -131066, 6, 655363, 16, 11, 655360, 5, 12, 655360, 65458, 37, 655364, 65453, 27, 1048581, 65456, 17, 6, 65458, 7, 1441796, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -161,3 +174,38 @@ path_joined = false
 
 [node name="ramp" parent="." instance=ExtResource("13_1jeig")]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 30, 0, 36)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="BarrelCollectable" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.559414, 0, 51.92093)
+
+[node name="BarrelCollectable2" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8329258, 0, 52.62221)
+
+[node name="BarrelCollectable3" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.085426, 0, 23.259293)
+
+[node name="BarrelCollectable4" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.05203, -1.9073486e-06, 22.796455)
+
+[node name="BarrelCollectable5" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.052032, -1.9073486e-06, -14.203545)
+
+[node name="BarrelCollectable6" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.052032, -1.9073486e-06, -47.203545)
+
+[node name="BarrelCollectable7" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.281851, -7.6293945e-06, -25.601696)
+
+[node name="BarrelCollectable8" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.190489, -7.6293945e-06, -54.07235)
+
+[node name="BarrelCollectable9" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.567528, -7.6293945e-06, -38.44688)
+
+[node name="BarrelCollectable10" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.39511, -7.6293945e-06, -9.916614)
+
+[node name="BarrelCollectable11" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.157543, -7.6293945e-06, 14.094083)

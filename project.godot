@@ -63,6 +63,10 @@ layout/default_style="res://resources/dialogic/test/custom_style.tres"
 window/stretch/mode="canvas_items"
 window/handheld/orientation=4
 
+[dotnet]
+
+project/assembly_name="Windy Seas"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/beehave/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")

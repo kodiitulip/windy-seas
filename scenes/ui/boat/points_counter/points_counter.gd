@@ -1,3 +1,4 @@
+class_name PointsCounterInterface
 extends HBoxContainer
 
 @onready var label: Label = $Label
