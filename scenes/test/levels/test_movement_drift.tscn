@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ijwkeyslbdk2"]
+[gd_scene load_steps=24 format=3 uid="uid://ijwkeyslbdk2"]
 
 [ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="1_4jjoi"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_43k8x"]
@@ -42,6 +42,9 @@ _data = {
 }
 point_count = 20
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4jjoi"]
+plane = Plane(1, 0, 1, 0)
+
 [node name="TestRockyIsland" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -50,6 +53,8 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_4jjoi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
@@ -119,18 +124,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -10)
 visible = false
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+visible = false
 multimesh = SubResource("MultiMesh_yvwvk")
 script = ExtResource("17_715ck")
 ocean_size = Vector2i(8, 8)
 metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="MultiMeshPath3D" type="Path3D" parent="."]
-transform = Transform3D(0.76604444, 0.41317588, 0.49240384, 0, 0.76604444, -0.6427876, -0.6427876, 0.49240384, 0.58682406, 4.828, -11, 2.2)
 curve = SubResource("Curve3D_4jjoi")
 debug_custom_color = Color(0.39215687, 0, 0.39215687, 1)
 script = ExtResource("18_e5k0h")
-distance_between_mesh_instances = 1.8
+distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D"]
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
 
 [node name="MultiMeshPath3D2" type="Path3D" parent="."]
 transform = Transform3D(0.5515521, 0.29748663, 0.35453075, 0, 0.551552, -0.46280712, -0.46280703, 0.35453087, 0.42251343, 0.7489939, -8, -10.1688)
@@ -139,3 +157,10 @@ debug_custom_color = Color(0.39215687, 0, 0.39215687, 1)
 script = ExtResource("18_e5k0h")
 distance_between_mesh_instances = 1.8
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -27, 0, -12)
+shape = SubResource("WorldBoundaryShape3D_4jjoi")
+debug_color = Color(0.62352943, 0.05490196, 0.16078432, 0.8392157)

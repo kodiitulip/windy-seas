@@ -71,6 +71,7 @@ next_level = "uid://3f1xqtcwaf35"
 level_to_restart = "uid://c4walhhhmdfd3"
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+visible = false
 multimesh = SubResource("MultiMesh_3lh42")
 script = ExtResource("3_spwf2")
 ocean_size = Vector2i(16, 16)
