@@ -499,6 +499,7 @@ shape = SubResource("ConcavePolygonShape3D_uoryr")
 
 [node name="patch-sand-foliage" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_yykaq")
 skeleton = NodePath("")
 
@@ -509,6 +510,7 @@ shape = SubResource("ConcavePolygonShape3D_eqm03")
 
 [node name="patch-sand" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_8ppvo")
 skeleton = NodePath("")
 

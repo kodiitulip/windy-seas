@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bf1cu8h0y1u1x"]
+[gd_scene load_steps=19 format=4 uid="uid://bf1cu8h0y1u1x"]
 
 [ext_resource type="Script" uid="uid://bqca0gnak6yyu" path="res://scenes/objects/boat/boat.gd" id="1_wha21"]
 [ext_resource type="Texture2D" uid="uid://bqijnc8g3xbsv" path="res://assets/kenney_assets/watercraft_pack/models/Textures/colormap.png" id="2_hwofe"]
@@ -56,6 +56,20 @@ shadow_mesh = SubResource("ArrayMesh_r4ihx")
 height = 2.4797974
 radius = 2.4418945
 
+[sub_resource type="Gradient" id="Gradient_e4cav"]
+offsets = PackedFloat32Array(0.057692308, 0.7692308, 1)
+colors = PackedColorArray(0.12225223, 0.12225223, 0.12225223, 1, 0.35714287, 0.35714287, 0.35714287, 1, 0.8474744, 0.84747446, 0.84747446, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tn501"]
+gradient = SubResource("Gradient_e4cav")
+
+[sub_resource type="Curve" id="Curve_dlfho"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6292157, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cchow"]
+curve = SubResource("Curve_dlfho")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e4cav"]
 lifetime_randomness = 0.69
 angle_min = -179.99998
@@ -67,31 +81,23 @@ initial_velocity_max = 5.0
 angular_velocity_min = -40.000015
 angular_velocity_max = 39.999985
 gravity = Vector3(0, 0, 0)
-scale_min = 0.099999994
+scale_min = 0.79999995
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_cchow")
+color_ramp = SubResource("GradientTexture1D_tn501")
 
-[sub_resource type="Gradient" id="Gradient_2qkur"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.13304721, 0.65665233)
-colors = PackedColorArray(0.5409905, 0.5409905, 0.5409905, 1, 0.45840496, 0.45840508, 0.4584049, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_e4cav"]
-gradient = SubResource("Gradient_2qkur")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h21vy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qkur"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = SubResource("GradientTexture2D_e4cav")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+disable_receive_shadows = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_tn501"]
-material = SubResource("StandardMaterial3D_h21vy")
+[sub_resource type="SphereMesh" id="SphereMesh_e4cav"]
+material = SubResource("StandardMaterial3D_2qkur")
+radius = 0.4
+height = 0.8
+radial_segments = 16
+rings = 4
 
 [node name="TowBoat" type="RigidBody3D"]
 mass = 4.0
@@ -159,26 +165,22 @@ metadata/_custom_type_script = "uid://so5rewyea1hc"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8437805, 0)
 shape = SubResource("CylinderShape3D_2qkur")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2611005, -1.1351306)
+[node name="SmokeStack" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, -1.2)
 amount = 100
 lifetime = 5.0
-interp_to_end = 0.02
-explosiveness = 0.03
-randomness = 1.0
+randomness = 0.8
 draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_e4cav")
-draw_pass_1 = SubResource("QuadMesh_tn501")
+draw_pass_1 = SubResource("SphereMesh_e4cav")
 script = ExtResource("6_e4cav")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2611005, 0.79006314)
+[node name="SmokeStack2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0.7)
 amount = 100
 lifetime = 5.0
-interp_to_end = 0.02
-explosiveness = 0.03
-randomness = 1.0
+randomness = 0.8
 draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_e4cav")
-draw_pass_1 = SubResource("QuadMesh_tn501")
+draw_pass_1 = SubResource("SphereMesh_e4cav")
 script = ExtResource("6_e4cav")
