@@ -3,6 +3,8 @@
 class_name ThirdPersonPCamController3D
 extends Node
 
+@export var follow_target: Node3D
+@export_range(0, 360, 0.1, "radians_as_degrees") var rotation_offset: float = PI
 @export var mouse_sensitivity: float = 0.20
 @export var zoom_sensitivity: float = 2.0
 @export_group("Camera Limits", "camera")
@@ -16,6 +18,12 @@ func _ready() -> void:
 	assert(get_parent() is PhantomCamera3D, 
 			"ThirdPersonPCamController3D must be a child of PhantomCamera3D")
 	pcam = get_parent() as PhantomCamera3D
+
+
+func _process(_delta: float) -> void:
+	if not follow_target or Engine.is_editor_hint():
+		return
+	_camera_follow()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,10 +43,18 @@ func _third_person_camera_movement(event: InputEventMouseMotion) -> void:
 	var pcam_rotation: Vector3 = pcam.get_third_person_rotation()
 	pcam_rotation.x -= deg_to_rad(moviment.y * mouse_sensitivity)
 	pcam_rotation.x = clampf(pcam_rotation.x, -camera_x_min, -camera_x_max)
-	pcam_rotation.y -= deg_to_rad(moviment.x * mouse_sensitivity)
-	pcam_rotation.y = wrapf(pcam_rotation.y, deg_to_rad(0), deg_to_rad(360))
+	rotation_offset -= deg_to_rad(moviment.x * mouse_sensitivity)
+	rotation_offset = wrapf(rotation_offset, 0, TAU)
 	pcam.set_third_person_rotation(pcam_rotation)
 	get_viewport().set_input_as_handled()
+
+
+func _camera_follow() -> void:
+	var target_y: float = follow_target.rotation.y
+	var pcam_rotation: Vector3 = pcam.get_third_person_rotation()
+	pcam_rotation.y = TAU - (target_y - rotation_offset)
+	pcam_rotation.y = wrapf(pcam_rotation.y, 0, TAU)
+	pcam.set_third_person_rotation(pcam_rotation)
 
 
 func _get_configuration_warnings() -> PackedStringArray:

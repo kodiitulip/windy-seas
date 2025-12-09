@@ -16,3 +16,4 @@ func _physics_process(_delta: float) -> void:
 	if not parent:
 		return
 	global_position = parent.global_position
+	rotation_degrees.y = -parent.rotation_degrees.y
