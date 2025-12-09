@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ijwkeyslbdk2"]
+[gd_scene load_steps=23 format=3 uid="uid://ijwkeyslbdk2"]
 
 [ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="1_4jjoi"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_43k8x"]
@@ -41,9 +41,6 @@ _data = {
 }
 point_count = 25
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4jjoi"]
-plane = Plane(1, 0, 1, 0)
-
 [node name="TestRockyIsland" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -52,8 +49,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_4jjoi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
@@ -136,6 +131,7 @@ distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D"]
+use_collision = true
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -155,11 +151,3 @@ debug_custom_color = Color(0.39215687, 0, 0.39215687, 1)
 script = ExtResource("18_e5k0h")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
-metadata/_edit_group_ = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -27, 0, -12)
-shape = SubResource("WorldBoundaryShape3D_4jjoi")
-debug_color = Color(0.62352943, 0.05490196, 0.16078432, 0.8392157)

@@ -1,25 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4walhhhmdfd3"]
+[gd_scene load_steps=25 format=3 uid="uid://bcp6nxytcnfxh"]
 
-[ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_1.gd" id="1_wfdrs"]
-[ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
-[ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="2_5o1mp"]
-[ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_hhmec"]
-[ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="3_spwf2"]
-[ext_resource type="PackedScene" uid="uid://4okr6p57k2n1" path="res://scenes/ui/finish_interfaces/won_interface.tscn" id="4_rmnd1"]
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_spwf2"]
-[ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="5_7uxs1"]
-[ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="6_3lh42"]
-[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="6_vmhy7"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_58uyj"]
-[ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="7_w3g2g"]
-[ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="10_napug"]
-[ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="11_1jeig"]
-[ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="12_napug"]
-[ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="13_1jeig"]
-[ext_resource type="PackedScene" uid="uid://rrshmr31vbtt" path="res://scenes/objects/collectables/barrel_collectable.tscn" id="16_ldw0e"]
+[ext_resource type="Script" uid="uid://dkm2b5bgooj0u" path="res://scenes/levels/level_sena/level_sena.gd" id="1_ohduw"]
+[ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="2_n7rfo"]
+[ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="3_oqnde"]
+[ext_resource type="PackedScene" uid="uid://4okr6p57k2n1" path="res://scenes/ui/finish_interfaces/won_interface.tscn" id="4_hksja"]
+[ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="5_48k4x"]
+[ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="6_vojv7"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_iyed1"]
+[ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="8_1m12q"]
+[ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="9_rfj1m"]
+[ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="10_uevm1"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="11_xe6wd"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_vxtin"]
+[ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="13_32448"]
+[ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="15_54e7s"]
+[ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="16_pweem"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
-material = ExtResource("2_5o1mp")
+material = ExtResource("5_48k4x")
 size = Vector2(64, 64)
 subdivide_width = 128
 subdivide_depth = 128
@@ -43,7 +41,7 @@ plane = Plane(0, 0, 1, -150)
 plane = Plane(0, 0, -1, -150)
 
 [sub_resource type="Resource" id="Resource_hhmec"]
-script = ExtResource("7_58uyj")
+script = ExtResource("12_vxtin")
 
 [sub_resource type="Curve3D" id="Curve3D_1jeig"]
 _data = {
@@ -52,27 +50,35 @@ _data = {
 }
 point_count = 11
 
+[sub_resource type="Curve3D" id="Curve3D_y27c2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Level1" type="Node3D" node_paths=PackedStringArray("wpoints_counter_ui")]
-script = ExtResource("1_wfdrs")
+script = ExtResource("1_ohduw")
 wpoints_enable = true
 wpoints_counter_ui = NodePath("CanvasLayer/PointsCounter")
 wpoints_points_to_collect = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="BoatControlInterface" parent="CanvasLayer" instance=ExtResource("1_x3ahk")]
+[node name="BoatControlInterface" parent="CanvasLayer" instance=ExtResource("2_n7rfo")]
 
-[node name="PointsCounter" parent="CanvasLayer" instance=ExtResource("2_hhmec")]
+[node name="PointsCounter" parent="CanvasLayer" instance=ExtResource("3_oqnde")]
 
-[node name="WonInterface" parent="CanvasLayer" instance=ExtResource("4_rmnd1")]
+[node name="WonInterface" parent="CanvasLayer" instance=ExtResource("4_hksja")]
 unique_name_in_owner = true
 visible = false
 next_level = "uid://3f1xqtcwaf35"
 level_to_restart = "uid://c4walhhhmdfd3"
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+visible = false
 multimesh = SubResource("MultiMesh_3lh42")
-script = ExtResource("3_spwf2")
+script = ExtResource("6_vojv7")
 ocean_size = Vector2i(16, 16)
 metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
@@ -96,21 +102,20 @@ debug_color = Color(0.621861, 0.05600716, 0.16248626, 0.8392157)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(0.5000001, -0.4297043, 0.7519003, 2.9802322e-08, 0.8682198, 0.49617982, -0.8660253, -0.24808997, 0.43411, -18.568928, 12.284601, 74.20819)
+transform = Transform3D(0.5000001, -0.4297043, 0.7519003, 2.9802322e-08, 0.8682198, 0.49617982, -0.8660253, -0.24808997, 0.43411, 56.69229, 12.284601, 93.689026)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
 process_physics_priority = 300
-script = ExtResource("4_spwf2")
+script = ExtResource("7_iyed1")
 
-[node name="TowBoat" parent="." instance=ExtResource("5_7uxs1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -29.183552, 0, 68.079834)
-acceleration_rate = 16.0
+[node name="TowBoat" parent="." instance=ExtResource("8_1m12q")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 46.077667, 0, 87.56067)
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.183552, 0, 68.079834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.077667, 0, 87.56067)
 top_level = true
-script = ExtResource("6_3lh42")
+script = ExtResource("9_rfj1m")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -118,11 +123,11 @@ transform = Transform3D(-0.5459376, -0.8375197, 0.02264441, -0.23766366, 0.18072
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("7_w3g2g")
+environment = ExtResource("10_uevm1")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.5000001, -0.4297043, 0.7519003, 2.9802322e-08, 0.8682198, 0.49617982, -0.8660253, -0.24808997, 0.43411, -18.568928, 12.284601, 74.20819)
-script = ExtResource("6_vmhy7")
+transform = Transform3D(0.5000001, -0.4297043, 0.7519003, 2.9802322e-08, 0.8682198, 0.49617982, -0.8660253, -0.24808997, 0.43411, 56.69229, 12.284601, 93.689026)
+script = ExtResource("11_xe6wd")
 priority = 3
 follow_mode = 6
 follow_target = NodePath("../TowBoat/TopLevelFollowerNode3D")
@@ -138,22 +143,13 @@ look_at_offset = Vector3(0, 3.28, 0)
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D"]
-script = ExtResource("10_napug")
+script = ExtResource("13_32448")
 camera_x_max = 0.0
 metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("11_1jeig")
-cell_size = Vector3(1, 0.2, 1)
-cell_center_y = false
-data = {
-"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, -131052, 19, 6, -131042, 14, 1048580, -131035, 5, 5, -131030, 65529, 6, -131028, 45, 5, -131025, 65518, 4, -131023, 34, 4, -131021, 25, 6, -131017, 48, 1441794, -131014, 12, 655366, -131008, 24, 1441795, -131007, 36, 1048579, -131005, 2, 655365, -131005, 7, 655366, -130997, 13, 1441795, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 56, 47, 1048577, 62, 30, 1048576, 63, 23, 1048576, 63, 40, 1441793, 72, 18, 1048576, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 131125, 41, 0, -131061, 18, 4, -65537, 16, 1441798, -65545, 9, 1441798, -65547, 65535, 655366, -65554, 4, 1048581, -65553, 65527, 1048580, -65552, 14, 2, -65538, 25, 2, -131053, 27, 655363, -131066, 28, 655363, -131056, 6, 655363, -131066, 6, 655363, 16, 11, 655360, 5, 12, 655360, 65458, 37, 655364, 65453, 27, 1048581, 65456, 17, 6, 65458, 7, 1441796, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797)
-}
-metadata/_editor_floor_ = Vector3(0, 0, 0)
-
 [node name="MultiMeshPath3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_1jeig")
-script = ExtResource("12_napug")
+script = ExtResource("15_54e7s")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
 metadata/_edit_lock_ = true
@@ -174,41 +170,11 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="ramp" parent="." instance=ExtResource("13_1jeig")]
+[node name="ramp" parent="." instance=ExtResource("16_pweem")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 30, 0, -18.181877)
+
+[node name="MultiMeshPath3D2" type="Path3D" parent="."]
 transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 30, 0, 36)
-
-[node name="Node" type="Node3D" parent="."]
-metadata/_edit_group_ = true
-
-[node name="BarrelCollectable" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.559414, 0, 51.92093)
-
-[node name="BarrelCollectable2" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8329258, 0, 52.62221)
-
-[node name="BarrelCollectable3" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.085426, 0, 23.259293)
-
-[node name="BarrelCollectable4" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.05203, -1.9073486e-06, 22.796455)
-
-[node name="BarrelCollectable5" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.052032, -1.9073486e-06, -14.203545)
-
-[node name="BarrelCollectable6" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.052032, -1.9073486e-06, -47.203545)
-
-[node name="BarrelCollectable7" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.281851, -7.6293945e-06, -25.601696)
-
-[node name="BarrelCollectable8" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.190489, -7.6293945e-06, -54.07235)
-
-[node name="BarrelCollectable9" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.567528, -7.6293945e-06, -38.44688)
-
-[node name="BarrelCollectable10" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.39511, -7.6293945e-06, -9.916614)
-
-[node name="BarrelCollectable11" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.157543, -7.6293945e-06, 14.094083)
+curve = SubResource("Curve3D_y27c2")
+script = ExtResource("15_54e7s")
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
