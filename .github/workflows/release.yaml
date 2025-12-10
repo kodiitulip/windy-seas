@@ -35,7 +35,7 @@ concurrency:
 env:
   godot_version: 4.5.0
   app_binary_name: windy-seas
-  itch_page: ""
+  itch_page: "kodiitulip/windy-seas"
 
 jobs:
   foward-env:
