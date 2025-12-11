@@ -6,7 +6,7 @@ sky_horizon_color = Color(0.20372781, 0.498469, 0.7641407, 1)
 sky_curve = 0.029421885
 ground_bottom_color = Color(0.11968804, 0.31977034, 0.66569304, 1)
 ground_horizon_color = Color(0.20372781, 0.498469, 0.7641407, 1)
-ground_curve = 0.054642204
+ground_curve = 0.03482234
 
 [sub_resource type="Sky" id="Sky_fo4fv"]
 sky_material = SubResource("ProceduralSkyMaterial_kwnyj")

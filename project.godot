@@ -132,6 +132,7 @@ locale/locale_filter_mode=0
 
 3d_physics/layer_1="world"
 3d_physics/layer_2="boat"
+3d_physics/main_scene="uid://bx460u03mm1g6"
 
 [physics]
 

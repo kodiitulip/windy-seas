@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://4okr6p57k2n1"]
+[gd_scene load_steps=5 format=3 uid="uid://4okr6p57k2n1"]
 
 [ext_resource type="Script" uid="uid://cpy7bgfycc1ct" path="res://scenes/ui/finish_interfaces/won_interface.gd" id="1_50ora"]
+[ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_e2iuo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_04vhm"]
 font_size = 36
+font_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e2iuo"]
+font_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 
 [node name="WonInterface" type="Control"]
 layout_mode = 3
@@ -13,6 +18,7 @@ anchor_right = 0.6996528
 anchor_bottom = 0.7175926
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_e2iuo")
 script = ExtResource("1_50ora")
 metadata/_edit_use_anchors_ = true
 
@@ -41,6 +47,7 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="PanelContainer"]
 layout_mode = 2
 text = "Você concluiu essa fase!"
+label_settings = SubResource("LabelSettings_e2iuo")
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
@@ -58,6 +65,7 @@ theme_override_constants/separation = 20
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"AltButton"
 text = "Reiniciar"
 
 [node name="Continue" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]

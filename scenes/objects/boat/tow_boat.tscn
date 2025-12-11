@@ -103,6 +103,8 @@ radial_segments = 16
 rings = 4
 
 [node name="TowBoat" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 5
 mass = 4.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.8, 0)
