@@ -19,5 +19,6 @@ fog_mode = 1
 fog_light_color = Color(0.569423, 0.66255367, 0.7899683, 1)
 fog_light_energy = 0.44
 fog_sun_scatter = 0.25
+fog_density = 1.0
 fog_aerial_perspective = 0.472
 fog_depth_curve = 1.6817889

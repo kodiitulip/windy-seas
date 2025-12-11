@@ -4,14 +4,14 @@
 
 [sub_resource type="Curve3D" id="Curve3D_bgkyq"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8, 0, 128, 0, 0, 0, 0, 0, 0, 8, 0, -128),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8, 0, 64, 0, 0, 0, 0, 0, 0, 8, 0, -64),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_e1kko"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8, 0, 128, 0, 0, 0, 0, 0, 0, -8, 0, -128),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8, 0, 64, 0, 0, 0, 0, 0, 0, -8, 0, -64),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2

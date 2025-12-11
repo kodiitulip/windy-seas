@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dphcdn01xnkym"]
+
+[ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="1_g7c5q"]
+
+[sub_resource type="Curve3D" id="Curve3D_g7c5q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 0, 0, 0, -16, 0, 0, 0, 0, 0, 0, -8, 0.314, -32, 0, 0, 0, 0, 0, 0, -16, 0, -32, 0, 0, 0, 0, 0, 0, -16, 0, -32, 0, 0, 0, 0, 0, 0, -40.153336, 0.3531494, -32.51927),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_xoamg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8, -0.749, 16, 0, 0, 0, 0, 0, 0, 8, 0.006, -16, 0, 0, 0, 0, 0, 0, 0, 0.446, -32, 0, 0, 0, 0, 0, 0, 0, 0, -32),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="90DegreeTurn" type="Node3D"]
+
+[node name="MultiMeshPath3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_g7c5q")
+script = ExtResource("1_g7c5q")
+distance_between_mesh_instances = 4.0
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
+
+[node name="MultiMeshPath3D2" type="Path3D" parent="."]
+curve = SubResource("Curve3D_xoamg")
+script = ExtResource("1_g7c5q")
+distance_between_mesh_instances = 4.0
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
