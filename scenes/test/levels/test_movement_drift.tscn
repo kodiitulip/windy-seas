@@ -36,13 +36,17 @@ buffer = PackedFloat32Array(1, 0, 0, -224, 0, 1, 0, 0, 0, 0, 1, -224, 1, 0, 0, -
 
 [sub_resource type="Curve3D" id="Curve3D_4jjoi"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.704, 0, -19.362, 0, 0, 0, 0, 0, 0, 2.2875097, 0, -19.4027, 0, 0, 0, 0, 0, 0, 25.915, 0, -20.01, 0, 0, 0, 0, 0, 0, 34.616, 0, -18.956, 0, 0, 0, 0, 0, 0, 33.939, 0, -27.361, 0, 0, 0, 0, 0, 0, 39.574, 0, -32.221, 0, 0, 0, 0, 0, 0, 45.137, 0, -37.078, 0, 0, 0, 0, 0, 0, 45.137, 0, -44.988, 0, 0, 0, 0, 0, 0, 41.732, 0, -51.184, 0, 0, 0, 0, 0, 0, 38.091, 0, -57.721, 0, 0, 0, 0, 0, 0, 34.218, 0, -63.594, 0, 0, 0, 0, 0, 0, 29.548, 0, -68.851, 0, 0, 0, 0, 0, 0, 25.192, 0, -73.692, 0, 0, 0, 0, 0, 0, 20.136, 0, -78.821, 0, 0, 0, 0, 0, 0, 14.648, 0, -84.493, 0, 0, 0, 0, 0, 0, 9.404, 0, -88.948, 0, 0, 0, 0, 0, 0, 5.311, 0, -94.6, 0, 0, 0, 0, 0, 0, 1.256, 0, -100.286, 0, 0, 0, 0, 0, 0, -11.12, 0, -89.249, 0, 0, 0, 0, 0, 0, -6.31, 0, -46.073, 0, 0, 0, 0, 0, 0, -16.156, 0, -36.667, 0, 0, 0, 0, 0, 0, -11.667474, 0, -29.5473, 0, 0, 0, 0, 0, 0, -8.999186, 0, -26.624886, 0, 0, 0, 0, 0, 0, -2.9002273, 0, -19.890621, 0, 0, 0, 0, 0, 0, -0.3056838, 0, -19.614513),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.704, 0, -19.362, 0, 0, 0, 0, 0, 0, 2.2875097, 0, -19.4027, 0, 0, 0, 0, 0, 0, 25.915, 0, -20.01, 0, 0, 0, 0, 0, 0, 34.616, 0, -18.956, 0, 0, 0, 0, 0, 0, 30.939, 0, -27.361, 0, 0, 0, 0, 0, 0, 35.574, 0, -32.221, 0, 0, 0, 0, 0, 0, 42.137, 0, -37.078, 0, 0, 0, 0, 0, 0, 41.137, 0, -44.988, 0, 0, 0, 0, 0, 0, 37.732, 0, -51.184, 0, 0, 0, 0, 0, 0, 34.091, 0, -57.721, 0, 0, 0, 0, 0, 0, 30.218, 0, -63.594, 0, 0, 0, 0, 0, 0, 25.548, 0, -68.851, 0, 0, 0, 0, 0, 0, 21.192, 0, -73.692, 0, 0, 0, 0, 0, 0, 16.136, 0, -78.821, 0, 0, 0, 0, 0, 0, 10.648, 0, -84.493, 0, 0, 0, 0, 0, 0, 5.404, 0, -88.948, 0, 0, 0, 0, 0, 0, 1.311, 0, -94.6, 0, 0, 0, 0, 0, 0, -2.744, 0, -100.286, 0, 0, 0, 0, 0, 0, -7.12, 0, -89.249, 0, 0, 0, 0, 0, 0, -2.31, 0, -46.073, 0, 0, 0, 0, 0, 0, -12.156, 0, -36.667, 0, 0, 0, 0, 0, 0, -7.667, 0, -29.547, 0, 0, 0, 0, 0, 0, -4.999, 0, -26.625, 0, 0, 0, 0, 0, 0, 1.1, 0, -19.891, 0, 0, 0, 0, 0, 0, 2.694, 0, -19.615),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 25
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_4jjoi"]
-plane = Plane(1, 0, 1, 0)
+[sub_resource type="Curve3D" id="Curve3D_43k8x"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.704, 0, -19.362, 0, 0, 0, 0, 0, 0, 2.2875097, 0, -19.4027, 0, 0, 0, 0, 0, 0, 25.915, 0, -20.01, 0, 0, 0, 0, 0, 0, 34.616, 0, -18.956, 0, 0, 0, 0, 0, 0, 30.939, 0, -27.361, 0, 0, 0, 0, 0, 0, 35.574, 0, -32.221, 0, 0, 0, 0, 0, 0, 42.137, 0, -37.078, 0, 0, 0, 0, 0, 0, 41.137, 0, -44.988, 0, 0, 0, 0, 0, 0, 37.732, 0, -51.184, 0, 0, 0, 0, 0, 0, 34.091, 0, -57.721, 0, 0, 0, 0, 0, 0, 30.218, 0, -63.594, 0, 0, 0, 0, 0, 0, 25.548, 0, -68.851, 0, 0, 0, 0, 0, 0, 21.192, 0, -73.692, 0, 0, 0, 0, 0, 0, 16.136, 0, -78.821, 0, 0, 0, 0, 0, 0, 10.648, 0, -84.493, 0, 0, 0, 0, 0, 0, 5.404, 0, -88.948, 0, 0, 0, 0, 0, 0, 1.311, 0, -94.6, 0, 0, 0, 0, 0, 0, -2.744, 0, -100.286, 0, 0, 0, 0, 0, 0, -7.12, 0, -89.249, 0, 0, 0, 0, 0, 0, -2.31, 0, -46.073, 0, 0, 0, 0, 0, 0, -12.156, 0, -36.667, 0, 0, 0, 0, 0, 0, -7.667, 0, -29.547, 0, 0, 0, 0, 0, 0, -4.999, 0, -26.625, 0, 0, 0, 0, 0, 0, 1.1, 0, -19.891, 0, 0, 0, 0, 0, 0, 2.694, 0, -19.615),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 25
 
 [node name="TestRockyIsland" type="Node3D"]
 
@@ -53,11 +57,9 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_4jjoi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment"]
-
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(-1, -2.1694316e-08, 5.960465e-08, -8.881784e-16, 0.9396926, 0.34202012, -6.3429944e-08, 0.34202012, -0.93969274, -11.998347, 5.472322, -29.100744)
+transform = Transform3D(-1, -3.2541465e-08, 8.940696e-08, -1.7763568e-15, 0.9396926, 0.3420201, -9.514489e-08, 0.3420201, -0.93969274, -6.8522744, 5.472322, -52.58825)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -65,7 +67,7 @@ process_physics_priority = 300
 script = ExtResource("2_43k8x")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(-1, -2.1694316e-08, 5.960465e-08, -8.881784e-16, 0.9396926, 0.34202012, -6.3429944e-08, 0.34202012, -0.93969274, -11.998347, 5.472322, -29.100744)
+transform = Transform3D(-1, -3.2541465e-08, 8.940696e-08, -1.7763568e-15, 0.9396926, 0.3420201, -9.514489e-08, 0.3420201, -0.93969274, -6.8522744, 5.472322, -52.58825)
 script = ExtResource("3_brnfe")
 priority = 3
 follow_mode = 6
@@ -92,10 +94,10 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="TowBoat" parent="." instance=ExtResource("7_ccj0q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.998348, 0, -14.065662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.852276, 0, -37.553165)
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.998348, 0, -14.065662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.852276, 0, -37.553165)
 top_level = true
 script = ExtResource("8_2m2pr")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
@@ -113,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.437393, 0, -1.7137403)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0439634, 0, 5.5543385)
 
 [node name="gate2" parent="." instance=ExtResource("13_m4bbm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.08306, 0, 8.522603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.916939, 0, -36.477398)
 
 [node name="gate-finish2" parent="." instance=ExtResource("14_edk5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.452484, 0, 10.221937)
@@ -136,6 +138,7 @@ distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D"]
+use_collision = true
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -149,17 +152,24 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="MultiMeshPath3D2" type="Path3D" parent="."]
-transform = Transform3D(0.74, 0, 0, 0, 0.74, 0, 0, 0, 0.74, 0.749, 0, 0)
-curve = SubResource("Curve3D_4jjoi")
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 9, 0, -23)
+curve = SubResource("Curve3D_43k8x")
 debug_custom_color = Color(0.39215687, 0, 0.39215687, 1)
 script = ExtResource("18_e5k0h")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
-metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -27, 0, -12)
-shape = SubResource("WorldBoundaryShape3D_4jjoi")
-debug_color = Color(0.62352943, 0.05490196, 0.16078432, 0.8392157)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D2"]
+transform = Transform3D(1.26, 0, 0, 0, 1.26, 0, 0, 0, 1.26, -3, 0, 10)
+use_collision = true
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false

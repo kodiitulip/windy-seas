@@ -25,6 +25,10 @@ func _enter_tree() -> void:
 	add_child.call_deferred(_multimesh)
 
 
+func _exit_tree() -> void:
+	_multimesh.queue_free()
+
+
 func _ready() -> void:
 	if not curve_changed.is_connected(_update_path_multimesh):
 		curve_changed.connect(_update_path_multimesh)
@@ -32,7 +36,10 @@ func _ready() -> void:
 
 
 func _update_path_multimesh() -> void:
-	if not curve or not _multimesh:
+	if not _multimesh:
+		return
+	if not curve:
+		_multimesh.multimesh.instance_count = 0
 		return
 	var mm: MultiMesh = _multimesh.multimesh
 	var path_length: float = curve.get_baked_length()

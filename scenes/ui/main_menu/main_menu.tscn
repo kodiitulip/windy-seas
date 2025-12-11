@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx460u03mm1g6"]
+[gd_scene load_steps=8 format=3 uid="uid://bx460u03mm1g6"]
 
 [ext_resource type="PackedScene" uid="uid://eet6h5nukcq1" path="res://scenes/ui/main_menu/main_menu_background.tscn" id="1_cmwxi"]
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_qt1dd"]
 [ext_resource type="Texture2D" uid="uid://cgm87pevwbo8b" path="res://assets/kenney_assets/pirate_kit/previews/barrel.png" id="4_cmwxi"]
+[ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_r70wa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt1dd"]
 
@@ -88,16 +89,20 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Sair"
 
-[node name="LevelSelector" type="VBoxContainer" parent="TabContainer"]
-custom_minimum_size = Vector2(607, 0)
+[node name="LevelSelector" type="Control" parent="TabContainer"]
+custom_minimum_size = Vector2(607, 582)
 layout_mode = 2
-theme_override_constants/separation = 350
 metadata/_edit_use_anchors_ = true
 metadata/_tab_index = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="TabContainer/LevelSelector"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.23367697
+grow_horizontal = 2
 theme_type_variation = &"BannerPanel_"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="TabContainer/LevelSelector/PanelContainer2"]
 layout_mode = 2
@@ -107,7 +112,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="TabContainer/LevelSelector"]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7628866
+anchor_right = 1.0
+anchor_bottom = 1.0034364
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/LevelSelector/PanelContainer"]
@@ -118,7 +127,7 @@ theme_override_constants/h_separation = 32
 theme_override_constants/v_separation = 32
 columns = 3
 
-[node name="Button" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
+[node name="Level1" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -126,8 +135,11 @@ theme_type_variation = &"IconButton"
 icon = ExtResource("4_cmwxi")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_r70wa")
+scene_to_transition_to = "uid://c4walhhhmdfd3"
+metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
-[node name="Button2" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
+[node name="Level2" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -135,8 +147,10 @@ theme_type_variation = &"IconButton"
 icon = ExtResource("4_cmwxi")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_r70wa")
+metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
-[node name="Button3" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
+[node name="LevelSena" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -144,5 +158,8 @@ theme_type_variation = &"IconButton"
 icon = ExtResource("4_cmwxi")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_r70wa")
+scene_to_transition_to = "uid://bcp6nxytcnfxh"
+metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
 [connection signal="pressed" from="TabContainer/MainMenu/HBoxContainer/Play" to="TabContainer" method="set_current_tab" binds= [1]]
