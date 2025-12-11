@@ -57,8 +57,8 @@ height = 2.4797974
 radius = 2.4418945
 
 [sub_resource type="Gradient" id="Gradient_e4cav"]
-offsets = PackedFloat32Array(0.057692308, 0.7692308, 1)
-colors = PackedColorArray(0.12225223, 0.12225223, 0.12225223, 1, 0.35714287, 0.35714287, 0.35714287, 1, 0.8474744, 0.84747446, 0.84747446, 1)
+offsets = PackedFloat32Array(0.043269232, 0.25, 0.69711536)
+colors = PackedColorArray(0.23921569, 0.23921569, 0.23921569, 0.74509805, 0.45490196, 0.45490196, 0.45490196, 0.43137255, 0.8862616, 0.88626146, 0.8862615, 0.19607843)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tn501"]
 gradient = SubResource("Gradient_e4cav")
@@ -170,7 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, -1.2)
 amount = 100
 lifetime = 5.0
 randomness = 0.8
-draw_order = 3
+draw_order = 1
 process_material = SubResource("ParticleProcessMaterial_e4cav")
 draw_pass_1 = SubResource("SphereMesh_e4cav")
 script = ExtResource("6_e4cav")

@@ -114,7 +114,6 @@ metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.5459376, -0.8375197, 0.02264441, -0.23766366, 0.18072544, 0.95438683, -0.8034103, 0.51565397, -0.29771286, 0, 0, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_w3g2g")

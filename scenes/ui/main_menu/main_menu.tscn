@@ -159,7 +159,6 @@ icon = ExtResource("4_cmwxi")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_r70wa")
-scene_to_transition_to = "uid://bcp6nxytcnfxh"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
 [connection signal="pressed" from="TabContainer/MainMenu/HBoxContainer/Play" to="TabContainer" method="set_current_tab" binds= [1]]

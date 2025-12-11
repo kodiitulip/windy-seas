@@ -5,6 +5,7 @@ extends Button
 
 func _ready() -> void:
 	pressed.connect(_on_pressed)
+	disabled = scene_to_transition_to.is_empty()
 
 
 func _on_pressed() -> void:

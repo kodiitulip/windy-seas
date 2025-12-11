@@ -59,4 +59,5 @@ void fragment() {
 	}
 	//Final color adjestment
 	ALBEDO = clamp(brightness * (vec3(1.0, 1.0, 1.0) - (band_color.xyz * -color_intensity)) * band_color.xyz, vec3(0.0, 0.0, 0.0), vec3(brightness, brightness, brightness));
+	ALPHA = 1.0;
 }
