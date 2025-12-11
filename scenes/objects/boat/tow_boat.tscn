@@ -91,6 +91,9 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 disable_receive_shadows = true
+proximity_fade_distance = 1558.93
+distance_fade_mode = 1
+distance_fade_max_distance = 20.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_e4cav"]
 material = SubResource("StandardMaterial3D_2qkur")
@@ -108,6 +111,9 @@ angular_damp = 0.9
 script = ExtResource("1_wha21")
 max_speed = 50.0
 flip_foward = true
+acceleration_rate = 16.0
+deacceleration_rate = 24.0
+brake_power = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_7kimf")
@@ -122,37 +128,37 @@ skeleton = NodePath("")
 [node name="FloatyMarker3D3" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, -1.4000001)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D4" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, 0.59999996)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D6" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 2.75)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D7" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -3.3)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D10" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, -1.4)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D11" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, 0.6)
 script = ExtResource("3_hwofe")
-float_force = 2.0
+float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="CollectorBoxArea3D" type="Area3D" parent="."]

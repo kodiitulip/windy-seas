@@ -104,7 +104,6 @@ script = ExtResource("4_spwf2")
 
 [node name="TowBoat" parent="." instance=ExtResource("5_7uxs1")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -29.183552, 0, 68.079834)
-acceleration_rate = 16.0
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
 transform = Transform3D(-1, 0, 3.8941437e-07, 0, 1, 0, -3.8941437e-07, 0, -1, -29.183552, 0, 68.079834)
@@ -156,7 +155,6 @@ metadata/_edit_lock_ = true
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D"]
 visible = false
-use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 4, 1, 4, 1, 0)
 mode = 2
 path_node = NodePath("..")

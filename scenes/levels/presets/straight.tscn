@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://uy1s0q2y681q"]
+
+[ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="1_infrj"]
+
+[sub_resource type="Curve3D" id="Curve3D_bgkyq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8, 0, 128, 0, 0, 0, 0, 0, 0, 8, 0, -128),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_e1kko"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8, 0, 128, 0, 0, 0, 0, 0, 0, -8, 0, -128),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Straight" type="Node3D"]
+
+[node name="MultiMeshPath3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_bgkyq")
+script = ExtResource("1_infrj")
+distance_between_mesh_instances = 4.0
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
+
+[node name="MultiMeshPath3D2" type="Path3D" parent="."]
+curve = SubResource("Curve3D_e1kko")
+script = ExtResource("1_infrj")
+distance_between_mesh_instances = 4.0
+metadata/_custom_type_script = "uid://d3xifcu4sta0j"
