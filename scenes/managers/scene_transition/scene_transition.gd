@@ -7,6 +7,7 @@ enum TransitionState {
 	OUT,
 }
 
+var _last_scene: String
 var scene_uuid_to_transition: String
 var transitioning: bool = false
 var transition_state: TransitionState = TransitionState.NONE
@@ -48,4 +49,11 @@ func _request_load() -> void:
 
 func transition_to(scene_uuid: String) -> void:
 	scene_uuid_to_transition = scene_uuid
+	_last_scene = scene_uuid
 	transition_state = TransitionState.IN
+
+
+func reload_last_scene() -> void:
+	if _last_scene.is_empty():
+		printerr("Could not load last scene"); return
+	transition_to(_last_scene)

@@ -53,11 +53,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qt1dd")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 tabs_visible = false
 
 [node name="MainMenu" type="VBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 400
 metadata/_tab_index = 0
@@ -90,6 +89,7 @@ theme_override_font_sizes/font_size = 32
 text = "Sair"
 
 [node name="LevelSelector" type="Control" parent="TabContainer"]
+visible = false
 custom_minimum_size = Vector2(607, 582)
 layout_mode = 2
 metadata/_edit_use_anchors_ = true

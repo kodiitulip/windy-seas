@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://c4walhhhmdfd3"]
 
-[ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
+[ext_resource type="Script" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
 [ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="2_5o1mp"]
 [ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_hhmec"]
@@ -66,9 +66,7 @@ wpoints_points_to_collect = 10
 
 [node name="WonInterface" parent="CanvasLayer" instance=ExtResource("4_rmnd1")]
 unique_name_in_owner = true
-visible = false
-next_level = "uid://bx460u03mm1g6"
-level_to_restart = "uid://c4walhhhmdfd3"
+next_level = "uid://bg2jhxlxj5eh0"
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 multimesh = SubResource("MultiMesh_3lh42")
@@ -113,7 +111,8 @@ script = ExtResource("6_3lh42")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.5459376, -0.8375197, 0.02264441, -0.23766366, 0.18072544, 0.95438683, -0.8034103, 0.51565397, -0.29771286, 0, 0, 0)
+transform = Transform3D(0.40514153, -0.62001014, -0.6718986, 0, -0.7349146, 0.67815965, -0.91425395, -0.27475065, -0.29774442, 0, 50, 0)
+directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_w3g2g")

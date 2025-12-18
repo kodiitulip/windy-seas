@@ -36,6 +36,7 @@ func _handle_steer() -> void:
 	var rotation_dir: float = -Input.get_axis(&"turn_left", &"turn_right")
 	apply_torque(Vector3(0, rotation_dir * curr_speed, 0))
 	GlobalSignalBus.emit_direction_changed(rotation_dir)
+	GlobalSignalBus.emit_rotation_changed(rotation.y)
 
 
 func explode() -> void:
