@@ -25,7 +25,6 @@ boot_splash/image.editor_hint=""
 
 BeehaveGlobalMetrics="*res://addons/beehave/metrics/beehave_global_metrics.gd"
 BeehaveGlobalDebugger="*res://addons/beehave/debug/global_debugger.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 SceneTransitionManager="*res://scenes/managers/scene_transition/scene_transition.tscn"
 GlobalSignalBus="*res://scripts/signal_bus.gd"
@@ -69,7 +68,7 @@ project/assembly_name="Windy Seas"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Node Distance Tool/plugin.cfg", "res://addons/beehave/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/Node Distance Tool/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [input]
 

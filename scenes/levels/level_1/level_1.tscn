@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://c4walhhhmdfd3"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
+[ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
 [ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="2_5o1mp"]
 [ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_hhmec"]
@@ -52,11 +52,12 @@ _data = {
 }
 point_count = 11
 
-[node name="Level1" type="Node3D" node_paths=PackedStringArray("wpoints_counter_ui")]
+[node name="Level1" type="Node" node_paths=PackedStringArray("wpoints_counter_ui")]
 script = ExtResource("1_wfdrs")
 wpoints_enable = true
 wpoints_counter_ui = NodePath("CanvasLayer/PointsCounter")
 wpoints_points_to_collect = 10
+metadata/_custom_type_script = "uid://bdljqj5o2mnxv"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,6 +96,7 @@ debug_color = Color(0.621861, 0.05600716, 0.16248626, 0.8392157)
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
 transform = Transform3D(1, 3.0008533e-07, -3.5762787e-07, 1.4210855e-14, 0.7660445, 0.64278746, 4.6684994e-07, -0.64278746, 0.7660445, -29.183558, 10.284601, 80.33655)
+current = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx460u03mm1g6"]
+[gd_scene load_steps=9 format=3 uid="uid://bx460u03mm1g6"]
 
 [ext_resource type="PackedScene" uid="uid://eet6h5nukcq1" path="res://scenes/ui/main_menu/main_menu_background.tscn" id="1_cmwxi"]
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_qt1dd"]
 [ext_resource type="Texture2D" uid="uid://cgm87pevwbo8b" path="res://assets/kenney_assets/pirate_kit/previews/barrel.png" id="4_cmwxi"]
 [ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_r70wa"]
+[ext_resource type="Texture2D" uid="uid://d4j7hpdsoelqo" path="res://assets/kenney_assets/watercraft_pack/previews/gate-finish.png" id="5_r70wa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt1dd"]
 
@@ -144,13 +145,13 @@ texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_type_variation = &"IconButton"
-icon = ExtResource("4_cmwxi")
+icon = ExtResource("5_r70wa")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_r70wa")
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
-[node name="LevelSena" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
+[node name="Level3" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
