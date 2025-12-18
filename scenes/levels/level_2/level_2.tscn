@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="12_x3a3q"]
 [ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="13_rbtc1"]
 [ext_resource type="PackedScene" uid="uid://uy1s0q2y681q" path="res://scenes/levels/presets/straight.tscn" id="14_up0v7"]
-[ext_resource type="PackedScene" uid="uid://dphcdn01xnkym" path="res://scenes/levels/presets/90_degree_turn.tscn" id="15_4xau6"]
+[ext_resource type="PackedScene" uid="uid://c6kwjvherprj7" path="res://scenes/levels/presets/straight_15G_6D.tscn" id="15_4xau6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("4_slc34")
@@ -53,7 +53,7 @@ metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 3.0633709e-07, -3.6507836e-07, -1.4210855e-14, 0.7660445, 0.64278746, 4.7657593e-07, -0.64278746, 0.7660445, -0.18355763, 10.284601, 65.33655)
+transform = Transform3D(0.9876883, 0.10055426, -0.119835906, 0, 0.76604444, 0.6427876, 0.15643466, -0.63487375, 0.75661314, -25.344818, 10.284577, 71.55578)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -61,10 +61,10 @@ process_physics_priority = 300
 script = ExtResource("6_ytkhg")
 
 [node name="TowBoat" parent="." instance=ExtResource("7_odxlg")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.18355179, 0, 53.079834)
+transform = Transform3D(-0.98768836, 0, -0.15643445, 0, 1, 0, 0.15643445, 0, -0.98768836, -23.427448, 0, 59.449997)
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
-transform = Transform3D(-1, 0, 3.8941437e-07, 0, 1, 0, -3.8941437e-07, 0, -1, -0.18355179, 0, 53.079834)
+transform = Transform3D(-0.9876859, 0, 0.15643428, 0, 1, 0, -0.15643428, 0, -0.9876859, -23.427448, 0, 59.449997)
 top_level = true
 script = ExtResource("8_issku")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
@@ -76,7 +76,7 @@ transform = Transform3D(-0.5459376, -0.8375197, 0.02264441, -0.23766366, 0.18072
 environment = ExtResource("9_sfxq0")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 3.0633709e-07, -3.6507836e-07, -1.4210855e-14, 0.7660445, 0.64278746, 4.7657593e-07, -0.64278746, 0.7660445, -0.18355763, 10.284601, 65.33655)
+transform = Transform3D(0.9876883, 0.10055426, -0.119835906, 0, 0.76604444, 0.6427876, 0.15643466, -0.63487375, 0.75661314, -25.344818, 10.284577, 71.55578)
 script = ExtResource("10_ekcpv")
 priority = 3
 follow_mode = 6
@@ -96,15 +96,17 @@ follow_target = NodePath("../../TowBoat/TopLevelFollowerNode3D")
 metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
 
 [node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.199768, 0, 0)
 mesh_library = ExtResource("13_rbtc1")
 cell_size = Vector3(1, 0.2, 1)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797)
+"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797, 65481, 65434, 5)
 }
-metadata/_editor_floor_ = Vector3(0, 2, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Straight" parent="." instance=ExtResource("14_up0v7")]
+transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, -33.249268, 0, 0)
 
-[node name="90DegreeTurn" parent="." instance=ExtResource("15_4xau6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96, 0, -56)
+[node name="StraightG15D6" parent="." instance=ExtResource("15_4xau6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.466805, 0, -70.80783)
