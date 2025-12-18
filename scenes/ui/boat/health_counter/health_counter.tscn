@@ -13,6 +13,7 @@ anchor_bottom = 0.074074075
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nl4ah")
+metadata/_custom_type_script = "uid://brmtb2rtyuw8r"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]

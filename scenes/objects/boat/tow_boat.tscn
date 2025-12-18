@@ -53,7 +53,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r4ihx")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2qkur"]
-height = 2.4797974
+height = 3.6804962
 radius = 2.4418945
 
 [sub_resource type="Gradient" id="Gradient_e4cav"]
@@ -116,6 +116,7 @@ flip_foward = true
 acceleration_rate = 16.0
 deacceleration_rate = 24.0
 brake_power = 30.0
+metadata/_custom_type_script = "uid://bqca0gnak6yyu"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_7kimf")
@@ -164,13 +165,13 @@ float_force = 2.5
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="CollectorBoxArea3D" type="Area3D" parent="."]
-collision_layer = 4
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("4_7kimf")
 metadata/_custom_type_script = "uid://so5rewyea1hc"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollectorBoxArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8437805, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6002121, 0)
 shape = SubResource("CylinderShape3D_2qkur")
 
 [node name="SmokeStack" type="GPUParticles3D" parent="."]
@@ -192,3 +193,8 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_e4cav")
 draw_pass_1 = SubResource("SphereMesh_e4cav")
 script = ExtResource("6_e4cav")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-2.283421, -0.5262718, -2.920495, 4.566842, 5.174614, 5.84099)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://giyscbdkyi1q"]
+[gd_scene load_steps=29 format=4 uid="uid://giyscbdkyi1q"]
 
 [ext_resource type="Script" uid="uid://bf4pxjrr8au5t" path="res://scenes/objects/collectables/damaging_item.gd" id="1_lv6in"]
 [ext_resource type="Texture2D" uid="uid://dchqy8422eqqy" path="res://assets/kenney_assets/pirate_kit/models/Textures/colormap.png" id="1_ppq4b"]
 [ext_resource type="Script" uid="uid://c1e7buf8k76ts" path="res://scripts/collecting/collected_box.gd" id="3_ir8qm"]
+[ext_resource type="AudioStream" uid="uid://b5y636cb73k64" path="res://assets/sounds/gunshot.wav" id="4_p0yex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b37g6"]
 resource_name = "colormap"
@@ -44,25 +45,167 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_154qa")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ir8qm"]
+points = PackedVector3Array(0.15568574, 0.14018753, 0.23600952, -0.3054099, -0.11023271, -0.014375367, -0.29851857, -0.101319514, -0.034780104, 0.17826936, -0.2743209, -0.014578526, 0.15774643, 0.11159132, -0.2684124, -0.17752862, 0.2745592, -0.014591717, -0.15692843, -0.111646086, 0.26976025, -0.15720892, -0.111845076, -0.26902416, 0.31016102, 0.1116224, -0.0043968004, 0.15746576, -0.1113922, 0.2691482, -0.014878655, -0.32717368, 0.015940169, -0.15692833, 0.11164601, 0.26976007, 0.015700443, 0.3269089, 0.015927762, 0.15774643, -0.11159132, -0.2684124, -0.15720892, 0.111845076, -0.26902416, -0.309393, 0.11166824, 0.0056673735, 0.31016102, -0.1116224, -0.0043968004, 0.09692657, 0.27409688, -0.15671729, -0.09611518, -0.274335, -0.15685396, -0.09604664, -0.27414027, 0.1580107, -0.09604664, 0.27414027, 0.1580107, 0.17814304, 0.27412602, 0.015836246, 0.10648555, -0.2625764, 0.16726187, -0.20727009, -0.25324315, -0.004386331, 0.106683746, -0.2630672, -0.16630504, -0.10603012, 0.26366538, -0.16668458, 0.10688342, 0.25346372, 0.17803966, 0.15746595, 0.111392334, 0.26914853, -0.30945313, -0.10157099, 0.015841965, 0.30947784, 0.101222225, 0.015799172, -0.014889544, 0.3274061, -0.014682157, 0.10721399, 0.24405795, -0.18745337)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ir8qm"]
 height = 1.6669922
-radius = 0.81396484
+radius = 0.9057617
 
-[node name="DamagingBall" type="Node3D" node_paths=PackedStringArray("collected_box")]
+[sub_resource type="Curve" id="Curve_ir8qm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.6705883, 0.7417219), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_p0yex"]
+curve = SubResource("Curve_ir8qm")
+
+[sub_resource type="Curve" id="Curve_5x6au"]
+_data = [Vector2(0, 0.052980185), 0.0, 0.0, 0, 0, Vector2(0.24705884, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_u5ktg"]
+curve = SubResource("Curve_5x6au")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4ayfy"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 5, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_u5ktg")
+color = Color(0.35, 0.35, 0.35, 1)
+alpha_curve = SubResource("CurveTexture_p0yex")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkpyp"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_fxqiu"]
+material = SubResource("StandardMaterial3D_dkpyp")
+radial_segments = 8
+rings = 4
+
+[sub_resource type="Gradient" id="Gradient_ir8qm"]
+offsets = PackedFloat32Array(0, 0.65065503, 1)
+colors = PackedColorArray(0.9999997, 0.67023665, 0.22853386, 1, 0.973905, 0.4248111, 3.85046e-07, 1, 0.8529517, 0.111642756, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p0yex"]
+gradient = SubResource("Gradient_ir8qm")
+
+[sub_resource type="Curve" id="Curve_h21vy"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5x6au"]
+curve = SubResource("Curve_h21vy")
+
+[sub_resource type="Curve" id="Curve_u5ktg"]
+_data = [Vector2(0, 0.052980185), 0.0, 0.0, 0, 0, Vector2(0.24705884, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4ayfy"]
+curve = SubResource("Curve_u5ktg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lcyoo"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+spread = 90.0
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 5, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_4ayfy")
+color = Color(0.9939988, 0.72147125, 0, 1)
+color_ramp = SubResource("GradientTexture1D_p0yex")
+emission_curve = SubResource("CurveTexture_5x6au")
+
+[sub_resource type="Curve" id="Curve_exmnq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.36078435, 0.9246689), 0.0, 0.0, 0, 0, Vector2(0.99607855, 0.042218566), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_dyihl"]
+curve = SubResource("Curve_exmnq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xmlee"]
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 12.0
+initial_velocity_max = 14.0
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_dyihl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uioj0"]
+albedo_color = Color(0.8741271, 0.3039858, 0.10187247, 1)
+emission_enabled = true
+emission = Color(0.830442, 0.39642075, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tf36p"]
+material = SubResource("StandardMaterial3D_uioj0")
+top_radius = 0.1
+bottom_radius = 0.0
+cap_bottom = false
+
+[node name="DamagingBall" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_lv6in")
-collected_box = NodePath("CollectedBoxArea3D")
 
 [node name="cannon-ball" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_aawo4")
 skeleton = NodePath("")
 
-[node name="CollectedBoxArea3D" type="Area3D" parent="." node_paths=PackedStringArray("target_node")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ir8qm")
+
+[node name="CollectedBoxArea3D" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 script = ExtResource("3_ir8qm")
-target_node = NodePath("..")
 metadata/_custom_type_script = "uid://c1e7buf8k76ts"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CollectedBoxArea3D"]
 shape = SubResource("CylinderShape3D_ir8qm")
+
+[node name="Particles" type="Node3D" parent="."]
+
+[node name="Smoke" type="GPUParticles3D" parent="Particles"]
+emitting = false
+amount = 12
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4ayfy")
+draw_pass_1 = SubResource("SphereMesh_fxqiu")
+
+[node name="Fire" type="GPUParticles3D" parent="Particles"]
+emitting = false
+amount = 12
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_lcyoo")
+draw_pass_1 = SubResource("SphereMesh_fxqiu")
+
+[node name="Debri" type="GPUParticles3D" parent="Particles"]
+emitting = false
+amount = 24
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_xmlee")
+draw_pass_1 = SubResource("CylinderMesh_tf36p")
+
+[node name="ExplosionSound" type="AudioStreamPlayer3D" parent="Particles"]
+stream = ExtResource("4_p0yex")

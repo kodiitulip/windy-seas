@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://rrshmr31vbtt"]
+[gd_scene load_steps=18 format=4 uid="uid://rrshmr31vbtt"]
 
 [ext_resource type="Texture2D" uid="uid://dchqy8422eqqy" path="res://assets/kenney_assets/pirate_kit/models/Textures/colormap.png" id="1_f4jsq"]
 [ext_resource type="Script" uid="uid://be3i3cede0lb" path="res://scenes/objects/collectables/collectable.gd" id="1_sesrd"]
 [ext_resource type="Script" uid="uid://c1e7buf8k76ts" path="res://scripts/collecting/collected_box.gd" id="2_sesrd"]
+[ext_resource type="AudioStream" uid="uid://ddjt80v6hg072" path="res://assets/kenney_assets/interface_sounds/audio/confirmation_002.ogg" id="3_46fmn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blyfs"]
 resource_name = "colormap"
@@ -44,25 +45,88 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y0mxm")
 
+[sub_resource type="Gradient" id="Gradient_sesrd"]
+offsets = PackedFloat32Array(0, 0.51965064, 1)
+colors = PackedColorArray(0.99999994, 0.12741649, 0.23952183, 1, 0.9169183, 7.315874e-05, 0.7068492, 1, 0.31227863, 0.00022929489, 0.9834773, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_46fmn"]
+gradient = SubResource("Gradient_sesrd")
+
+[sub_resource type="Curve" id="Curve_sesrd"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 2.0637417), 0.0, 0.0, 0, 0, Vector2(0.9960783, 3), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_46fmn"]
+curve = SubResource("Curve_sesrd")
+
+[sub_resource type="Curve" id="Curve_xtflr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.44705886, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7j4q7"]
+curve = SubResource("Curve_xtflr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j51cm"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -5, 0)
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_7j4q7")
+color_ramp = SubResource("GradientTexture1D_46fmn")
+emission_curve = SubResource("CurveTexture_46fmn")
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sesrd"]
+vertex_color_use_as_albedo = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_46fmn"]
+material = SubResource("StandardMaterial3D_sesrd")
+top_radius = 0.1
+bottom_radius = 0.0
+radial_segments = 8
+cap_bottom = false
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_46fmn"]
 height = 1.5
 radius = 1.0
 
-[node name="BarrelCollectable" type="Node3D" node_paths=PackedStringArray("collected_box")]
+[node name="BarrelCollectable" type="Node3D"]
 script = ExtResource("1_sesrd")
-collected_box = NodePath("ColectedBoxArea3D")
 
 [node name="barrel" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_5gpwd")
 skeleton = NodePath("")
 
-[node name="ColectedBoxArea3D" type="Area3D" parent="." node_paths=PackedStringArray("target_node")]
+[node name="Particles" type="Node3D" parent="."]
+
+[node name="Confetti" type="GPUParticles3D" parent="Particles"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9282229, 0)
+emitting = false
+amount = 24
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_j51cm")
+draw_pass_1 = SubResource("CylinderMesh_46fmn")
+
+[node name="Pling" type="AudioStreamPlayer3D" parent="Particles"]
+stream = ExtResource("3_46fmn")
+
+[node name="CollectedBoxArea3D" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
 script = ExtResource("2_sesrd")
-target_node = NodePath("..")
 metadata/_custom_type_script = "uid://c1e7buf8k76ts"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ColectedBoxArea3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollectedBoxArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CylinderShape3D_46fmn")

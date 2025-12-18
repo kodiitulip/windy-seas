@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx460u03mm1g6"]
+[gd_scene load_steps=12 format=3 uid="uid://bx460u03mm1g6"]
 
 [ext_resource type="PackedScene" uid="uid://eet6h5nukcq1" path="res://scenes/ui/main_menu/main_menu_background.tscn" id="1_cmwxi"]
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_qt1dd"]
+[ext_resource type="Script" uid="uid://5dqmg1fxcf7b" path="res://scripts/ui_components/buttons/quit_button.gd" id="3_8ouhi"]
+[ext_resource type="Texture2D" uid="uid://cv2038p1040o6" path="res://assets/kenney_assets/input_prompts/keyboard-n-mouse/vector/keyboard_arrow_left.svg" id="4_5mqxt"]
 [ext_resource type="Texture2D" uid="uid://cgm87pevwbo8b" path="res://assets/kenney_assets/pirate_kit/previews/barrel.png" id="4_cmwxi"]
 [ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_r70wa"]
 [ext_resource type="Texture2D" uid="uid://d4j7hpdsoelqo" path="res://assets/kenney_assets/watercraft_pack/previews/gate-finish.png" id="5_r70wa"]
+[ext_resource type="Texture2D" uid="uid://bnet3ywe47ypu" path="res://assets/kenney_assets/pirate_kit/previews/cannon.png" id="6_52x6y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt1dd"]
 
@@ -80,14 +83,18 @@ alignment = 1
 
 [node name="Play" type="Button" parent="TabContainer/MainMenu/HBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_type_variation = &"AltButton"
 theme_override_font_sizes/font_size = 32
 text = "Jogar"
 
 [node name="Quit" type="Button" parent="TabContainer/MainMenu/HBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 32
 text = "Sair"
+script = ExtResource("3_8ouhi")
+metadata/_custom_type_script = "uid://5dqmg1fxcf7b"
 
 [node name="LevelSelector" type="Control" parent="TabContainer"]
 visible = false
@@ -104,6 +111,13 @@ anchor_bottom = 0.23367697
 grow_horizontal = 2
 theme_type_variation = &"BannerPanel_"
 metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="TextureButton" parent="TabContainer/LevelSelector/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_5mqxt")
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="TabContainer/LevelSelector/PanelContainer2"]
 layout_mode = 2
@@ -132,6 +146,7 @@ columns = 3
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_type_variation = &"IconButton"
 icon = ExtResource("4_cmwxi")
 icon_alignment = 1
@@ -144,6 +159,7 @@ metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_type_variation = &"IconButton"
 icon = ExtResource("5_r70wa")
 icon_alignment = 1
@@ -155,11 +171,14 @@ metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 texture_filter = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_type_variation = &"IconButton"
-icon = ExtResource("4_cmwxi")
+icon = ExtResource("6_52x6y")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_r70wa")
+scene_to_transition_to = "uid://ghghv63u2twl"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
 [connection signal="pressed" from="TabContainer/MainMenu/HBoxContainer/Play" to="TabContainer" method="set_current_tab" binds= [1]]
+[connection signal="pressed" from="TabContainer/LevelSelector/PanelContainer2/Back" to="TabContainer" method="set_current_tab" binds= [0]]

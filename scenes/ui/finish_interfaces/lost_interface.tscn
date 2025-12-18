@@ -1,25 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://4okr6p57k2n1"]
+[gd_scene load_steps=6 format=3 uid="uid://q1vrub2efmmh"]
 
-[ext_resource type="Script" uid="uid://cpy7bgfycc1ct" path="res://scenes/ui/finish_interfaces/won_interface.gd" id="1_50ora"]
-[ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_e2iuo"]
-[ext_resource type="Script" uid="uid://ch2706kgdk687" path="res://scripts/ui_components/buttons/scene_reload_button.gd" id="3_5ppgq"]
-[ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_vpvt7"]
+[ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_57sc5"]
+[ext_resource type="Script" uid="uid://ch2706kgdk687" path="res://scripts/ui_components/buttons/scene_reload_button.gd" id="2_6dafh"]
+[ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="2_hu01i"]
+[ext_resource type="Script" uid="uid://btpcqsvpmtojr" path="res://scenes/ui/finish_interfaces/lost_interface.gd" id="2_lta4p"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_e2iuo"]
+[sub_resource type="LabelSettings" id="LabelSettings_nhi5s"]
 font_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
 
-[node name="WonInterface" type="PanelContainer"]
+[node name="LostInterface" type="PanelContainer"]
 anchors_preset = -1
 anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7
 anchor_bottom = 0.7
+offset_bottom = 3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_e2iuo")
+theme = ExtResource("1_57sc5")
 theme_type_variation = &"AltPanelContainer"
-script = ExtResource("1_50ora")
-metadata/_custom_type_script = "uid://cpy7bgfycc1ct"
+script = ExtResource("2_lta4p")
+metadata/_custom_type_script = "uid://btpcqsvpmtojr"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -29,14 +30,14 @@ theme_override_constants/margin_top = 20
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 36
-text = "Parabéns"
+text = "Oh no..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
-text = "Você concluiu essa fase!"
-label_settings = SubResource("LabelSettings_e2iuo")
+text = "Tente novamente!"
+label_settings = SubResource("LabelSettings_nhi5s")
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -58,14 +59,14 @@ size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
 theme_type_variation = &"AltButton"
 text = "Reiniciar"
-script = ExtResource("3_5ppgq")
+script = ExtResource("2_6dafh")
 metadata/_custom_type_script = "uid://ch2706kgdk687"
 
-[node name="Continue" type="Button" parent="MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
+[node name="Menu" type="Button" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-text = "Continue"
-script = ExtResource("4_vpvt7")
+text = "menu"
+script = ExtResource("2_hu01i")
+scene_to_transition_to = "uid://bx460u03mm1g6"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"

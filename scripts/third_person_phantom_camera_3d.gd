@@ -55,6 +55,7 @@ func _camera_follow() -> void:
 	pcam_rotation.y = TAU - (target_y - rotation_offset)
 	pcam_rotation.y = wrapf(pcam_rotation.y, 0, TAU)
 	pcam.set_third_person_rotation(pcam_rotation)
+	GlobalSignalBus.emit_rotation_changed(pcam_rotation.y)
 
 
 func _get_configuration_warnings() -> PackedStringArray:

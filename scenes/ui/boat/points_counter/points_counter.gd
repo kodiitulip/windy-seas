@@ -1,13 +1,12 @@
 class_name PointsCounterInterface
-extends HBoxContainer
+extends PanelContainer
 
 signal points_changed(new_points: int)
-
-@onready var label: Label = $Label
 
 @export var points: int = 0
 @export var max_points: int = -1
 
+@onready var label: Label = %Label
 
 func _ready() -> void:
 	GlobalSignalBus.item_collected.connect(_add_points)

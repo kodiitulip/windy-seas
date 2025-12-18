@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://txydcsuw1bx2"]
+[gd_scene load_steps=15 format=3 uid="uid://txydcsuw1bx2"]
 
 [ext_resource type="Script" uid="uid://mplyjta2u5pk" path="res://scenes/managers/scene_transition/scene_transition.gd" id="1_3y8qk"]
+[ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="2_3fkr7"]
 
 [sub_resource type="Animation" id="Animation_3y8qk"]
 length = 0.001
@@ -195,13 +196,13 @@ advance_expression = "transition_state == TransitionState.IN"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hlq7p"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "transitioning"
+advance_expression = "transition_state != TransitionState.IN"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3y8qk"]
 break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
-advance_expression = "not transitioning and transition_state == TransitionState.OUT"
+advance_expression = "transition_state == TransitionState.OUT"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b1tpv"]
 switch_mode = 2
@@ -217,8 +218,10 @@ states/transition_out/position = Vector2(612, 156)
 states/transitioning/node = SubResource("AnimationNodeAnimation_b1tpv")
 states/transitioning/position = Vector2(816, 100)
 transitions = ["Start", "transition_in", SubResource("AnimationNodeStateMachineTransition_3fkr7"), "transition_in", "transitioning", SubResource("AnimationNodeStateMachineTransition_hlq7p"), "transitioning", "transition_out", SubResource("AnimationNodeStateMachineTransition_3y8qk"), "transition_out", "transition_in", SubResource("AnimationNodeStateMachineTransition_b1tpv")]
+graph_offset = Vector2(130, 9)
 
 [node name="SceneTransition" type="CanvasLayer"]
+process_mode = 3
 layer = 10
 script = ExtResource("1_3y8qk")
 
@@ -240,6 +243,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("2_3fkr7")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1

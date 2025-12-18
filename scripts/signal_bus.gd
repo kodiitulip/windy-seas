@@ -25,5 +25,6 @@ func emit_item_collected(points: int = 0) -> void:
 
 
 func emit_health_changed(health_delta: float) -> void:
-	health_changed.emit(AutoGameGlobals.boat_curr_health - health_delta,
+	AutoGameGlobals.boat_curr_health -= health_delta
+	health_changed.emit(AutoGameGlobals.boat_curr_health,
 		AutoGameGlobals.boat_max_health)
