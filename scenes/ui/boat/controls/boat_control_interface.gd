@@ -1,18 +1,16 @@
 class_name BoatControllerInterface
 extends Control
 
-@onready var speed_lever: VSlider = $SpeedLever
 @onready var leme_anchor: Control = $LemeAnchor
 
 func _ready() -> void:
 	GlobalSignalBus.direction_changed.connect(_rotate_leme)
-	GlobalSignalBus.speed_changed.connect(_update_lever_value)
+	GlobalSignalBus.rotation_changed.connect(_update_compass)
 
 
-func _update_lever_value(value: float, max_speed: float) -> void:
-	speed_lever.max_value = max_speed
-	speed_lever.min_value = -max_speed
-	speed_lever.value = value
+func _update_compass(boat_rotation: float) -> void:
+	RenderingServer.global_shader_parameter_set(
+		&"compass_direction", boat_rotation)
 
 
 func _rotate_leme(direction: float) -> void:

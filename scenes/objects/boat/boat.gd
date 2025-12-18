@@ -11,9 +11,15 @@ extends RigidBody3D
 
 var curr_speed: float = 0.0
 
+func _ready() -> void:
+	GlobalSignalBus.health_changed.connect(_on_health_changed)
+
+
 func _physics_process(delta: float) -> void:
 	_handle_move(delta)
 	_handle_steer()
+	if PI - absf(rotation.z) <= deg_to_rad(20):
+		_unstuck()
 
 
 func _handle_move(delta: float) -> void:
@@ -36,3 +42,32 @@ func _handle_steer() -> void:
 	var rotation_dir: float = -Input.get_axis(&"turn_left", &"turn_right")
 	apply_torque(Vector3(0, rotation_dir * curr_speed, 0))
 	GlobalSignalBus.emit_direction_changed(rotation_dir)
+	#GlobalSignalBus.emit_rotation_changed(rotation.y)
+
+
+func _unstuck() -> void:
+	apply_torque(Vector3.BACK * 50)
+
+
+func _get_floaties() -> Array[FloatyMarker3D]:
+	var floaties: Array[FloatyMarker3D] = []
+	var children: Array = get_children().filter(func(child: Node) -> bool:
+		return child is FloatyMarker3D)
+	floaties.assign(children)
+	return floaties
+
+
+func _on_health_changed(health: float, _m: float) -> void:
+	if health > 0:
+		return
+	sink()
+	pass
+
+
+func sink() -> void:
+	for floaty: FloatyMarker3D in _get_floaties():
+		floaty.set_physics_process(false)
+
+
+func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+	freeze = true

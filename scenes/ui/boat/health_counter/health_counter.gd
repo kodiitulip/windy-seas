@@ -1,3 +1,4 @@
+class_name HealthCouterInterface
 extends HBoxContainer
 
 @onready var progress: TextureProgressBar = $TextureProgressBar

@@ -34,7 +34,7 @@ plane = Plane(0, 0, -1, -64)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_fo4fv")
@@ -60,6 +60,7 @@ transform = Transform3D(0.9999811, 0.005369584, -0.0029889394, 0, 0.4863686, 0.8
 transform = Transform3D(-0.8572392, 0, -0.51491845, 0, 1, 0, 0.51491845, 0, -0.8572392, -28.89095, 0, 14.481716)
 
 [node name="WorldBorder" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBorder"]
 shape = SubResource("WorldBoundaryShape3D_kwnyj")

@@ -5,4 +5,4 @@ func _ready() -> void:
 	
 	
 func _on_speed_changed(speed: float, max_speed: float) -> void:
-	amount_ratio = speed / max_speed
+	amount_ratio = absf(speed) / max_speed

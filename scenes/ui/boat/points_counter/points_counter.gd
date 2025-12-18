@@ -1,11 +1,12 @@
 class_name PointsCounterInterface
-extends HBoxContainer
+extends PanelContainer
 
-@onready var label: Label = $Label
+signal points_changed(new_points: int)
 
 @export var points: int = 0
 @export var max_points: int = -1
 
+@onready var label: Label = %Label
 
 func _ready() -> void:
 	GlobalSignalBus.item_collected.connect(_add_points)
@@ -15,3 +16,5 @@ func _ready() -> void:
 func _add_points(points_delta: int) -> void:
 	points += points_delta
 	label.text = "%s" % points if max_points <= 0 else "%s / %s" % [points, max_points]
+	if points_delta != 0:
+		points_changed.emit(points)

@@ -1,34 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba56hadfj8rfy"]
+[gd_scene load_steps=14 format=3 uid="uid://ba56hadfj8rfy"]
 
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_ekyel"]
 [ext_resource type="Script" uid="uid://bdpsf8ny3gjcs" path="res://scenes/ui/boat/controls/boat_control_interface.gd" id="2_rlhkv"]
-[ext_resource type="Texture2D" uid="uid://dn01luirp7tf8" path="res://icon.svg" id="3_c1om7"]
+[ext_resource type="Texture2D" uid="uid://ilyb4ur2dqyy" path="res://assets/kenney_assets/ui_pack_adventure/png/double/minimap_ring_brown_detail.png" id="3_c1om7"]
+[ext_resource type="Texture2D" uid="uid://x3lslbnd6pba" path="res://assets/kenney_assets/ui_pack_adventure/vector/minimap_compass_future_s.svg" id="3_ifm64"]
+[ext_resource type="Shader" uid="uid://w5pd7hnmuwj4" path="res://resources/shaders/ui/compassbar.gdshader" id="3_vtyjp"]
+[ext_resource type="Texture2D" uid="uid://c1bf7uhr2iywf" path="res://assets/kenney_assets/ui_pack_adventure/png/double/round_damaged_brown.png" id="4_gpgim"]
+[ext_resource type="Texture2D" uid="uid://c4n8mcr4ntj4p" path="res://assets/kenney_assets/ui_pack_adventure/vector/minimap_compass_future_w.svg" id="4_vtyjp"]
+[ext_resource type="Texture2D" uid="uid://c46w5mmmpt1u1" path="res://assets/kenney_assets/ui_pack_adventure/vector/minimap_compass_future_n.svg" id="5_ui112"]
+[ext_resource type="Texture2D" uid="uid://bw65qrw2jiwcn" path="res://assets/kenney_assets/ui_pack_adventure/vector/minimap_compass_future_e.svg" id="6_tgldh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtyjp"]
+shader = ExtResource("3_vtyjp")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ifm64"]
+viewport_path = NodePath("TextureRect/SubViewport")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifm64"]
+atlas = ExtResource("3_ifm64")
+region = Rect2(10, 0, 10, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtyjp"]
+atlas = ExtResource("3_ifm64")
+region = Rect2(0, 0, 10, 22)
 
 [node name="BoatControlInterface" type="Control"]
 layout_mode = 3
-anchor_top = 0.82098764
-anchor_right = 1.0
-anchor_bottom = 0.9506173
+anchor_left = 0.43229166
+anchor_top = 0.7453704
+anchor_right = 0.5677083
+anchor_bottom = 0.96450615
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 theme = ExtResource("1_ekyel")
 script = ExtResource("2_rlhkv")
+metadata/_custom_type_script = "uid://bdpsf8ny3gjcs"
 metadata/_edit_use_anchors_ = true
 
-[node name="SpeedLever" type="VSlider" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_vtyjp")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.049479168
-anchor_right = 0.06336805
-anchor_bottom = 1.0
-grow_vertical = 2
-mouse_filter = 2
-theme_type_variation = &"SpeedLever"
-min_value = -10.0
-max_value = 10.0
-step = 0.5
+anchor_left = -1.1410257
+anchor_top = -3.1197183
+anchor_right = 2.1410255
+anchor_bottom = -2.9647887
+grow_horizontal = 2
+texture = SubResource("ViewportTexture_ifm64")
+stretch_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+transparent_bg = true
+size = Vector2i(512, 22)
+
+[node name="CompassContainer" type="HBoxContainer" parent="TextureRect/SubViewport"]
+custom_minimum_size = Vector2(512, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -11.0
+offset_right = 256.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 108
+alignment = 1
+
+[node name="South" type="TextureRect" parent="TextureRect/SubViewport/CompassContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ifm64")
+
+[node name="West" type="TextureRect" parent="TextureRect/SubViewport/CompassContainer"]
+layout_mode = 2
+texture = ExtResource("4_vtyjp")
+
+[node name="North" type="TextureRect" parent="TextureRect/SubViewport/CompassContainer"]
+layout_mode = 2
+texture = ExtResource("5_ui112")
+
+[node name="East" type="TextureRect" parent="TextureRect/SubViewport/CompassContainer"]
+layout_mode = 2
+texture = ExtResource("6_tgldh")
+
+[node name="South2" type="TextureRect" parent="TextureRect/SubViewport/CompassContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vtyjp")
 
 [node name="LemeAnchor" type="Control" parent="."]
 layout_mode = 1
@@ -46,7 +108,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="LemeAnchor"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,5 +122,23 @@ offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_c1om7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="LemeAnchor/TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gpgim")
 expand_mode = 1
 stretch_mode = 5
