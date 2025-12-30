@@ -16,10 +16,13 @@ config/name_localized={
 }
 run/main_scene="uid://bx460u03mm1g6"
 config/features=PackedStringArray("4.5", "Forward Plus")
-boot_splash/bg_color=Color(0.12941177, 0.047058824, 0.13725491, 1)
+boot_splash/bg_color=Color(0.35840803, 0.6261572, 0.7038939, 1)
+boot_splash/use_filter=false
+boot_splash/image="uid://b0dwhflifuack"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 boot_splash/bg_color.editor_hint=Color(0.14, 0.14, 0.14, 1)
-boot_splash/image.editor_hint=""
+boot_splash/image.editor_hint="uid://dn01luirp7tf8"
 
 [autoload]
 

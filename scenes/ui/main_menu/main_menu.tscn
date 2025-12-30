@@ -24,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_qt1dd")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -55,6 +56,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qt1dd")
 tab_alignment = 1
 current_tab = 0
@@ -62,6 +64,7 @@ tabs_visible = false
 
 [node name="MainMenu" type="VBoxContainer" parent="TabContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 400
 metadata/_tab_index = 0
 
@@ -100,6 +103,7 @@ metadata/_custom_type_script = "uid://5dqmg1fxcf7b"
 visible = false
 custom_minimum_size = Vector2(607, 582)
 layout_mode = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 metadata/_tab_index = 1
 

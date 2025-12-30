@@ -1,6 +1,8 @@
 class_name BoatBody3D
 extends RigidBody3D
 
+signal above_water()
+
 @export var mouse_sensitivity: float = 0.20
 @export var max_speed: float = 10.0
 @export var flip_foward: bool = false
@@ -9,17 +11,22 @@ extends RigidBody3D
 @export var deacceleration_rate: float = 12.0
 @export var brake_power: float = 20.0
 
+@export var freeze_when_off_screen: bool = true
+
 var curr_speed: float = 0.0
 
 func _ready() -> void:
 	GlobalSignalBus.health_changed.connect(_on_health_changed)
+	GlobalSignalBus.on_explode.connect(_on_explode)
 
 
 func _physics_process(delta: float) -> void:
 	_handle_move(delta)
 	_handle_steer()
-	if PI - absf(rotation.z) <= deg_to_rad(20):
+	if 165 <= absf(rotation_degrees.z) and absf(rotation_degrees.z) <= 180.0:
 		_unstuck()
+	if global_position.y >= 1.0:
+		above_water.emit()
 
 
 func _handle_move(delta: float) -> void:
@@ -34,7 +41,8 @@ func _handle_move(delta: float) -> void:
 	if Input.is_action_just_pressed(&"toggle_anchor"):
 		get_tree().create_tween().tween_property(self, ^"curr_speed", 0.0, .2)
 	var dir: Vector3 = Vector3.BACK if flip_foward else Vector3.FORWARD
-	apply_central_force(global_transform.basis * dir * curr_speed)
+	var force_dir: Vector3 = global_transform.basis * dir
+	apply_central_force(Vector3(force_dir.x, 0.0, force_dir.z) * curr_speed)
 	GlobalSignalBus.emit_speed_changed(curr_speed, max_speed)
 
 
@@ -46,7 +54,7 @@ func _handle_steer() -> void:
 
 
 func _unstuck() -> void:
-	apply_torque(Vector3.BACK * 50)
+	apply_torque_impulse(global_transform.basis * Vector3.FORWARD * max_speed)
 
 
 func _get_floaties() -> Array[FloatyMarker3D]:
@@ -70,4 +78,10 @@ func sink() -> void:
 
 
 func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	freeze = true
+	if freeze_when_off_screen:
+		set_freeze_enabled(true)
+
+
+func _on_explode(position_from: Vector3) -> void:
+	var direction: Vector3 = position_from.direction_to(global_position)
+	apply_impulse(direction * max_speed, position_from - global_position)

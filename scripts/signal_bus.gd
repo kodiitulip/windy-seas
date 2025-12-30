@@ -4,7 +4,7 @@ signal direction_changed(direction: float)
 signal rotation_changed(rotation: float)
 signal speed_changed(speed: float, max_speed: float)
 signal health_changed(health: float, max_health: float)
-
+signal on_explode(position: Vector3)
 signal item_collected(points: int)
 
 
@@ -28,3 +28,7 @@ func emit_health_changed(health_delta: float) -> void:
 	AutoGameGlobals.boat_curr_health -= health_delta
 	health_changed.emit(AutoGameGlobals.boat_curr_health,
 		AutoGameGlobals.boat_max_health)
+
+
+func emit_on_explode(position: Vector3) -> void:
+	on_explode.emit(position)

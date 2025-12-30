@@ -1,10 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://eet6h5nukcq1"]
+[gd_scene load_steps=20 format=3 uid="uid://eet6h5nukcq1"]
 
 [ext_resource type="Environment" uid="uid://b0a3a8phdw0l1" path="res://resources/world_enviroments/cartoony_style_enviroment.tres" id="1_fo4fv"]
 [ext_resource type="Material" uid="uid://deplp1k0qessb" path="res://resources/shaders/ocean/ocean_water.tres" id="1_t2nyr"]
+[ext_resource type="Script" uid="uid://cr0fq5ux5e15s" path="res://scenes/ui/main_menu/main_menu_background.gd" id="1_y8or7"]
 [ext_resource type="Script" uid="uid://btia4uu0y4tow" path="res://scripts/boyancy/ocean.gd" id="2_kwnyj"]
 [ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="3_fo4fv"]
 [ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="4_kwnyj"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_pheet"]
+[ext_resource type="Script" uid="uid://cxd3sjw0n2lc4" path="res://scripts/top_level_follower_node_3d.gd" id="7_kkb50"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_pyfjm"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_kkb50"]
+[ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="10_y8or7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4y01l"]
 material = ExtResource("1_t2nyr")
@@ -30,10 +36,18 @@ plane = Plane(0, 0, 1, -64)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_t45kh"]
 plane = Plane(0, 0, -1, -64)
 
+[sub_resource type="Resource" id="Resource_y8or7"]
+script = ExtResource("8_kkb50")
+
+[sub_resource type="Resource" id="Resource_s03fj"]
+script = ExtResource("8_kkb50")
+
 [node name="MainMenuBackground" type="Node3D"]
+script = ExtResource("1_y8or7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8656412, 0.50066495, 0, -0.50066495, 0.8656412, 0, 17.258682, 0)
+light_color = Color(0.81008375, 0.6812863, 0.56943494, 1)
 directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -54,10 +68,37 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.9999811, 0.005369584, -0.0029889394, 0, 0.4863686, 0.8737538, 0.00614542, -0.8737373, 0.4863594, 1.557035, 53.412285, 33.94752)
+transform = Transform3D(0.111434475, -0.16148964, -0.98056287, 0, 0.9867083, -0.16250172, 0.9937718, 0.018108295, 0.10995332, -37.211914, 1.9803863, 10.417564)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_pheet")
 
 [node name="TowBoat" parent="." instance=ExtResource("4_kwnyj")]
 transform = Transform3D(-0.8572392, 0, -0.51491845, 0, 1, 0, 0.51491845, 0, -0.8572392, -28.89095, 0, 14.481716)
+freeze_when_off_screen = false
+
+[node name="FloatyMarker3D4" parent="TowBoat" index="4"]
+noise_level_enable = null
+
+[node name="FloatyMarker3D6" parent="TowBoat" index="5"]
+noise_level_enable = null
+
+[node name="FloatyMarker3D7" parent="TowBoat" index="6"]
+noise_level_enable = null
+
+[node name="FloatyMarker3D10" parent="TowBoat" index="7"]
+noise_level_enable = null
+
+[node name="FloatyMarker3D11" parent="TowBoat" index="8"]
+noise_level_enable = null
+
+[node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
+transform = Transform3D(-0.8572388, 0, 0.51491857, 0, 1, 0, -0.51491857, 0, -0.8572388, -28.89095, 0, 14.481716)
+top_level = true
+script = ExtResource("7_kkb50")
+metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
 
 [node name="WorldBorder" type="StaticBody3D" parent="."]
 metadata/_edit_group_ = true
@@ -77,3 +118,33 @@ debug_color = Color(0.621861, 0.05600716, 0.16248626, 0.8392157)
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="WorldBorder"]
 shape = SubResource("WorldBoundaryShape3D_t45kh")
 debug_color = Color(0.621861, 0.05600716, 0.16248626, 0.8392157)
+
+[node name="StaticCamera" type="Node3D" parent="."]
+transform = Transform3D(0.111434475, -0.16148964, -0.98056287, 0, 0.9867083, -0.16250172, 0.9937718, 0.018108295, 0.10995332, -37.211914, 1.9803863, 10.417564)
+script = ExtResource("7_pyfjm")
+priority = 1
+tween_resource = SubResource("Resource_y8or7")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="FollowCamera" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.8572389, 0.3309835, -0.39445075, 0, 0.7660444, 0.64278764, 0.5149189, -0.5510226, 0.6566831, -35.20216, 10.284599, 24.988644)
+script = ExtResource("7_pyfjm")
+follow_mode = 6
+follow_target = NodePath("../TowBoat/TopLevelFollowerNode3D")
+tween_resource = SubResource("Resource_s03fj")
+tween_on_load = false
+follow_distance = 16.0
+vertical_rotation_offset = 0.6981317007977318
+horizontal_rotation_offset = 3.141592653589793
+spring_length = 16.0
+collision_mask = 0
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="ThirdPersonPCamController3D" type="Node" parent="FollowCamera" node_paths=PackedStringArray("follow_target")]
+script = ExtResource("10_y8or7")
+follow_target = NodePath("../../TowBoat/TopLevelFollowerNode3D")
+metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
+
+[connection signal="screen_exited" from="TowBoat/VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+
+[editable path="TowBoat"]

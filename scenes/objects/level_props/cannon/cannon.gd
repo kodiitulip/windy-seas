@@ -18,9 +18,13 @@ func _ready() -> void:
 
 func _fire_one_shot() -> void:
 	var ball: RigidBody3D = DAMAGING_BALL.instantiate()
+	ball.set_as_top_level(true)
 	add_child(ball)
 	ball.global_position = marker.global_position
-	ball.apply_central_impulse(global_transform.basis * Vector3.BACK * force)
+	var dir: Vector3 = Vector3.BACK
+	dir = dir.rotated(Vector3.UP, randf_range(deg_to_rad(15), deg_to_rad(-15)))
+	dir = dir.rotated(Vector3.LEFT, randf_range(deg_to_rad(5), deg_to_rad(-5)))
+	ball.apply_central_impulse(global_transform.basis * dir * force)
 
 
 func fire() -> void:

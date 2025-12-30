@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ghghv63u2twl"]
+[gd_scene load_steps=27 format=3 uid="uid://ghghv63u2twl"]
 
 [ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_jwa6q"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="2_juui1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://hp63v61r2deu" path="res://scenes/objects/level_props/cannon/cannon.tscn" id="15_g0m7m"]
 [ext_resource type="PackedScene" uid="uid://eg54ttpd5w2d" path="res://scenes/objects/level_props/finish_gate/finish_gate.tscn" id="15_nd7a6"]
 [ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="16_g0m7m"]
+[ext_resource type="PackedScene" uid="uid://dbb6grfk514tf" path="res://scenes/objects/collectables/floaty_damaging_ball.tscn" id="18_0djly"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("5_nd7a6")
@@ -115,7 +116,6 @@ follow_distance = 16.0
 vertical_rotation_offset = 0.6981317007977318
 horizontal_rotation_offset = 3.141592653589793
 spring_length = 16.0
-collision_mask = 0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ThirdPersonPCamController3D" type="Node" parent="PhantomCamera3D" node_paths=PackedStringArray("follow_target")]
@@ -126,14 +126,44 @@ metadata/_custom_type_script = "uid://b3rx2qiibtqhq"
 [node name="Cannon" parent="." instance=ExtResource("15_g0m7m")]
 transform = Transform3D(0.05864432, 0, -0.9982789, 0, 1, 0, 0.9982789, 0, 0.05864432, 30.286354, 3.6956701, -4.234891)
 
+[node name="Cannon2" parent="." instance=ExtResource("15_g0m7m")]
+transform = Transform3D(0.56950915, 0, -0.8219851, 0, 1, 0, 0.8219851, 0, 0.56950915, 30.783594, 5.27544, -99.76236)
+
+[node name="Cannon3" parent="." instance=ExtResource("15_g0m7m")]
+transform = Transform3D(-0.12991092, 0.40183592, -0.9064498, 0.05700798, 0.9157117, 0.39777157, 0.98988557, 0, -0.1418688, 14.321777, 13.201397, -137.5628)
+
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("14_ah86r")
 physics_material = SubResource("PhysicsMaterial_fs3s1")
 cell_size = Vector3(1, 0.2, 1)
 data = {
-"cells": PackedInt32Array(65535, 105, 3, 10, 93, 3, 65526, 93, 3, 8, 82, 3, 16, 109, 3, 0, 123, 3, 65518, 113, 3, 65508, 102, 3, 65505, 91, 1441795, 65518, 84, 1441795, 65528, 75, 1441795, 7, 72, 1441795, 25, 94, 1441795, 16, 121, 1441795, 28, 112, 1441795, 65526, 63, 1441803, 65526, 59, 1441803, 65526, 55, 1441803, 65526, 51, 1441803, 8, 96, 1441799, 65535, 106, 1441800, 65533, 94, 1441801, 196606, 90, 2, 196605, 105, 1048578, 458738, 98, 1048588, 458737, 97, 1048588, 458737, 98, 458764, -256, 65497, 10, -65828, 65482, 1441801, -65822, 18, 1441801, -65751, 65445, 1441799, -65747, 18, 655369, -65737, 65382, 1441799, -131056, 65398, 1441800, -131043, 65404, 1441801, -131036, 65439, 1441800, -131034, 65425, 1441799, -131027, 65411, 1441800, -131038, 65535, 1441801)
+"cells": PackedInt32Array(65535, 105, 3, 10, 93, 3, 65526, 93, 3, 8, 82, 3, 16, 109, 3, 0, 123, 3, 65518, 113, 3, 65508, 102, 3, 65505, 91, 1441795, 65518, 84, 1441795, 65528, 75, 1441795, 7, 72, 1441795, 25, 94, 1441795, 16, 121, 1441795, 28, 112, 1441795, 65526, 63, 1441803, 65526, 59, 1441803, 65526, 55, 1441803, 65526, 51, 1441803, 8, 96, 1441799, 65535, 106, 1441800, 65533, 94, 1441801, 196606, 90, 2, 196605, 105, 1048578, 458738, 98, 1048588, 458737, 97, 1048588, 458737, 98, 458764, -256, 65497, 10, -65828, 65482, 1441801, -65822, 18, 1441801, -65751, 65445, 1441799, -65747, 18, 655369, -65737, 65382, 1441799, -131056, 65398, 1441800, -131043, 65404, 1441801, -131036, 65439, 1441800, -131034, 65425, 1441799, -131027, 65411, 1441800, -131038, 65535, 1441801, -65567, 15, 1441799, -65577, 4, 1441799, -65584, 65523, 1441799, -65588, 65507, 1441799, -65583, 65519, 1441794, -65575, 0, 1441794, -65585, 65534, 1048578, -65597, 65522, 1048578, -65595, 7, 1441794, -65584, 12, 655362, -65574, 65515, 655371, -65570, 65515, 655371, -65566, 65515, 655371, -65651, 65409, 655366, -65641, 65415, 655364, -65656, 65422, 655365, -65642, 65428, 655365, -65646, 65442, 655365, -65645, 65442, 655365, -65645, 65443, 655365, -65620, 65454, 655365, -65620, 65455, 655365, -65619, 65455, 655365, -65618, 65455, 655365, -65585, 65453, 655365, -65600, 65457, 655365, -65634, 65455, 655365, -65634, 65454, 655365, -65635, 65454, 655365, -65632, 65442, 655360, -65610, 65450, 655360, -65620, 65445, 0, -62, 65444, 2, -78, 65434, 2, -97, 65427, 2, -78, 65422, 655362, -64, 65431, 655362)
 }
 metadata/_editor_floor_ = Vector3(0, -2, 0)
+
+[node name="FloatyDamagingBall" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5979934, 0, -36.15078)
+
+[node name="FloatyDamagingBall2" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.890968, 0, -55.25817)
+
+[node name="FloatyDamagingBall3" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.068239, 0, -102.041916)
+
+[node name="FloatyDamagingBall4" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.542028, 0, -153.19394)
+
+[node name="FloatyDamagingBall5" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.43712, 0, -157.05824)
+
+[node name="FloatyDamagingBall6" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.50067, 0, -198.74315)
+
+[node name="FloatyDamagingBall7" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.09987, 0, -183.32385)
+
+[node name="FloatyDamagingBall8" parent="GridMap" instance=ExtResource("18_0djly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.09987, 0, -219.32385)
 
 [node name="FinishGate" parent="." instance=ExtResource("15_nd7a6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.45784, 0, 8.526978)

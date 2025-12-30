@@ -15,17 +15,21 @@ func _ready() -> void:
 	collected_box.collected.connect(explode)
 
 
-func explode() -> void:
-	GlobalSignalBus.emit_health_changed(points)
+func explode(damage: bool = true) -> void:
+	if damage:
+		GlobalSignalBus.emit_health_changed(points)
+		GlobalSignalBus.emit_on_explode(global_position)
 	smoke.emitting = true
 	fire.emitting = true
 	debri.emitting = true
+	explosion_sound.pitch_scale = randf_range(0.8, 1.2)
 	explosion_sound.play()
 	cannon_ball.hide()
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
 
-func _process(_delta: float) -> void:
-	if position.y <= -100:
-		queue_free()
+func _physics_process(_delta: float) -> void:
+	if global_position.y < -0.8:
+		explode(false)
+		set_physics_process(false)

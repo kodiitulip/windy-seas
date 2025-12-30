@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bf1cu8h0y1u1x"]
+[gd_scene load_steps=21 format=4 uid="uid://bf1cu8h0y1u1x"]
 
 [ext_resource type="Script" uid="uid://bqca0gnak6yyu" path="res://scenes/objects/boat/boat.gd" id="1_wha21"]
 [ext_resource type="Texture2D" uid="uid://bqijnc8g3xbsv" path="res://assets/kenney_assets/watercraft_pack/models/Textures/colormap.png" id="2_hwofe"]
@@ -51,6 +51,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r4ihx")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2qkur"]
+noise_type = 2
+frequency = 0.0069
+fractal_type = 0
+cellular_distance_function = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e4cav"]
+noise = SubResource("FastNoiseLite_2qkur")
+seamless = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2qkur"]
 height = 3.6804962
@@ -132,36 +142,48 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, -1.4000001)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D4" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.4, 0.59999996)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D6" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 2.75)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D7" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -3.3)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D10" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, -1.4)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="FloatyMarker3D11" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, 0.6)
 script = ExtResource("3_hwofe")
 float_force = 2.5
+noise_level_enable = true
+noise_level_noise = SubResource("NoiseTexture2D_e4cav")
 metadata/_custom_type_script = "uid://dqv4vfaxlo8vo"
 
 [node name="CollectorBoxArea3D" type="Area3D" parent="."]
