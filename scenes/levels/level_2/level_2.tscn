@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bg2jhxlxj5eh0"]
+[gd_scene load_steps=20 format=3 uid="uid://bg2jhxlxj5eh0"]
 
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_ses5c"]
 [ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_up0v7"]
@@ -15,6 +15,7 @@
 [ext_resource type="MeshLibrary" uid="uid://brof71k4dhc2a" path="res://resources/mesh_libraries/island_objects.tres" id="13_rbtc1"]
 [ext_resource type="PackedScene" uid="uid://uy1s0q2y681q" path="res://scenes/levels/presets/straight.tscn" id="14_up0v7"]
 [ext_resource type="PackedScene" uid="uid://c6kwjvherprj7" path="res://scenes/levels/presets/straight_15G_6D.tscn" id="15_4xau6"]
+[ext_resource type="PackedScene" uid="uid://eg54ttpd5w2d" path="res://scenes/objects/level_props/finish_gate/finish_gate.tscn" id="16_slc34"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("4_slc34")
@@ -43,7 +44,6 @@ script = ExtResource("11_wlqsf")
 unique_name_in_owner = true
 visible = false
 next_level = "uid://bcp6nxytcnfxh"
-level_to_restart = "uid://c4walhhhmdfd3"
 
 [node name="OceanMultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
 multimesh = SubResource("MultiMesh_6qah1")
@@ -62,6 +62,9 @@ script = ExtResource("6_ytkhg")
 
 [node name="TowBoat" parent="." instance=ExtResource("7_odxlg")]
 transform = Transform3D(-0.98768836, 0, -0.15643445, 0, 1, 0, 0.15643445, 0, -0.98768836, -23.427448, 0, 59.449997)
+max_speed = 96.0
+acceleration_rate = 32.0
+deacceleration_rate = 48.0
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
 transform = Transform3D(-0.9876859, 0, 0.15643428, 0, 1, 0, -0.15643428, 0, -0.9876859, -23.427448, 0, 59.449997)
@@ -101,12 +104,15 @@ mesh_library = ExtResource("13_rbtc1")
 cell_size = Vector3(1, 0.2, 1)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797, 65481, 65434, 5)
+"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65442, 111, 4)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Straight" parent="." instance=ExtResource("14_up0v7")]
-transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, -33.249268, 0, 0)
+transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, -35.70006, 0, 0.21180344)
 
 [node name="StraightG15D6" parent="." instance=ExtResource("15_4xau6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.466805, 0, -70.80783)
+transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, -47.969597, 0, -70.80783)
+
+[node name="FinishGate" parent="." instance=ExtResource("16_slc34")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -57.25363, 0, -35.376747)
