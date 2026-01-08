@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ghghv63u2twl"]
+[gd_scene load_steps=28 format=3 uid="uid://ghghv63u2twl"]
 
 [ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_jwa6q"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="2_juui1"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://eg54ttpd5w2d" path="res://scenes/objects/level_props/finish_gate/finish_gate.tscn" id="15_nd7a6"]
 [ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="16_g0m7m"]
 [ext_resource type="PackedScene" uid="uid://dbb6grfk514tf" path="res://scenes/objects/collectables/floaty_damaging_ball.tscn" id="18_0djly"]
+[ext_resource type="AudioStream" uid="uid://ca17ygs01b3jj" path="res://assets/sounds/265. Won&#039;t Quit.mp3" id="21_okpty"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("5_nd7a6")
@@ -196,3 +197,7 @@ metadata/_edit_group_ = true
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="WorldBorder"]
 visible = false
 shape = SubResource("ConcavePolygonShape3D_nd7a6")
+
+[node name="265_Won&#039;tQuit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_okpty")
+autoplay = true

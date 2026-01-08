@@ -52,6 +52,9 @@ Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</spa
   - ["Watercraft Kit by Kenney"](https://kenney.nl/assets/watercraft-kit) CC0
 - Assets - Sons:
   - ["Interface Sounds by Kenney"](https://kenney.nl/assets/interface-sounds) CC0
+  - Menu Principal ["Curry Us - Dan Knoflicek](https://opengameart.org/content/curry-us) CC-BY 3.0
+  - Level 1 ["Courage Rescue - Dan Knoflickek](https://opengameart.org/content/courage-rescue) CC-BY 4.0
+  - Créditos ["A Floater - Dan Knoflickek"](https://opengameart.org/content/a-floater) CC-BY 4.0
 - Código:
   - ["BeeHave"](https://bitbra.in/beehave/#/) MIT
   - ["Dialogic"](https://github.com/dialogic-godot/dialogic?tab=readme-ov-file#dialogic-2) MIT

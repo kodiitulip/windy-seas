@@ -6,11 +6,11 @@ extends PanelContainer
 
 @onready var continue_button: SceneTransitionButton = %Continue
 
-#func _ready() -> void:
-	#hide()
-	#assert(!next_level.is_empty() and ResourceLoader.exists(next_level),
-		#"Next Level scene must be a valid scene!")
-	#continue_button.scene_to_transition_to = next_level
+func _ready() -> void:
+	hide()
+	assert(!next_level.is_empty() and ResourceLoader.exists(next_level),
+		"Next Level scene must be a valid scene!")
+	continue_button.scene_to_transition_to = next_level
 
 
 func _restart_level() -> void:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bg2jhxlxj5eh0"]
+[gd_scene load_steps=21 format=3 uid="uid://bg2jhxlxj5eh0"]
 
+[ext_resource type="Script" uid="uid://dadar1xtrjk3n" path="res://scenes/levels/level_2/level_2.gd" id="1_5owdk"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_ses5c"]
 [ext_resource type="PackedScene" uid="uid://c7mj02qp38y1c" path="res://scenes/ui/boat/points_counter/points_counter.tscn" id="2_up0v7"]
 [ext_resource type="PackedScene" uid="uid://4okr6p57k2n1" path="res://scenes/ui/finish_interfaces/won_interface.tscn" id="3_4xau6"]
@@ -33,6 +34,7 @@ buffer = PackedFloat32Array(1, 0, 0, -480, 0, 1, 0, 0, 0, 0, 1, -480, 1, 0, 0, -
 script = ExtResource("11_wlqsf")
 
 [node name="Level2" type="Node3D"]
+script = ExtResource("1_5owdk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
