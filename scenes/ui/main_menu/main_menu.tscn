@@ -170,6 +170,7 @@ icon = ExtResource("5_r70wa")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_r70wa")
+scene_to_transition_to = "uid://bg2jhxlxj5eh0"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
 [node name="Level3" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]

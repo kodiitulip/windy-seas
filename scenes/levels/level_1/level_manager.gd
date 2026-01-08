@@ -41,7 +41,7 @@ func _ready() -> void:
 	if walive_enable:
 		GlobalSignalBus.health_changed.connect(_on_health_changed)
 
-# Checa se todas as condições de vitória foram feitas e emite a tela de vitória se sim
+
 func _process(_delta: float) -> void:
 	if _won_all_conditions():
 		set_process(false)

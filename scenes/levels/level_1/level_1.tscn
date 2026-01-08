@@ -74,7 +74,7 @@ metadata/_custom_type_script = "uid://bdljqj5o2mnxv"
 [node name="PointsCounter" parent="CanvasLayer" instance=ExtResource("2_hhmec")]
 
 [node name="WonInterface" parent="CanvasLayer" instance=ExtResource("4_rmnd1")]
-next_level = "uid://ghghv63u2twl"
+next_level = "uid://bg2jhxlxj5eh0"
 
 [node name="LostInterface" parent="CanvasLayer" instance=ExtResource("5_wloe5")]
 
