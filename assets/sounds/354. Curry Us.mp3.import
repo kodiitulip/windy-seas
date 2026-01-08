@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3qdjhn58qnys"
+path="res://.godot/imported/354. Curry Us.mp3-e5617d90b0b9a5115a480d500cbb1a7d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/354. Curry Us.mp3"
+dest_files=["res://.godot/imported/354. Curry Us.mp3-e5617d90b0b9a5115a480d500cbb1a7d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
