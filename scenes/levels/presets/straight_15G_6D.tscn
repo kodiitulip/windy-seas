@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6kwjvherprj7"]
+[gd_scene load_steps=4 format=3 uid="uid://c6kwjvherprj7"]
 
 [ext_resource type="Script" uid="uid://d3xifcu4sta0j" path="res://scripts/multimesh_path_3d/multimesh_path_3d.gd" id="1_n8n81"]
-[ext_resource type="PackedScene" uid="uid://bf1cu8h0y1u1x" path="res://scenes/objects/boat/tow_boat.tscn" id="2_vmj18"]
 
 [sub_resource type="Curve3D" id="Curve3D_bgkyq"]
 _data = {
@@ -36,6 +35,3 @@ curve = SubResource("Curve3D_vmj18")
 script = ExtResource("1_n8n81")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
-
-[node name="TowBoat" parent="." instance=ExtResource("2_vmj18")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3422394, 0, 5.013359)
