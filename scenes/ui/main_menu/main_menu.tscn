@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bx460u03mm1g6"]
+[gd_scene load_steps=13 format=3 uid="uid://bx460u03mm1g6"]
 
 [ext_resource type="PackedScene" uid="uid://eet6h5nukcq1" path="res://scenes/ui/main_menu/main_menu_background.tscn" id="1_cmwxi"]
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_qt1dd"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_r70wa"]
 [ext_resource type="Texture2D" uid="uid://d4j7hpdsoelqo" path="res://assets/kenney_assets/watercraft_pack/previews/gate-finish.png" id="5_r70wa"]
 [ext_resource type="Texture2D" uid="uid://bnet3ywe47ypu" path="res://assets/kenney_assets/pirate_kit/previews/cannon.png" id="6_52x6y"]
+[ext_resource type="AudioStream" uid="uid://3qdjhn58qnys" path="res://assets/sounds/354. Curry Us.mp3" id="9_tk7lu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qt1dd"]
 
@@ -169,6 +170,7 @@ icon = ExtResource("5_r70wa")
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("4_r70wa")
+scene_to_transition_to = "uid://bg2jhxlxj5eh0"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
 
 [node name="Level3" type="Button" parent="TabContainer/LevelSelector/PanelContainer/GridContainer"]
@@ -183,6 +185,10 @@ expand_icon = true
 script = ExtResource("4_r70wa")
 scene_to_transition_to = "uid://ghghv63u2twl"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
+
+[node name="MenuST" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tk7lu")
+autoplay = true
 
 [connection signal="pressed" from="TabContainer/MainMenu/HBoxContainer/Play" to="TabContainer" method="set_current_tab" binds= [1]]
 [connection signal="pressed" from="TabContainer/LevelSelector/PanelContainer2/Back" to="TabContainer" method="set_current_tab" binds= [0]]

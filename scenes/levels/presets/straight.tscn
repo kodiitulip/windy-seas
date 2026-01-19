@@ -19,12 +19,14 @@ point_count = 2
 [node name="Straight" type="Node3D"]
 
 [node name="MultiMeshPath3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 curve = SubResource("Curve3D_bgkyq")
 script = ExtResource("1_infrj")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
 
 [node name="MultiMeshPath3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 curve = SubResource("Curve3D_e1kko")
 script = ExtResource("1_infrj")
 distance_between_mesh_instances = 4.0
