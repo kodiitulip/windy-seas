@@ -1,7 +1,3 @@
-<p align="center">
-  <img class="align-center" src="./.github/attachments/iconx500.png" alt="icon"/>
-</p>
-
 # Windy Seas
 
 > [!NOTE]
