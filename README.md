@@ -1,5 +1,5 @@
 <p align="center">
-  <img class="align-center" src="./icon.svg" alt="icon"/>
+  <img class="align-center" src="./.github/attachments/iconx500.png" alt="icon"/>
 </p>
 
 # Windy Seas
