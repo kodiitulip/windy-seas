@@ -226,7 +226,7 @@ transform = Transform3D(-0.9677735, 0.059989713, -0.2445724, -0.023993853, 0.944
 transform = Transform3D(-0.7314014, 0, -0.6819473, 0, 0.99999994, 0, 0.68194723, 0, -0.73140144, -203.01431, 11.417912, -158.33615)
 
 [node name="ramp-wide" parent="GridMap" instance=ExtResource("19_0ypvb")]
-transform = Transform3D(-0.15091573, 0, -0.9885466, 0, 1, 0, 0.9885466, 0, -0.15091573, -108.73068, 0, -198.24313)
+transform = Transform3D(-0.15091573, 0, -0.9885466, 0, 1, 0, 0.9885466, 0, -0.15091573, -108.77176, -1.9073486e-06, -196.42474)
 
 [node name="ramp-wide2" parent="GridMap" instance=ExtResource("19_0ypvb")]
 transform = Transform3D(0.63524294, 0, -0.7723125, 0, 1, 0, 0.7723125, 0, 0.63524294, -210.11958, 0, -184.66151)
