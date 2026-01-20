@@ -47,12 +47,25 @@ bounce = 0.24
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vuo7h"]
 points = PackedVector3Array(-2.5, -0.2, -2.5, 2.5, -0.2, -2.5, 2.5, 1.2, 1.5, -2.5, 1.2, 1.5)
 
-[node name="ramp-wide" type="MeshInstance3D"]
+[node name="Node3D" type="Node3D"]
+
+[node name="ramp-wide" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_jms67")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="ramp-wide"]
 physics_material_override = SubResource("PhysicsMaterial_fs3s1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp-wide/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_vuo7h")
+
+[node name="ramp-wide2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0142117, 0, 0)
+mesh = SubResource("ArrayMesh_jms67")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ramp-wide2"]
+physics_material_override = SubResource("PhysicsMaterial_fs3s1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp-wide2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_vuo7h")

@@ -90,7 +90,7 @@ metadata/_custom_type_script = "uid://btia4uu0y4tow"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(0.9876883, 0.10055436, -0.11983602, 0, 0.76604444, 0.6427876, 0.15643482, -0.63487375, 0.75661314, -25.34482, 10.284577, 71.55578)
+transform = Transform3D(0.9876883, 0.10055426, -0.119835906, 0, 0.76604444, 0.6427876, 0.15643466, -0.63487375, 0.75661314, -25.344818, 10.284577, 71.55578)
 current = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -105,7 +105,7 @@ acceleration_rate = 32.0
 deacceleration_rate = 48.0
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
-transform = Transform3D(-0.9876859, 0, 0.1564343, 0, 1, 0, -0.1564343, 0, -0.9876859, -23.427448, 0, 59.449997)
+transform = Transform3D(-0.9876859, 0, 0.15643428, 0, 1, 0, -0.15643428, 0, -0.9876859, -23.427448, 0, 59.449997)
 top_level = true
 script = ExtResource("8_issku")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
@@ -117,7 +117,7 @@ transform = Transform3D(-0.5459376, -0.8375197, 0.02264441, -0.23766366, 0.18072
 environment = ExtResource("9_sfxq0")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.9876883, 0.10055436, -0.11983602, 0, 0.76604444, 0.6427876, 0.15643482, -0.63487375, 0.75661314, -25.34482, 10.284577, 71.55578)
+transform = Transform3D(0.9876883, 0.10055426, -0.119835906, 0, 0.76604444, 0.6427876, 0.15643466, -0.63487375, 0.75661314, -25.344818, 10.284577, 71.55578)
 script = ExtResource("10_ekcpv")
 priority = 3
 follow_mode = 6
@@ -168,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144, 0, 90)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -90)
 
 [node name="BarrelCollectable8" parent="GridMap" instance=ExtResource("17_ekcpv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, -116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.754166, 0, -112.413536)
 
 [node name="BarrelCollectable9" parent="GridMap" instance=ExtResource("17_ekcpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 3, -103)
@@ -207,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 0, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -29)
 
 [node name="ramp-wide" parent="GridMap" instance=ExtResource("18_wlqsf")]
-transform = Transform3D(0.1298339, 0, -0.9915356, 0, 1, 0, 0.9915356, 0, 0.1298339, -60, 0, -105)
+transform = Transform3D(0.35020727, 0, -0.93667203, 0, 1, 0, 0.93667203, 0, 0.35020727, -56.82978, 0, -102.86731)
 
 [node name="FinishGate" parent="." instance=ExtResource("16_slc34")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -64.52699, 0, -41.472153)
