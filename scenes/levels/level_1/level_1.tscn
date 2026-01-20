@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c4walhhhmdfd3"]
+[gd_scene load_steps=33 format=3 uid="uid://c4walhhhmdfd3"]
 
 [ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="13_1jeig"]
 [ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="13_rmnd1"]
 [ext_resource type="PackedScene" uid="uid://rrshmr31vbtt" path="res://scenes/objects/collectables/barrel_collectable.tscn" id="16_ldw0e"]
+[ext_resource type="Script" uid="uid://fpo1fdoc1uef" path="res://scenes/levels/level_1/grid_map.gd" id="17_1iula"]
 [ext_resource type="AudioStream" uid="uid://clgttobyhfgow" path="res://assets/sounds/131_A_Floater.mp3" id="20_41r28"]
 [ext_resource type="AudioStream" uid="uid://6vi1rls77cst" path="res://assets/sounds/gentle-ocean-waves-birdsong-and-gull-7109.mp3" id="21_1iula"]
 
@@ -117,7 +118,7 @@ shape = SubResource("ConcavePolygonShape3D_8spg0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 3.0008533e-07, -3.5762787e-07, 1.4210855e-14, 0.7660445, 0.64278746, 4.6684994e-07, -0.64278746, 0.7660445, -29.183558, 10.284601, 80.33655)
+transform = Transform3D(1, 3.0008533e-07, -3.5762787e-07, 1.4210855e-14, 0.7660445, 0.64278746, 4.6684994e-07, -0.64278746, 0.7660445, -31.183558, 10.284601, 80.33655)
 current = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -126,10 +127,10 @@ process_physics_priority = 300
 script = ExtResource("4_spwf2")
 
 [node name="TowBoat" parent="." instance=ExtResource("5_7uxs1")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -29.183552, 0, 68.079834)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -31.183552, 0, 68.079834)
 
 [node name="TopLevelFollowerNode3D" type="Node3D" parent="TowBoat"]
-transform = Transform3D(-1, 0, 3.8941437e-07, 0, 1, 0, -3.8941437e-07, 0, -1, -29.183552, 0, 68.079834)
+transform = Transform3D(-1, 0, 3.8941437e-07, 0, 1, 0, -3.8941437e-07, 0, -1, -31.183552, 0, 68.079834)
 top_level = true
 script = ExtResource("6_3lh42")
 metadata/_custom_type_script = "uid://cxd3sjw0n2lc4"
@@ -142,7 +143,7 @@ directional_shadow_mode = 0
 environment = ExtResource("7_w3g2g")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 3.0008533e-07, -3.5762787e-07, 1.4210855e-14, 0.7660445, 0.64278746, 4.6684994e-07, -0.64278746, 0.7660445, -29.183558, 10.284601, 80.33655)
+transform = Transform3D(1, 3.0008533e-07, -3.5762787e-07, 1.4210855e-14, 0.7660445, 0.64278746, 4.6684994e-07, -0.64278746, 0.7660445, -31.183558, 10.284601, 80.33655)
 script = ExtResource("6_vmhy7")
 priority = 3
 follow_mode = 6
@@ -166,9 +167,10 @@ mesh_library = ExtResource("11_1jeig")
 cell_size = Vector3(1, 0.2, 1)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65559, 67, 655371, -65559, 71, 655371, -65559, 75, 655371, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, -131052, 19, 6, -131042, 14, 1048580, -131035, 5, 5, -131030, 65529, 6, -131028, 45, 5, -131025, 65518, 4, -131023, 34, 4, -131021, 25, 6, -131017, 48, 1441794, -131014, 12, 655366, -131008, 24, 1441795, -131007, 36, 1048579, -131005, 2, 655365, -131005, 7, 655366, -130997, 13, 1441795, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 56, 47, 1048577, 62, 30, 1048576, 63, 23, 1048576, 63, 40, 1441793, 72, 18, 1048576, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, 131125, 41, 0, -131061, 18, 4, -65537, 16, 1441798, -65545, 9, 1441798, -65547, 65535, 655366, -65554, 4, 1048581, -65553, 65527, 1048580, -65552, 14, 2, -65538, 25, 2, -131053, 27, 655363, -131066, 28, 655363, -131056, 6, 655363, -131066, 6, 655363, 16, 11, 655360, 5, 12, 655360, 65458, 37, 655364, 65453, 27, 1048581, 65456, 17, 6, 65458, 7, 1441796, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 85, 69, 1048580, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797)
+"cells": PackedInt32Array(-65588, 105, 1441795, -65583, 90, 3, -65583, 114, 1441795, -65574, 122, 1441795, -65573, 108, 655363, -65563, 93, 1441795, -65562, 119, 1048579, -65555, 82, 3, -65551, 108, 3, -65550, 130, 3, -65547, 91, 655363, -65541, 119, 3, -131072, 104, 3, -131052, 19, 6, -131042, 14, 1048580, -131035, 5, 5, -131030, 65529, 6, -131025, 65518, 4, 65495, 110, 1048578, 65503, 107, 655363, 65505, 118, 1048578, 65506, 88, 655362, 65518, 103, 1048578, 65523, 118, 1441794, 196568, 107, 1048576, 196574, 106, 1441798, 196574, 117, 655360, 196575, 95, 0, 196578, 101, 6, 196580, 112, 1048580, 196583, 98, 0, 196584, 120, 0, 196585, 105, 1048581, 196589, 105, 1441792, 196589, 116, 1441792, -131061, 18, 4, -65537, 16, 1441798, -65545, 9, 1441798, -65547, 65535, 655366, -65554, 4, 1048581, -65553, 65527, 1048580, -65552, 14, 2, -65538, 25, 2, -131053, 27, 655363, -131066, 28, 655363, -131056, 6, 655363, -131066, 6, 655363, 16, 11, 655360, 5, 12, 655360, 65458, 37, 655364, 65453, 27, 1048581, 65456, 17, 6, 65458, 7, 1441796, 65531, 65419, 1441796, 65534, 65419, 1441796, 52, 65428, 1441796, 105, 65459, 1441796, 136, 65506, 1441796, 120, 25, 655364, 70, 105, 4, 32, 128, 1441796, 40, 124, 655366, 51, 120, 6, 63, 116, 5, 65473, 65449, 5, 65435, 65506, 1441796, 65461, 96, 1441798, 65434, 73, 1441796, 65448, 84, 1441797, 85, 69, 1048580, 56, 47, 1048577, 62, 30, 1048576, 63, 23, 1048576, 63, 40, 1441793, 72, 18, 1048576, -130997, 13, 1441795, -131009, 32, 6, -131005, 55, 1441794, -130996, 31, 1441795, -130995, 43, 1048579, -131002, 12, 655366, -130993, 2, 655365, -130993, 7, 655366, -131016, 52, 5, -131011, 41, 4, 131136, 51, 0, 196606, 47, 4, 196604, 63, 4, -65573, 69, 655371, -65573, 73, 655371, -65573, 77, 655371, -65539, 83, 5, -131064, 92, 5)
 }
-metadata/_editor_floor_ = Vector3(0, 0, 0)
+script = ExtResource("17_1iula")
+metadata/_editor_floor_ = Vector3(0, -2, 0)
 
 [node name="MultiMeshPath3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_1jeig")
@@ -193,22 +195,19 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="ramp" parent="." instance=ExtResource("13_1jeig")]
-transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 30, 0, 36)
+transform = Transform3D(0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.7071067, 37, 0, 40)
+
+[node name="ramp2" parent="." instance=ExtResource("13_1jeig")]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 44, 0, 47)
 
 [node name="Node" type="Node3D" parent="."]
 metadata/_edit_group_ = true
 
 [node name="BarrelCollectable" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.559414, 0, 51.92093)
-
-[node name="BarrelCollectable2" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8329258, 0, 52.62221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.559414, 0, 51.92093)
 
 [node name="BarrelCollectable3" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.085426, 0, 23.259293)
-
-[node name="BarrelCollectable4" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.05203, -1.9073486e-06, 22.796455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.085426, 0, 23.259293)
 
 [node name="BarrelCollectable5" parent="Node" instance=ExtResource("16_ldw0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.052032, -1.9073486e-06, -14.203545)
@@ -226,10 +225,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.190489, -7.6293945e-06, -5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.567528, -7.6293945e-06, -38.44688)
 
 [node name="BarrelCollectable10" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.39511, -7.6293945e-06, -9.916614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.39511, -7.6293945e-06, -5.9166136)
+
+[node name="BarrelCollectable12" parent="Node" instance=ExtResource("16_ldw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.39511, -7.6293945e-06, 31.083385)
 
 [node name="BarrelCollectable11" parent="Node" instance=ExtResource("16_ldw0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.157543, -7.6293945e-06, 14.094083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.157543, -7.6293945e-06, 72.094086)
 
 [node name="BGSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_v0dvh")
