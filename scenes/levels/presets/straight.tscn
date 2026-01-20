@@ -19,15 +19,45 @@ point_count = 2
 [node name="Straight" type="Node3D"]
 
 [node name="MultiMeshPath3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, 0, 0, 0)
 curve = SubResource("Curve3D_bgkyq")
 script = ExtResource("1_infrj")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
 
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D"]
+transform = Transform3D(0.98768836, 0, -0.15643448, 0, 1, 0, 0.15643448, 0, 0.98768836, 0, 0, 0)
+use_collision = true
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
 [node name="MultiMeshPath3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+transform = Transform3D(0.98768836, 0, 0.15643448, 0, 1, 0, -0.15643448, 0, 0.98768836, 5, 0, 0)
 curve = SubResource("Curve3D_e1kko")
 script = ExtResource("1_infrj")
 distance_between_mesh_instances = 4.0
 metadata/_custom_type_script = "uid://d3xifcu4sta0j"
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="MultiMeshPath3D2"]
+transform = Transform3D(0.98768836, 0, -0.15643448, 0, 1, 0, 0.15643448, 0, 0.98768836, -5, 0, 0)
+use_collision = true
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false

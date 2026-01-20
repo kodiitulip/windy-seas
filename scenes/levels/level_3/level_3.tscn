@@ -195,7 +195,6 @@ collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="WorldBorder"]
-visible = false
 shape = SubResource("ConcavePolygonShape3D_nd7a6")
 
 [node name="265_Won&#039;tQuit" type="AudioStreamPlayer" parent="."]
