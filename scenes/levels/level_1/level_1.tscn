@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c4walhhhmdfd3"]
+[gd_scene load_steps=32 format=3 uid="uid://c4walhhhmdfd3"]
 
 [ext_resource type="Script" uid="uid://bdljqj5o2mnxv" path="res://scenes/levels/level_1/level_manager.gd" id="1_wfdrs"]
 [ext_resource type="PackedScene" uid="uid://ba56hadfj8rfy" path="res://scenes/ui/boat/controls/boat_control_interface.tscn" id="1_x3ahk"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cih2me4xa8ff0" path="res://scenes/objects/ramp.tscn" id="13_1jeig"]
 [ext_resource type="Script" uid="uid://b3rx2qiibtqhq" path="res://scripts/third_person_phantom_camera_3d.gd" id="13_rmnd1"]
 [ext_resource type="PackedScene" uid="uid://rrshmr31vbtt" path="res://scenes/objects/collectables/barrel_collectable.tscn" id="16_ldw0e"]
-[ext_resource type="AudioStream" uid="uid://brxxki1bw663c" path="res://assets/sounds/132_Courage_Rescue.mp3" id="20_5d3u7"]
+[ext_resource type="AudioStream" uid="uid://clgttobyhfgow" path="res://assets/sounds/131_A_Floater.mp3" id="20_41r28"]
+[ext_resource type="AudioStream" uid="uid://6vi1rls77cst" path="res://assets/sounds/gentle-ocean-waves-birdsong-and-gull-7109.mp3" id="21_1iula"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7uxs1"]
 material = ExtResource("2_5o1mp")
@@ -57,6 +58,13 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 11
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_v0dvh"]
+stream_count = 2
+stream_0/stream = ExtResource("20_41r28")
+stream_0/volume = -2.0
+stream_1/stream = ExtResource("21_1iula")
+stream_1/volume = 0.0
 
 [node name="Level1" type="Node" node_paths=PackedStringArray("won_interface", "lost_interface", "wpoints_counter_ui")]
 script = ExtResource("1_wfdrs")
@@ -223,6 +231,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.39511, -7.6293945e-06, -9.
 [node name="BarrelCollectable11" parent="Node" instance=ExtResource("16_ldw0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.157543, -7.6293945e-06, 14.094083)
 
-[node name="132CourageRescue" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_5d3u7")
+[node name="BGSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_v0dvh")
+volume_db = -5.0
 autoplay = true

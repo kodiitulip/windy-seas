@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://482n8jj56qx1"]
+[gd_scene load_steps=8 format=3 uid="uid://482n8jj56qx1"]
 
 [ext_resource type="Theme" uid="uid://dcq5227ksqjr0" path="res://resources/themes/adventure.theme" id="1_mo4ir"]
 [ext_resource type="Script" uid="uid://c3ojcpeee04sx" path="res://scenes/ui/finish_interfaces/pause_interface.gd" id="2_mo4ir"]
 [ext_resource type="Script" uid="uid://ch2706kgdk687" path="res://scripts/ui_components/buttons/scene_reload_button.gd" id="3_g1q7g"]
 [ext_resource type="Script" uid="uid://b2h11r0hnoxl7" path="res://scripts/ui_components/buttons/scene_transition_button.gd" id="4_w2eob"]
+[ext_resource type="AudioStream" uid="uid://3qdjhn58qnys" path="res://assets/sounds/354. Curry Us.mp3" id="5_g1q7g"]
+[ext_resource type="AudioStream" uid="uid://6vi1rls77cst" path="res://assets/sounds/gentle-ocean-waves-birdsong-and-gull-7109.mp3" id="6_w2eob"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q5nc7"]
+stream_count = 2
+stream_0/stream = ExtResource("5_g1q7g")
+stream_0/volume = -2.0
+stream_1/stream = ExtResource("6_w2eob")
+stream_1/volume = 0.0
 
 [node name="PauseInterface" type="PanelContainer"]
 process_mode = 3
@@ -67,5 +76,12 @@ text = "menu"
 script = ExtResource("4_w2eob")
 scene_to_transition_to = "uid://bx460u03mm1g6"
 metadata/_custom_type_script = "uid://b2h11r0hnoxl7"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 2
+stream = SubResource("AudioStreamSynchronized_q5nc7")
+volume_db = -5.0
+autoplay = true
+stream_paused = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continue" to="." method="unpause"]

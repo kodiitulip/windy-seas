@@ -23,8 +23,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_handle_move(delta)
 	_handle_steer()
-	if 165 <= absf(rotation_degrees.z) and absf(rotation_degrees.z) <= 180.0:
-		_unstuck()
 	if global_position.y >= 1.0:
 		above_water.emit()
 
@@ -53,10 +51,6 @@ func _handle_steer() -> void:
 	#GlobalSignalBus.emit_rotation_changed(rotation.y)
 
 
-func _unstuck() -> void:
-	apply_torque_impulse(global_transform.basis * Vector3.FORWARD * max_speed)
-
-
 func _get_floaties() -> Array[FloatyMarker3D]:
 	var floaties: Array[FloatyMarker3D] = []
 	var children: Array = get_children().filter(func(child: Node) -> bool:
@@ -83,5 +77,7 @@ func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
 
 
 func _on_explode(position_from: Vector3) -> void:
-	var direction: Vector3 = position_from.direction_to(global_position)
-	apply_impulse(direction * max_speed, position_from - global_position)
+	var direction: Vector3 = position_from - global_position
+	var distance: float = position_from.distance_to(global_position)
+	apply_impulse((direction * max_speed).limit_length(3.0),
+		global_position + global_position.direction_to(position_from) * distance)
