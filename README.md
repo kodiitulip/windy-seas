@@ -34,6 +34,7 @@ Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</spa
 - Dialogos
 - Carregamento / Descarregamento de carga
 - Tutorial de controles
+- Inimigos
 
 ## Licensas
 
@@ -49,8 +50,6 @@ Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</spa
   - Level 1 ["Courage Rescue - Dan Knoflickek](https://opengameart.org/content/courage-rescue) CC-BY 4.0
   - Créditos ["A Floater - Dan Knoflickek"](https://opengameart.org/content/a-floater) CC-BY 4.0
 - Código:
-  - ["BeeHave"](https://bitbra.in/beehave/#/) MIT
-  - ["Dialogic"](https://github.com/dialogic-godot/dialogic?tab=readme-ov-file#dialogic-2) MIT
   - ["Phantom Camera"](https://phantom-camera.dev/) MIT
   - Esse jogo MIT
 
