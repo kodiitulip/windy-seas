@@ -7,10 +7,6 @@
 > - Arte: **<span style="color:#b4637a;font-weight:bold;">Negrito</span>**
 > - Som: **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">Negrito Itálico</span>_**
 
-## Narrativa
-
-O jogador aceita um trabalho como cargueiro para quitar dívidas de jogo. Agora deve desbravar os perigosos 7 mares fazendo entregas de pacotes clandestinos, para pagar a dívida... ou morrer tentando!
-
 ## Jogo
 
 Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</span>** de _<span style="color:#56949f;font-style:italic;">Loading</span>_ para o **<span style="color:#b4637a;font-weight:bold;">menu inicial</span>**, sendo esse composto pelos **<span style="color:#b4637a;font-weight:bold;">botões jogar e sair do jogo</span>** possuindo **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música de fundo</span>_**. Ao clicar em jogar, **<span style="color:#b4637a;font-weight:bold;">uma tela de Loading</span>** levará o jogador para a próxima cena, que consiste do primeiro nível do jogo: Um **<span style="color:#b4637a;font-weight:bold;">cais</span>** atrás do jogador e um percurso logo a frente, onde o jogador (representado pelo **<span style="color:#b4637a;font-weight:bold;">modelo do barco</span>**) irá _<span style="color:#56949f; font-style:italic;">coletar</span>_ um número de **<span style="color:#b4637a;">barris</span>** dispostos no percurso. Ao um nível uma **<span style="color:#b4637a;">tela de resultados</span>** vai aparecer em conjunto com a **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música do menu</span>_** informando que o player finalizou, possibilitando o player de reiniciar ou avança para a próxima fase. Os níveis seguintes vão introduzir novas mecânicas como obstáculos para desafiar as habilidades do jogador.
