@@ -13,30 +13,27 @@ O jogador aceita um trabalho como cargueiro para quitar dívidas de jogo. Agora 
 
 ## Jogo
 
-Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</span>** de _<span style="color:#56949f;font-style:italic;">Loading</span>_ para o **<span style="color:#b4637a;font-weight:bold;">menu inicial</span>**, sendo esse composto pelos **<span style="color:#b4637a;font-weight:bold;">botões jogar e sair do jogo</span>** possuindo **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música de fundo</span>_**. Ao clicar em jogar, **<span style="color:#b4637a;font-weight:bold;">uma tela de Loading</span>** levará o jogador para a próxima cena, que consiste do primeiro nível do jogo: Um **<span style="color:#b4637a;font-weight:bold;">cais</span>** atrás do jogador e um percurso logo a frente, onde o jogador (representado pelo **<span style="color:#b4637a;font-weight:bold;">modelo do barco</span>**) receberá instruções por meio de **<span style="color:#b4637a;font-weight:bold;">diálogos</span>** em _<span style="color:#56949f;font-style:italic;">balões de fala</span>_ sobre como _<span style="color:#56949f;font-style:italic;">controlar o barco</span>_, sendo necessário _<span style="color:#56949f; font-style:italic;">coletar</span>_ ao menos uma das **<span style="color:#b4637a;">caixas</span>** dispostas no percurso até chegar no **<span style="color:#b4637a;">cais de destino</span>**. Ao chegar no cais de destino uma **<span style="color:#b4637a;">tela de resultados</span>** vai aparecer em conjunto com a **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música da tela de resultados</span>_** informando quanto dinheiro o player fez, sendo o dinheiro ganho dependente de 3 fatores: _<span style="color:#56949f;font-style:italic;">Quantidade de caixas coletadas</span>_, _<span style="color:#56949f;font-style:italic;">dano do barco</span>_ e _<span style="color:#56949f;font-style:italic;">tempo para chegar ao destino</span>_. Além disso, nessa mesma tela caso o player tenha conseguido o valor mínimo de dinheiro o **<span style="color:#b4637a;font-weight:bold">botão para ir para o próximo nível</span>** aparecerá, caso não ele terá o **<span style="color:#b4637a;font-weight:bold">botão de refazer a fase</span>** ou **<span style="color:#b4637a;font-weight:bold">voltar para o menu inicial</span>**. Os níveis seguintes vão introduzir novas mecânicas como obstáculos para desafiar as habilidades do jogador mantendo o mesmo sistema de dinheiro.
+Começa o jogo com uma **<span style="color:#b4637a;font-weight:bold;">tela</span>** de _<span style="color:#56949f;font-style:italic;">Loading</span>_ para o **<span style="color:#b4637a;font-weight:bold;">menu inicial</span>**, sendo esse composto pelos **<span style="color:#b4637a;font-weight:bold;">botões jogar e sair do jogo</span>** possuindo **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música de fundo</span>_**. Ao clicar em jogar, **<span style="color:#b4637a;font-weight:bold;">uma tela de Loading</span>** levará o jogador para a próxima cena, que consiste do primeiro nível do jogo: Um **<span style="color:#b4637a;font-weight:bold;">cais</span>** atrás do jogador e um percurso logo a frente, onde o jogador (representado pelo **<span style="color:#b4637a;font-weight:bold;">modelo do barco</span>**) irá _<span style="color:#56949f; font-style:italic;">coletar</span>_ um número de **<span style="color:#b4637a;">barris</span>** dispostos no percurso. Ao um nível uma **<span style="color:#b4637a;">tela de resultados</span>** vai aparecer em conjunto com a **_<span style="color:#ea9d34;font-weight:bold;font-style:italic;">música do menu</span>_** informando que o player finalizou, possibilitando o player de reiniciar ou avança para a próxima fase. Os níveis seguintes vão introduzir novas mecânicas como obstáculos para desafiar as habilidades do jogador.
 
-| <span style="color:#b4637a;">Arte</span> | Status | <span style="color:#56949f;">Programação</span> | Status |
-| ---------------------------------------- | :----: | ----------------------------------------------- | :----: |
-| Tela de Loading                          |   🚧   | Loading entre cenas                             |   ✅   |
-| Fonte                                    |   🚧   | Controles do Barco                              |   ✅   |
-| Backdrop Menu Inicial                    |   🚧   | Diálogos (dialogic2)                            |   🚧   |
-| Botões Tela inicial                      |   🚧   | Começar uma nova missão                         |   🚧   |
-| Botões de Controles do Barco             |   🚧   | Completar a missão atual                        |   🚧   |
-| Interface de Diálogo                     |   🚧   | Interface de Controle do Barco                  |   🚧   |
-| Modelo do Barco                          |   ✅   | Interface de Pausa                              |   🚧   |
-| Texto dos diálogos                       |   🚧   | Física e Colisões                               |   ✅   |
-| Narrativa do jogo                        |   🚧   | Quantidade Caixas Coletadas                     |   🚧   |
-| Sprites dos personagens                  |   🚧   | Dano do Barco                                   |   🚧   |
-| Ícones                                   |   🚧   | Tempo para Completar Entrega                    |   🚧   |
-| Botão Próximo Nível                      |   🚧   |                                                 |        |
-| Botão Refazer Fase                       |   🚧   |                                                 |        |
-| Voltar para Menu Inicial                 |   🚧   |                                                 |        |
+| <span style="color:#b4637a;">Arte</span> | Status | <span style="color:#56949f;">Programação</span> | Status | <span style="color:#ea9d34;">Sons</span> | Status |
+| ---------------------------------------- | :----: | ----------------------------------------------- | :----: | ---------------------------------------- | :----: |
+| Tela de Loading                          |   ✅   | Loading entre cenas                             |   ✅   | Sons de UI                               |   ✅   |
+| Fonte                                    |   ✅   | Controles do Barco                              |   ✅   | Música de fundo tela inicial             |   ✅   |
+| Backdrop Menu Inicial                    |   ✅   | Dano do Barco                                   |   ✅   | Música Tela Resultados                   |   ✅   |
+| Botões Tela inicial                      |   ✅   | Quantidade de Barris Coletados                  |   ✅   |                                          |        |
+| Botões de Controles do Barco             |   ✅   | Completar a missão atual                        |   ✅   |                                          |        |
+| Voltar para Menu Inicial                 |   ✅   | Interface de Controle do Barco                  |   ✅   |                                          |        |
+| Modelo do Barco                          |   ✅   | Interface de Pausa                              |   ✅   |                                          |        |
+| Ícones                                   |   ✅   | Física e Colisões                               |   ✅   |                                          |        |
+| Botão Próximo Nível                      |   ✅   | Vida do Barco                                   |   ✅   |                                          |        |
+| Botão Refazer Fase                       |   ✅   |                                                 |        |                                          |        |
+| Voltar para Menu Inicial                 |   ✅   |                                                 |        |                                          |        |
 
-| <span style="color:#ea9d34;">Sons</span> | Status |
-| ---------------------------------------- | :----: |
-| Sons de UI                               |   🚧   |
-| Música de fundo tela inicial             |   🚧   |
-| Música Tela Resultados                   |   🚧   |
+## Cancelados
+
+- Dialogos
+- Carregamento / Descarregamento de carga
+- Tutorial de controles
 
 ## Licensas
 
